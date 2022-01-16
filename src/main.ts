@@ -1,7 +1,12 @@
+import dotenv from 'dotenv'
+dotenv.config()
 import "reflect-metadata";
-import { Intents, Interaction, Message } from "discord.js";
+import { Intents, Interaction, Message, TextChannel } from "discord.js";
 import { Client } from "discordx";
 import { dirname, importx } from "@discordx/importer";
+import express from "express";
+import multer from "multer";
+const upload = multer({ dest: 'uploads/' });
 
 const client = new Client({
   simpleCommand: {
@@ -12,12 +17,13 @@ const client = new Client({
     Intents.FLAGS.GUILD_MEMBERS,
     Intents.FLAGS.GUILD_MESSAGES,
     Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
-    Intents.FLAGS.GUILD_VOICE_STATES,
   ],
   // If you only want to use global commands only, comment this line
   botGuilds: [(client) => client.guilds.cache.map((guild) => guild.id)],
   silent: true,
 });
+
+const app = express();
 
 client.once("ready", async () => {
   // make sure all guilds are in cache
@@ -49,12 +55,21 @@ client.on("messageCreate", (message: Message) => {
   client.executeCommand(message);
 });
 
+// app.post('/profile', upload.single('avatar'), function (req, res, next) {
+//   // req.file is the `avatar` file
+//   // req.body will hold the text fields, if there were any
+//   (client.channels.cache.get('photos') as TextChannel).send('Hello');
+// });
+
 async function run() {
   // with cjs
   // await importx(__dirname + "/{events,commands}/**/*.{ts,js}");
   // with ems
   await importx(dirname(import.meta.url) + "/{events,commands}/**/*.{ts,js}");
-  client.login(process.env.BOT_TOKEN ?? ""); // provide your bot token
+  client.login(process.env.DISCORDTOKEN ?? ""); // provide your bot token
+  app.listen( 3000, () => {
+    console.log( `server started at http://localhost:3000` );
+} );
 }
 
 run();

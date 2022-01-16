@@ -8,3 +8,4 @@ export abstract class AppDiscord {
     console.log("Message Deleted", client.user?.username, message.content);
   }
 }
+
