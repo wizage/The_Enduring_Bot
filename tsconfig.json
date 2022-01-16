@@ -15,5 +15,7 @@
     /* Advanced Options */
     "skipLibCheck": false,
     "forceConsistentCasingInFileNames": true
-  }
+  },
+  "include": ["src/**/*.ts", "tests/**/*.ts"],
+  "exclude": ["node_modules", ".vscode"]
 }
