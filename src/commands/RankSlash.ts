@@ -1,6 +1,6 @@
 import { ButtonInteraction, CommandInteraction, EmbedFieldData, GuildMemberRoleManager, Message, MessageActionRow, MessageButton, MessageEmbed, TextChannel, User as DiscordUser } from "discord.js";
 import { Discord, Slash, SlashOption, SlashGroup, On, ButtonComponent} from "discordx";
-import { Pagination } from "@discordx/utilities";
+import { Pagination } from "@discordx/pagination";
 import { clan } from "runescape-api";
 import { User } from "../backend/types/User";
 import { createUser, getUser, verifyUser } from "../backend/models/User.js";
@@ -66,15 +66,15 @@ export abstract class RankSlash {
       role = guild?.roles.cache.find(r => r.name == roleName);
     }
     // Get current roles
-    let current_roles = (interaction.member.roles as GuildMemberRoleManager).cache.filter((role) => (RankSlash.ADMIN_RANKS.includes(role.name) || RankSlash.CLAN_RANKS.includes(role.name)));
+    let current_roles = (interaction.member!.roles as GuildMemberRoleManager).cache.filter((role) => (RankSlash.ADMIN_RANKS.includes(role.name) || RankSlash.CLAN_RANKS.includes(role.name)));
     // 
     current_roles.forEach((current_role) => {
       if (current_role.name != roleName){
-        (interaction.member.roles as GuildMemberRoleManager).remove(current_role);
+        (interaction.member!.roles as GuildMemberRoleManager).remove(current_role);
       }
     });
     if (role) {
-      (interaction.member.roles as GuildMemberRoleManager).add(role);
+      (interaction.member!.roles as GuildMemberRoleManager).add(role);
     }
   }
 
@@ -175,7 +175,7 @@ export abstract class RankSlash {
   @Slash("config", { description: "Config your discord with your rsn" })
   @SlashGroup("rank")
   async setRSN( 
-    @SlashOption("rsn", { description: "Runescape Username", required: true })
+    @SlashOption("rsn", { description: "Runescape Username" })
     rsn: string, 
     interaction: CommandInteraction)
     {
@@ -183,7 +183,7 @@ export abstract class RankSlash {
       const person = data.find(person => person.name.toLowerCase() === rsn.toLowerCase());
       let fields = RankSlash.embedFields;
       fields[0].value = person?.name || rsn;
-      if (!person){
+      if (!person || !interaction.member){
         fields[1].value = 'Guest';
         fields[2].value = 'N/A';
         const embed = new MessageEmbed({title: 'Current Rank', fields: fields});
@@ -254,7 +254,7 @@ export abstract class RankSlash {
   @Slash("update", { description: "Update your clan discord rank" })
   @SlashGroup("rank")
   async setRank(interaction: CommandInteraction){
-    getUser(interaction.member.user.id, (err: Error, result: User)=> {
+    getUser(interaction.member!.user.id, (err: Error, result: User)=> {
       if (err) {
         console.log(err);
       } else {
