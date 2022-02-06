@@ -1,5 +1,5 @@
-import { Collection, CommandInteraction, DiscordAPIError, EmbedFieldData, Emoji, GuildMemberRoleManager, Interaction, MessageActionRow, MessageEmbed, MessageReaction, ReactionUserManager, Role, TextChannel, User as DiscordUser } from "discord.js";
-import { Discord, MetadataStorage, Slash, SlashOption, SlashGroup} from "discordx";
+import { ButtonInteraction, Collection, CommandInteraction, DiscordAPIError, EmbedFieldData, Emoji, GuildMemberRoleManager, Interaction, Message, MessageActionRow, MessageButton, MessageEmbed, MessageReaction, ReactionUserManager, Role, TextChannel, User as DiscordUser } from "discord.js";
+import { Discord, MetadataStorage, Slash, SlashOption, SlashGroup, On, ButtonComponent} from "discordx";
 import { Pagination } from "@discordx/utilities";
 import { clan } from "runescape-api";
 import { User } from "../backend/types/User";
@@ -79,23 +79,39 @@ export abstract class RankSlash {
       (interaction.member.roles as GuildMemberRoleManager).add(role);
     }
   }
-  // example: pagination for all slash command
-  @Slash("all-commands", { description: "Pagination for all slash command" })
-  async pages(interaction: CommandInteraction): Promise<void> {
-    const commands = MetadataStorage.instance.applicationCommands.map((cmd) => {
-      return { name: cmd.name, description: cmd.description };
-    });
 
-    const pages = commands.map((cmd, i) => {
-      return new MessageEmbed()
-        .setFooter(`Page ${i + 1} of ${commands.length}`)
-        .setTitle("**Slash command info**")
-        .addField("Name", cmd.name)
-        .addField("Description", cmd.description);
+  @ButtonComponent(/(confirm-user-*)\w+/g)
+  confirmUser(interaction: ButtonInteraction){
+    const id = interaction.id.split('confirm-user-')[0];
+    verifyUser(id, true, async (err: Error, result: string) => {
+      if (err) {
+        console.log("Error: valid saving", err)
+      } else {
+        if (interaction.user) {
+          const message = (interaction.message as Message);
+          console.log(interaction.user);
+          const embedVerify = interaction.message.embeds[0];
+          // interaction.
+          embedVerify.description = `✅ Verified by <@${interaction.user.id}> ✅`;
+          message.edit({embeds:[embedVerify]});
+        }
+        await interaction.reply({ content: 'Successfully Verfied User', ephemeral: true });
+      }
     });
+    
+  }
 
-    const pagination = new Pagination(interaction, pages);
-    await pagination.send();
+  @ButtonComponent(/(deny-user-*)\w+/g)
+  async denyUser(interaction: ButtonInteraction){
+    const id = interaction.id.split('deny-user-')[0];
+    const message = (interaction.message as Message);
+    console.log(interaction.user);
+    const embedVerify = interaction.message.embeds[0];
+    // interaction.
+    embedVerify.description = `❌ Denied by <@${interaction.user.id}> ❌`;
+    message.edit({embeds:[embedVerify]});
+    await interaction.reply({ content: 'Denied User', ephemeral: true });
+
   }
 
   @Slash("new-ranks", { description: "Config your discord with your rsn" })
@@ -150,7 +166,6 @@ export abstract class RankSlash {
         interaction.reply({embeds:[noneofthat], ephemeral:true});
       }
     });
-      
   }
 
   @Slash("config", { description: "Config your discord with your rsn" })
@@ -162,11 +177,13 @@ export abstract class RankSlash {
     {
     clan.getMembers("The Enduring").then(async data => {
       const person = data.find(person => person.name.toLowerCase() === rsn.toLowerCase());
+      console.log(person);
       let fields = RankSlash.embedFields;
       fields[0].value = person?.name || rsn;
-      if (!person?.rank){
+      if (!person){
+        fields[1].value = 'Guest';
+        fields[2].value = 'N/A';
         const embed = new MessageEmbed({title: 'Current Rank', fields: fields});
-        
         this.addRole(interaction, 'Guest');
         interaction.reply({embeds:[embed], ephemeral:true});
         return;
@@ -199,38 +216,33 @@ export abstract class RankSlash {
           verifyEmbed[0].value = rsn;
           verifyEmbed[1].value = person?.rank || 'Guest';
           verifyEmbed[2].value = `<@${interaction.user.id}>`
+          const row = new MessageActionRow().addComponents(
+              new MessageButton()
+                .setCustomId(`confirm-user-${dbUser.discordID}`)
+                .setLabel('Validate')
+                .setStyle('SUCCESS'),
+              new MessageButton()
+                .setCustomId(`deny-user-${dbUser.discordID}`)
+                .setLabel('Deny')
+                .setStyle('DANGER'),
+          );
+
           const embedVerify = new MessageEmbed({title: 'New Registered RSN', fields: verifyEmbed, description:'Please verify new user'});
-          const message = await verifyChannel.send({embeds:[embedVerify]});
-          await message.react('✅');
-          await message.react('❌');
-          const filter = (reaction : MessageReaction, user: DiscordUser) => ( reaction.emoji.name === '✅' ||  reaction.emoji.name === '❌' ) && !user.bot;
-          message.awaitReactions({filter, max:1}).then( async (collected)=>{
-            let react = collected.first();
-            if (!react){
-              return;
-            }
-            let users = await react?.users.fetch() as Collection<string, DiscordUser>;
-            let userReactor = users.first();
-            if (react?.emoji.name === '✅'){
-              verifyUser(dbUser.discordID, true, (err: Error, result: string) => {
-                if (err) {
-                  console.log("Error: valid saving", err)
-                } else {
-                  if (userReactor) {
-                    embedVerify.description = `✅ Verified by <@${userReactor.id}> ✅`;
-                    message.edit({embeds:[embedVerify]});
-                    message.reactions.removeAll();
-                  }
-                }
-              });
-            } else if (react?.emoji.name === '❌') {
-              if (userReactor) {
-                embedVerify.description = `❌ Denied by <@${userReactor.id}> ❌`;
-                message.edit({embeds:[embedVerify]});
-                message.reactions.removeAll();
-              }
-            }
-          });
+          await verifyChannel.send({embeds:[embedVerify], components:[row]});
+          // const filter = (reaction : MessageReaction, user: DiscordUser) => ( reaction.emoji.name === '✅' ||  reaction.emoji.name === '❌' ) && !user.bot;
+          // message.awaitReactions({filter, max:1}).then( async (collected)=>{
+          //   let react = collected.first();
+          //   if (!react){
+          //     return;
+          //   }
+          //   let users = await react?.users.fetch() as Collection<string, DiscordUser>;
+          //   let userReactor = users.first();
+          //   if (react?.emoji.name === '✅'){
+              
+          //   } else if (react?.emoji.name === '❌') {
+              
+          //   }
+          // });
           let StringRole = "";
           if (person?.rank && !RankSlash.ADMIN_RANKS.includes(person?.rank)) {
             StringRole = person?.rank;
