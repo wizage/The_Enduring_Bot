@@ -48,7 +48,7 @@ export abstract class ClueSlash {
             .addField("Hards", `Count: ${clues[2].count !== -1 ? clues[2].count : 0}, Rank: ${clues[2].rank !== -1 ? clues[2].rank : 0}`)
             .addField("Mediums", `Count: ${clues[1].count !== -1 ? clues[1].count : 0}, Rank: ${clues[1].rank !== -1 ? clues[1].rank : 0}`)
             .addField("Easies", `Count: ${clues[0].count !== -1 ? clues[0].count : 0}, Rank: ${clues[0].rank !== -1 ? clues[0].rank : 0}`)
-            interaction.reply({embeds:[clueScrollResults], ephemeral:true});
+            interaction.reply({embeds:[clueScrollResults]});
           }
         } else {
           const errorEmbed = new MessageEmbed()
