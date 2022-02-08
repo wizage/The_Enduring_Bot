@@ -90,9 +90,8 @@ export abstract class RankSlash {
           const embedVerify = interaction.message.embeds[0];
           // interaction.
           embedVerify.description = `✅ Verified by <@${interaction.user.id}> ✅`;
-          message.edit({embeds:[embedVerify]});
+          interaction.update({embeds:[embedVerify]});
         }
-        await interaction.reply({ content: 'Successfully Verfied User', ephemeral: true });
       }
     });
     
@@ -110,9 +109,8 @@ export abstract class RankSlash {
           const embedVerify = interaction.message.embeds[0];
           // interaction.
           embedVerify.description = `❌ Denied by <@${interaction.user.id}> ❌`;
-          message.edit({embeds:[embedVerify]});
+          interaction.update({embeds:[embedVerify]});
         }
-        await interaction.reply({ content: 'Successfully Denied User', ephemeral: true });
       }
     });
 
