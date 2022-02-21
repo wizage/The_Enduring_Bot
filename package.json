@@ -32,7 +32,7 @@
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.52.0",
     "@discordx/importer": "^1.1.2",
-    "@discordx/pagination": "^1.2.0",
+    "@discordx/pagination": "^2.0.0",
     "@discordx/utilities": "^3.1.5",
     "discordx": "^9.1.15",
     "dotenv": "^16.0.0",
