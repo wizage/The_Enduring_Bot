@@ -30,7 +30,7 @@
     "serve": "node build/main.js"
   },
   "dependencies": {
-    "@aws-sdk/client-dynamodb": "^3.52.0",
+    "@aws-sdk/client-dynamodb": "^3.58.0",
     "@discordx/importer": "^1.1.2",
     "@discordx/pagination": "^1.2.0",
     "@discordx/utilities": "^3.1.5",
