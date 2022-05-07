@@ -2,25 +2,12 @@ import dotenv from 'dotenv'
 dotenv.config()
 import "reflect-metadata";
 import { Intents, Interaction, Message, TextChannel } from "discord.js";
-import { Client } from "discordx";
 import { dirname, importx } from "@discordx/importer";
 import express from "express";
 import multer from "multer";
+import { apiRouter } from './api/index.js';
+import { client } from './client/index.js'
 const upload = multer({ dest: 'uploads/' });
-
-const client = new Client({
-  simpleCommand: {
-    prefix: "!",
-  },
-  intents: [
-    Intents.FLAGS.GUILDS,
-    Intents.FLAGS.GUILD_MEMBERS,
-    Intents.FLAGS.GUILD_MESSAGES,
-    Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
-  ],
-  // If you only want to use global commands only, comment this line
-  botGuilds: [(client) => client.guilds.cache.map((guild) => guild.id)],
-});
 
 const app = express();
 
@@ -54,10 +41,7 @@ client.on("messageCreate", (message: Message) => {
   client.executeCommand(message);
 });
 
-app.get('/health', (req, res) => {
-  res.send('hello world')
-});
-
+app.use('/api', apiRouter);
 // app.post('/profile', upload.single('avatar'), function (req, res, next) {
 //   // req.file is the `avatar` file
 //   // req.body will hold the text fields, if there were any

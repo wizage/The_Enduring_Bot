@@ -1,6 +1,6 @@
 import { ButtonInteraction, CommandInteraction, EmbedFieldData, GuildMemberRoleManager, Message, MessageActionRow, MessageButton, MessageEmbed, TextChannel, User as DiscordUser } from "discord.js";
 import { Discord, Slash, SlashOption, SlashGroup, On, ButtonComponent } from "discordx";
-import { Pagination } from "@discordx/pagination";
+import { Pagination, PaginationType } from "@discordx/pagination";
 import { clan } from "runescape-api";
 import { User } from "../backend/types/User";
 import { createUser, getUser, verifyUser } from "../backend/models/User.js";
@@ -145,14 +145,14 @@ export abstract class RankSlash {
         const pages = needRanks.map((needRank, i) => {
           return new MessageEmbed()
             .setFooter({ text: `Page ${i + 1} of ${needRanks.length}` })
-            .setTitle("**Rankup**")
+            .setTitle("**Rankups**")
             .addField("RSN", needRank.clanny.name, true)
             .addField("Current Rank", needRank.clanny.rank, true)
             .addField("New Rank", needRank.newRank, true)
             .addField("Clan Xp", this.numberWithCommas(needRank.clanny.experience), true);
         });
 
-        const pagination = new Pagination(interaction, pages, { type: "BUTTON", ephemeral: true, time: 600000 });
+        const pagination = new Pagination(interaction, pages, {type: PaginationType.Button, ephemeral: true, time: 600000 });
         await pagination.send();
       } else {
         let noneofthat = new MessageEmbed()
