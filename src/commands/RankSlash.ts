@@ -181,7 +181,7 @@ export abstract class RankSlash {
       let fields = RankSlash.embedFields;
       fields[0].value = person?.name || rsn;
       if (!interaction.member){
-        const embed = new EmbedBuilder({ title: 'Server Error', description: `❌ Error: Contact <@409181714821283840> if you see this with a screenshot ❌ \n \n ${result.err}` });
+        const embed = new EmbedBuilder({ title: 'Server Error', description: `❌ Error: Contact <@409181714821283840> if you see this with a screenshot ❌ \n \n No 'interaction.member' was found` });
         interaction.reply({ embeds: [embed], ephemeral: true });
         return;
       }
