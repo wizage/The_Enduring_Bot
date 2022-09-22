@@ -30,12 +30,12 @@
     "serve": "node build/main.js"
   },
   "dependencies": {
-    "@aws-sdk/client-dynamodb": "^3.81.0",
-    "@discordx/importer": "^1.1.2",
-    "@discordx/pagination": "^2.1.1",
-    "@discordx/utilities": "^4.2.4",
-    "discordx": "^9.5.3",
-    "dotenv": "^16.0.0",
+    "@aws-sdk/client-dynamodb": "^3.172.0",
+    "@discordx/importer": "^1.1.10",
+    "@discordx/pagination": "^3.2.0",
+    "@discordx/utilities": "^5.1.0",
+    "discordx": "^11.3.0",
+    "dotenv": "^16.0.2",
     "express": "^4.18.1",
     "multer": "^1.4.4",
     "reflect-metadata": "^0.1.13",
@@ -45,12 +45,12 @@
     "@types/express": "^4.17.13",
     "@types/multer": "^1.4.7",
     "@types/mysql": "^2.15.20",
-    "@types/node": "^17.0.31",
+    "@types/node": "^18.7.18",
     "cross-env": "^7.0.3",
     "nodemon": "^2.0.16",
     "prettier": "^2.6.2",
     "ts-node": "^10.7.0",
-    "typescript": "^4.6.4"
+    "typescript": "^4.8.3"
   },
   "engines": {
     "node": ">=16.0.0",
