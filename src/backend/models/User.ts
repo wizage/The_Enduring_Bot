@@ -22,7 +22,7 @@ export const createUser = async (user: User) => {
     });
     try {
       const result = await ddbClient.send(addNewUser);
-      console.log({ result });
+      // console.log({ result });
       return { result, err: null };
     } catch (err) {
       console.error(err);

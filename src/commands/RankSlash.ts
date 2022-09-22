@@ -1,7 +1,7 @@
-import { ButtonInteraction, CommandInteraction, EmbedFieldData, GuildMemberRoleManager, Message, MessageActionRow, MessageButton, MessageEmbed, TextChannel, User as DiscordUser } from "discord.js";
-import { Discord, Slash, SlashOption, SlashGroup, On, ButtonComponent } from "discordx";
-import { Pagination } from "@discordx/pagination";
-import { clan } from "runescape-api";
+import { ButtonInteraction, CommandInteraction, APIEmbedField, GuildMemberRoleManager, Message, ActionRowBuilder, ButtonBuilder, EmbedBuilder, TextChannel, ApplicationCommandOptionType, ButtonStyle, MessageActionRowComponentBuilder, User as DiscordUser } from "discord.js";
+import { Discord, Slash, SlashOption, SlashGroup, ButtonComponent } from "discordx";
+import { Pagination, PaginationItem, PaginationType } from "@discordx/pagination";
+import { clan, hiscores } from "runescape-api";
 import { User } from "../backend/types/User";
 import { createUser, getUser, verifyUser } from "../backend/models/User.js";
 
@@ -16,7 +16,7 @@ export abstract class RankSlash {
     "General", "Captain", "Lieuntenant", "Sergeant", "Corporal", "Recruit", "Guest", // Normal roles
   ];
 
-  static readonly embedFields: EmbedFieldData[] = [{
+  static readonly embedFields: APIEmbedField[] = [{
     "name": "Username",
     "value": '',
     "inline": true
@@ -32,7 +32,7 @@ export abstract class RankSlash {
     "inline": true
   }];
 
-  static readonly verifyFields: EmbedFieldData[] = [{
+  static readonly verifyFields: APIEmbedField[] = [{
     "name": "RSN",
     "value": '',
     "inline": true
@@ -76,7 +76,7 @@ export abstract class RankSlash {
     }
   }
 
-  @ButtonComponent(/(confirm-user-*)\w+/g)
+  @ButtonComponent({id:/(confirm-user-*)\w+/g})
   async confirmUser(interaction: ButtonInteraction) {
     const userId = interaction.customId.split('-');
     const result = await verifyUser(userId[2], true);
@@ -87,13 +87,13 @@ export abstract class RankSlash {
         const message = (interaction.message as Message);
         const embedVerify = interaction.message.embeds[0];
         // interaction.
-        embedVerify.description = `✅ Verified by <@${interaction.user.id}> ✅`;
-        interaction.update({ embeds: [embedVerify] });
+        const newEmbed = EmbedBuilder.from(embedVerify).setDescription(`✅ Verified by <@${interaction.user.id}> ✅`);
+        interaction.update({ embeds: [newEmbed] });
       }
     }
   }
 
-  @ButtonComponent(/(deny-user-*)\w+/g)
+  @ButtonComponent({id:/(deny-user-*)\w+/g})
   async denyUser(interaction: ButtonInteraction) {
     const userId = interaction.customId.split('-');
     const result = await verifyUser(userId[2], false)
@@ -104,13 +104,13 @@ export abstract class RankSlash {
         const message = (interaction.message as Message);
         const embedVerify = interaction.message.embeds[0];
         // interaction.
-        embedVerify.description = `❌ Denied by <@${interaction.user.id}> ❌`;
-        interaction.update({ embeds: [embedVerify] });
+        const newEmbed = EmbedBuilder.from(embedVerify).setDescription(`❌ Denied by <@${interaction.user.id}> ❌`);
+        interaction.update({ embeds: [newEmbed] });
       }
     }
   }
 
-  @Slash("new-ranks", { description: "Config your discord with your rsn" })
+  @Slash({name: "new-ranks", description: "Config your discord with your rsn" })
   @SlashGroup("rank")
   async getAllClannies(
     interaction: CommandInteraction) {
@@ -143,19 +143,25 @@ export abstract class RankSlash {
       };
       if (needRanks.length > 0) {
         const pages = needRanks.map((needRank, i) => {
-          return new MessageEmbed()
-            .setFooter({ text: `Page ${i + 1} of ${needRanks.length}` })
-            .setTitle("**Rankup**")
-            .addField("RSN", needRank.clanny.name, true)
-            .addField("Current Rank", needRank.clanny.rank, true)
-            .addField("New Rank", needRank.newRank, true)
-            .addField("Clan Xp", this.numberWithCommas(needRank.clanny.experience), true);
+          const embeder = new EmbedBuilder()
+          .setFooter({ text: `Page ${i + 1} of ${needRanks.length}` })
+          .setTitle("**Rankup**")
+          .addFields([
+            {name:"RSN", value:needRank.clanny.name, inline: true},
+            {name:"Current Rank", value: needRank.clanny.rank, inline:true},
+            {name:"New Rank", value: needRank.newRank, inline:true},
+            {name:"Clan Xp", value: this.numberWithCommas(needRank.clanny.experience), inline:true}
+          ]);
+          const page : PaginationItem = {
+            embeds: [embeder]
+          }
+          return page;
         });
 
-        const pagination = new Pagination(interaction, pages, { type: "BUTTON", ephemeral: true, time: 600000 });
+        const pagination = new Pagination(interaction, pages, { type: PaginationType.Button, ephemeral: true, time: 600000 });
         await pagination.send();
       } else {
-        let noneofthat = new MessageEmbed()
+        let noneofthat = new EmbedBuilder()
           .setTitle("**Rankup**")
           .setDescription("🎉 Everyone is ranked up 🎉");
         interaction.reply({ embeds: [noneofthat], ephemeral: true });
@@ -163,24 +169,23 @@ export abstract class RankSlash {
     });
   }
 
-  @Slash("config", { description: "Config your discord with your rsn" })
+  @Slash({name:"config", description: "Config your discord with your rsn" })
   @SlashGroup("rank")
   async setRSN(
-    @SlashOption("rsn", { description: "Runescape Username" })
+    @SlashOption({ name:"rsn", description: "Runescape Username", required: true,  type: ApplicationCommandOptionType.String})
     rsn: string,
     interaction: CommandInteraction) {
+      
     clan.getMembers("The Enduring").then(async data => {
       const person = data.find(person => person.name.toLowerCase() === rsn.toLowerCase());
       let fields = RankSlash.embedFields;
       fields[0].value = person?.name || rsn;
-      if (!person || !interaction.member) {
-        fields[1].value = 'Guest';
-        fields[2].value = 'N/A';
-        const embed = new MessageEmbed({ title: 'Current Rank', fields: fields });
-        this.addRole(interaction, 'Guest');
+      if (!interaction.member){
+        const embed = new EmbedBuilder({ title: 'Server Error', description: `❌ Error: Contact <@409181714821283840> if you see this with a screenshot ❌ \n \n ${result.err}` });
         interaction.reply({ embeds: [embed], ephemeral: true });
         return;
-      } else {
+      }
+      if (person) {
         // Fixes Capitalization issues
         rsn = person?.name;
       }
@@ -191,39 +196,42 @@ export abstract class RankSlash {
         rsn: rsn,
         valid: false,
       };
-
       const result = await createUser(dbUser);
       if (result.err) {
         if (result.err instanceof Error && result.err.name == 'userExist') {
-          const embed = new MessageEmbed({
+          const embed = new EmbedBuilder({
             title: 'Current Rank', description: '❌ Error: A user already has registered this RSN and has been verified! ❌ \n \n \
              If you think this is incorrect, please contact an admin to help you out!'  });
           interaction.reply({ embeds: [embed], ephemeral: true });
           return;
         } else {
-          const embed = new MessageEmbed({ title: 'Server Error', description: `❌ Error: Contact <@409181714821283840> if you see this with a screenshot ❌ \n \n ${result.err}` });
+          const embed = new EmbedBuilder({ title: 'Server Error', description: `❌ Error: Contact <@409181714821283840> if you see this with a screenshot ❌ \n \n ${result.err}` });
           interaction.reply({ embeds: [embed], ephemeral: true });
         }
       } else {
-        // console.log(message);
-        let verifyChannel = interaction.client.channels.cache.get('932331442669776916') as TextChannel;
+        let channelId = '';
+        if (interaction.guildId === '932144876659822623'){
+          channelId = '932331442669776916';
+        } else if (interaction.guildId === '198166521573408768'){
+          channelId = '1022554962439450674';
+        }
+        let verifyChannel = interaction.client.channels.cache.get(channelId) as TextChannel;
         let verifyEmbed = RankSlash.verifyFields;
         verifyEmbed[0].value = rsn;
         verifyEmbed[1].value = person?.rank || 'Guest';
         verifyEmbed[2].value = `<@${interaction.user.id}>`
-        console.log(dbUser);
-        const row = new MessageActionRow().addComponents(
-          new MessageButton()
+        const row = new ActionRowBuilder<MessageActionRowComponentBuilder>().addComponents(
+          new ButtonBuilder()
             .setCustomId(`confirm-user-${dbUser.discordID}`)
             .setLabel('Validate')
-            .setStyle('SUCCESS'),
-          new MessageButton()
+            .setStyle(ButtonStyle.Success),
+          new ButtonBuilder()
             .setCustomId(`deny-user-${dbUser.discordID}`)
             .setLabel('Deny')
-            .setStyle('DANGER'),
+            .setStyle(ButtonStyle.Danger)
         );
 
-        const embedVerify = new MessageEmbed({ title: 'New Registered RSN', fields: verifyEmbed, description: 'Please verify new user' });
+        const embedVerify = new EmbedBuilder({ title: 'New Registered RSN', fields: verifyEmbed, description: 'Please verify new user' });
         await verifyChannel.send({ embeds: [embedVerify], components: [row] });
         let StringRole = "";
         if (person?.rank && !RankSlash.ADMIN_RANKS.includes(person?.rank)) {
@@ -231,28 +239,33 @@ export abstract class RankSlash {
         } else {
           StringRole = "Guest";
         }
-        fields[1].value = person?.rank;
-        fields[2].value = this.numberWithCommas(person?.experience);
+        if (!person){
+          fields[1].value = 'Guest';
+          fields[2].value = 'Not in clan';
+        } else {
+          fields[1].value = person?.rank || 'Guest';
+          fields[2].value = this.numberWithCommas(person?.experience);
+        }
         this.addRole(interaction, StringRole);
-        const embed = new MessageEmbed({ title: 'Current Rank', fields: fields });
+        const embed = new EmbedBuilder({ title: 'Current Rank', fields: fields });
         interaction.reply({ embeds: [embed], ephemeral: true });
       }
     });
   }
 
-  @Slash("update", { description: "Update your clan discord rank" })
+  @Slash({name:"update", description: "Update your clan discord rank" })
   @SlashGroup("rank")
   async setRank(interaction: CommandInteraction) {
     const userResults = await getUser(interaction.member!.user.id)
     if (userResults.err || !userResults.result) {
       if (userResults.err instanceof Error && userResults.err.name == 'noUser') {
-        const embed = new MessageEmbed({
+        const embed = new EmbedBuilder({
           title: 'Current Rank', description: '❌ Error: No RSN Configured ❌ \n \n \
            Please use `/rank config` to configure your RSN.'  });
         interaction.reply({ embeds: [embed], ephemeral: true });
         return;
       } else {
-        const embed = new MessageEmbed({ title: 'Server Error', description: `❌ Error: Contact <@409181714821283840> if you see this with a screenshot ❌ \n \n ${userResults.err}` });
+        const embed = new EmbedBuilder({ title: 'Server Error', description: `❌ Error: Contact <@409181714821283840> if you see this with a screenshot ❌ \n \n ${userResults.err}` });
         interaction.reply({ embeds: [embed], ephemeral: true });
       }
     } else {
@@ -261,7 +274,7 @@ export abstract class RankSlash {
         let fields = RankSlash.embedFields;
         fields[0].value = person?.name || userResults.result.rsn;
         if (!person?.rank) {
-          const embed = new MessageEmbed({ title: 'Current Rank', fields: fields });
+          const embed = new EmbedBuilder({ title: 'Current Rank', fields: fields });
 
           this.addRole(interaction, 'Guest');
           interaction.reply({ embeds: [embed], ephemeral: true });
@@ -276,7 +289,7 @@ export abstract class RankSlash {
         fields[1].value = person?.rank;
         fields[2].value = this.numberWithCommas(person?.experience);
         this.addRole(interaction, StringRole);
-        const embed = new MessageEmbed({ title: 'Current Rank', fields: fields });
+        const embed = new EmbedBuilder({ title: 'Current Rank', fields: fields });
         interaction.reply({ embeds: [embed], ephemeral: true });
       });
     }
