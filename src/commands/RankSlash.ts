@@ -1,4 +1,4 @@
-import { ButtonInteraction, CommandInteraction, APIEmbedField, GuildMemberRoleManager, Message, ActionRowBuilder, ButtonBuilder, EmbedBuilder, TextChannel, ApplicationCommandOptionType, ButtonStyle, MessageActionRowComponentBuilder, User as DiscordUser } from "discord.js";
+import { ButtonInteraction, CommandInteraction, APIEmbedField, GuildMemberRoleManager, Message, ActionRowBuilder, ButtonBuilder, EmbedBuilder, TextChannel, ApplicationCommandOptionType, ButtonStyle, MessageActionRowComponentBuilder, Role, User as DiscordUser } from "discord.js";
 import { Discord, Slash, SlashOption, SlashGroup, ButtonComponent } from "discordx";
 import { Pagination, PaginationItem, PaginationType } from "@discordx/pagination";
 import { clan, hiscores } from "runescape-api";
@@ -56,7 +56,7 @@ export abstract class RankSlash {
   private async addRole(interaction: CommandInteraction, roleName: string) {
     let guild = await interaction.guild?.fetch();
 
-    let role = guild?.roles.cache.find(r => r.name == roleName);
+    let role = guild?.roles.cache.find( (r: Role) => r.name == roleName);
     if (!role) {
       await guild?.roles.create({
         name: roleName,
@@ -64,9 +64,9 @@ export abstract class RankSlash {
       role = guild?.roles.cache.find(r => r.name == roleName);
     }
     // Get current roles
-    let current_roles = (interaction.member!.roles as GuildMemberRoleManager).cache.filter((role) => (RankSlash.ADMIN_RANKS.includes(role.name) || RankSlash.CLAN_RANKS.includes(role.name)));
+    let current_roles = (interaction.member!.roles as GuildMemberRoleManager).cache.filter((role: Role) => (RankSlash.ADMIN_RANKS.includes(role.name) || RankSlash.CLAN_RANKS.includes(role.name)));
     // 
-    current_roles.forEach((current_role) => {
+    current_roles.forEach((current_role: Role) => {
       if (current_role.name != roleName) {
         (interaction.member!.roles as GuildMemberRoleManager).remove(current_role);
       }
