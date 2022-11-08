@@ -3,6 +3,7 @@ dotenv.config()
 import "reflect-metadata";
 import { IntentsBitField, Interaction, Message } from "discord.js";
 import { Client } from "discordx";
+import { ActivityType } from "discord-api-types/v10";
 import { dirname, importx } from "@discordx/importer";
 import express from "express";
 
@@ -34,6 +35,8 @@ export class Main {
         global: { log: true },
         guild: { log: true },
       });
+
+      this._client.user?.setActivity('Runescape | Type / to get started')
 
       console.log(">> Bot started");
     });
