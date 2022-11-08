@@ -1,27 +1,40 @@
 import { ButtonInteraction, CommandInteraction, GuildMemberRoleManager, Message, EmbedBuilder, TextChannel, User as DiscordUser } from "discord.js";
 import { Discord, Slash, SlashOption, SlashGroup, On, ButtonComponent } from "discordx";
+import { ApplicationCommandOptionType } from "discord-api-types/v10";
 import { hiscores } from "runescape-api";
 import { createUser, getUser, verifyUser } from "../backend/models/User.js";
 
 
 @Discord()
 export abstract class ClueSlash {
-  @Slash( { name: 'clue-title', description: 'Get your current clue rank' })
-  async assignClueTitle(interaction: CommandInteraction) {
-    const userResults = await getUser(interaction.member!.user.id)
-    if (userResults.err || !userResults.result) {
-      if (userResults.err instanceof Error && userResults.err.name == 'noUser') {
-        const embed = new EmbedBuilder({
-          title: 'Current Rank', description: '❌ Error: No RSN Configured ❌ \n \n \
-           Please use `/rank config` to configure your RSN.'  });
-        interaction.reply({ embeds: [embed], ephemeral: true });
-        return;
-      } else {
-        const embed = new EmbedBuilder({ title: 'Server Error', description: `❌ Error: Contact <@409181714821283840> if you see this with a screenshot ❌ \n \n ${userResults.err}` });
-        interaction.reply({ embeds: [embed], ephemeral: true });
+  @Slash( { name: 'clue-title', description: 'Get current clue points' })
+  async assignClueTitle(
+  @SlashOption({
+      description: "username",
+      name: "username",
+      required: false,
+      type: ApplicationCommandOptionType.String,
+    })
+  username: string,
+  interaction: CommandInteraction) {
+    if (!username){
+      const userResults = await getUser(interaction.member!.user.id)
+      if (userResults.err || !userResults.result) {
+        if (userResults.err instanceof Error && userResults.err.name == 'noUser') {
+          const embed = new EmbedBuilder({
+            title: 'Current Rank', description: '❌ Error: No RSN Configured ❌ \n \n \
+             Please use `/rank config` to configure your RSN.'  });
+          interaction.reply({ embeds: [embed], ephemeral: true });
+          return;
+        } else {
+          const embed = new EmbedBuilder({ title: 'Server Error', description: `❌ Error: Contact <@409181714821283840> if you see this with a screenshot ❌ \n \n ${userResults.err}` });
+          interaction.reply({ embeds: [embed], ephemeral: true });
+          return;
+        }
       }
-    } else {
-      const userScore = await hiscores.getPlayer(userResults.result.rsn);
+      username = userResults.result.rsn;
+    }
+      const userScore = await hiscores.getPlayer(username);
       if (userScore.activities) {
         const clues = [userScore.activities.clue_scrolls_easy, userScore.activities.clue_scrolls_medium,
         userScore.activities.clue_scrolls_hard, userScore.activities.clue_scrolls_elite, userScore.activities.clue_scrolls_master];
@@ -43,7 +56,7 @@ export abstract class ClueSlash {
         }
 
         const clueScrollResults = new EmbedBuilder()
-          .setTitle(`**Clue Stats for ${userResults.result.rsn}**`)
+          .setTitle(`**Clue Stats for ${username}**`)
           .addFields([{ name:"Total", value:`Total Clue Points: ${totalPoints}\nTotalClues: ${totalClues}`},
           { name:"Masters", value:`Count: ${clues[4].count !== -1 ? clues[4].count : 0}, Rank: ${clues[4].rank !== -1 ? clues[4].rank : 0}`},
           { name:"Elites", value:`Count: ${clues[3].count !== -1 ? clues[3].count : 0}, Rank: ${clues[3].rank !== -1 ? clues[3].rank : 0}`},
@@ -55,5 +68,3 @@ export abstract class ClueSlash {
     }
 
   }
-
-}
