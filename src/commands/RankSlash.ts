@@ -79,23 +79,27 @@ export abstract class RankSlash {
 
   @ButtonComponent({id:/(confirm-user-*)\w+/g})
   async confirmUser(interaction: ButtonInteraction) {
+    await interaction.deferUpdate();
     const userId = interaction.customId.split('-');
     const result = await verifyUser(userId[2], true);
     if (result.err) {
       console.log("Error: valid saving", result.err)
     } else {
+      
       if (interaction.user) {
+        console.log("responding")
         const message = (interaction.message as Message);
         const embedVerify = interaction.message.embeds[0];
         // interaction.
         const newEmbed = EmbedBuilder.from(embedVerify).setDescription(`✅ Verified by <@${interaction.user.id}> ✅`);
-        interaction.update({ embeds: [newEmbed] });
+        interaction.editReply({ embeds: [newEmbed] });
       }
     }
   }
 
   @ButtonComponent({id:/(deny-user-*)\w+/g})
   async denyUser(interaction: ButtonInteraction) {
+    await interaction.deferUpdate();
     const userId = interaction.customId.split('-');
     const result = await verifyUser(userId[2], false)
     if (result.err) {
@@ -106,12 +110,12 @@ export abstract class RankSlash {
         const embedVerify = interaction.message.embeds[0];
         // interaction.
         const newEmbed = EmbedBuilder.from(embedVerify).setDescription(`❌ Denied by <@${interaction.user.id}> ❌`);
-        interaction.update({ embeds: [newEmbed] });
+        interaction.editReply({ embeds: [newEmbed] });
       }
     }
   }
 
-  @Slash({name: "new-ranks", description: "Config your discord with your rsn" })
+  @Slash({name: "new-ranks", description: "List new rank-ups needed" })
   @SlashGroup("rank")
   async getAllClannies(
     interaction: CommandInteraction) {

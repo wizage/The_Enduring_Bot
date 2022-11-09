@@ -7,7 +7,7 @@ import { createUser, getUser, verifyUser } from "../backend/models/User.js";
 
 @Discord()
 export abstract class ClueSlash {
-  @Slash( { name: 'clue-title', description: 'Get current clue points' })
+  @Slash( { name: 'clue-points', description: 'Get current clue points' })
   async assignClueTitle(
   @SlashOption({
       description: "username",
