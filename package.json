@@ -26,7 +26,7 @@
     "build": "tsc",
     "watch": "tsc -p tsconfig.json -w",
     "dev": "node --loader ts-node/esm/transpile-only src/main.ts",
-    "start": "cross-env AWS_PROFILE=partyAccount nodemon --exec node --loader ts-node/esm/transpile-only src/main.ts ",
+    "start": "cross-env AWS_PROFILE=botty nodemon --exec node --loader ts-node/esm/transpile-only src/main.ts ",
     "start-prod": "cross-env AWS_PROFILE=partyAccount nodemon --exec node --loader ts-node/esm/transpile-only src/main.ts ",
     "serve": "node build/main.js"
   },

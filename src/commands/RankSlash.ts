@@ -240,7 +240,7 @@ export abstract class RankSlash {
         await verifyChannel.send({ embeds: [embedVerify], components: [row] });
         let StringRole = "";
         if (person?.rank && !RankSlash.ADMIN_RANKS.includes(person?.rank)) {
-          StringRole = person?.rank;
+          StringRole = `Clan ${person?.rank}`;
         } else {
           StringRole = "Guest";
         }
@@ -287,7 +287,7 @@ export abstract class RankSlash {
         }
         let StringRole = "";
         if (person?.rank && (!RankSlash.ADMIN_RANKS.includes(person?.rank) || userResults.result.valid)) {
-          StringRole = person?.rank;
+          StringRole = `Clan ${person?.rank}`;
         } else {
           StringRole = "Guest";
         }
