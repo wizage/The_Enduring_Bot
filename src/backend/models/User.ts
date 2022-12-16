@@ -22,12 +22,30 @@ export const createUser = async (user: User) => {
     });
     try {
       const result = await ddbClient.send(addNewUser);
-      // console.log({ result });
-      return { result, err: null };
+      return { result, wrongCommand: false, err: null };
     } catch (err) {
       console.error(err);
-      return ({ result: null, err });
+      return ({ result: null,  wrongCommand: false, err });
     }
+  } else if (rsnExists.result && rsnExists.result.Count! === 1){
+    const resultItem = rsnExists.result.Items![0];
+    const currentDiscordUser = resultItem["discordId"]["S"];
+    if (currentDiscordUser === user.discordID){
+      return {
+        result: null,
+        wrongCommand: true,
+        err: null,
+      }
+    } else {
+      const userExists = new Error(`User already exsits and is verified with the discord <@${currentDiscordUser}>`);
+    
+      return {
+        result: null,
+        wrongCommand: false,
+        err: userExists,
+      }
+    }
+    
   } else {
     const userExists = new Error('User already exsits and is verified');
     userExists.name = 'userExist';
