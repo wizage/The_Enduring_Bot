@@ -64,9 +64,8 @@ export abstract class OysterSlash {
           .setFooter({ text: `Page ${i + 1} of ${hiscores.length}` })
           .setTitle("**Oyster Competition**")
           .addFields([{ name:"Value of Oyster", value:this.numberWithCommas(submission.value), inline: true},
-          { name:"Current position", value:`${i+1}`, inline: true}])
+          { name:"Current position", value:`${i+1}`, inline: true}, { name:"Username", value:`<@${submission.discordId}>`, inline: true}])
           .setImage(submission.picture)
-          .setFooter({ text: 'Powered by Wizages'});
           const page : PaginationItem = {
             embeds: [embeder]
           }
