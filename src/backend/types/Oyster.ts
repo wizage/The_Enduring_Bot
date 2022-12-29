@@ -7,6 +7,6 @@ export interface OysterSubmission {
     value: number,
     discordId: string,
     discordName: string,
-    rsn: string
+    rsn?: string
     picture: string
 }

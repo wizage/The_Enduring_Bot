@@ -1,14 +1,17 @@
-import { ButtonInteraction, CommandInteraction, GuildMemberRoleManager, Message, EmbedBuilder, TextChannel, User as DiscordUser } from "discord.js";
+import { ButtonInteraction, CommandInteraction, GuildMemberRoleManager, Message, EmbedBuilder, TextChannel, Attachment, User as DiscordUser } from "discord.js";
 import { Discord, Slash, SlashOption, SlashGroup, On, ButtonComponent } from "discordx";
+import { Pagination, PaginationItem, PaginationType } from "@discordx/pagination";
 import { ApplicationCommandOptionType } from "discord-api-types/v10";
 import { hiscores } from "runescape-api";
-import { getHiscores } from "../backend/models/Oyster.js";
+import { addEntry, getHiscores } from "../backend/models/Oyster.js";
 
 
 @Discord()
+@SlashGroup({ name: "oyster", description: "Commands for oyster competition" })
 export abstract class OysterSlash {
-  @Slash( { name: 'oyster', description: 'Submit your value' })
-  async assignClueTitle(
+  @Slash( { name: 'submit', description: 'Submit your value' })
+  @SlashGroup("oyster")
+  async submitOyster(
   @SlashOption({
       description: "Provide your oyster value",
       name: "value",
@@ -16,28 +19,61 @@ export abstract class OysterSlash {
       type: ApplicationCommandOptionType.String,
     })
   value: string,
+  @SlashOption({
+    description: "image",
+    name: "image",
+    required: true,
+    type: ApplicationCommandOptionType.Attachment,
+  })
+  attachment: Attachment,
   interaction: CommandInteraction) {
-    // if (!username){
-    //   const userResults = await getUser(interaction.member!.user.id)
-    //   if (userResults.err || !userResults.result) {
-    //     if (userResults.err instanceof Error && userResults.err.name == 'noUser') {
-    //       const embed = new EmbedBuilder({
-    //         title: 'Current Rank', description: '❌ Error: No RSN Configured ❌ \n \n \
-    //          Please use `/rank config` to configure your RSN.'  });
-    //       interaction.reply({ embeds: [embed], ephemeral: true });
-    //       return;
-    //     } else {
-    //       const embed = new EmbedBuilder({ title: 'Server Error', description: `❌ Error: Contact <@409181714821283840> if you see this with a screenshot ❌ \n \n ${userResults.err}` });
-    //       interaction.reply({ embeds: [embed], ephemeral: true });
-    //       return;
-    //     }
-    //   }
-    //   username = userResults.result.rsn;
-    // }
-    const submissionId = interaction.member!.user.id
 
     // getHiscores();
-    interaction.reply("Provide a screenshot with the code: @");
-    
+    const convertValue = Number(value);
+    const results = await addEntry({value: convertValue,  discordId:interaction.member!.user.id, picture: attachment.url, discordName:interaction.member!.user.username });
+
+    if (results.err) {
+        interaction.reply("Error has occured... Please ping Wizages");
+    } else {
+        const oysterSubmission = new EmbedBuilder()
+          .setTitle(`**Oyster Submission for ${interaction.member!.user.username}**`)
+          .addFields([{ name:"Value of Oyster", value:`${value}`, inline: true},
+          { name:"Current position", value:`${results.position}`, inline: true}])
+          .setImage(attachment.url)
+          .setFooter({ text: 'Powered by Wizages'})
+          interaction.reply({ embeds: [oysterSubmission] });
+    }
+  }
+
+  @Slash( { name: 'hiscore', description: 'Hiscore list for this month' })
+  @SlashGroup("oyster")
+  async getHiscoresOyster(
+    interaction: CommandInteraction
+  ){
+     const hiscores = await getHiscores();
+     if (hiscores.length > 0) {
+        const pages = hiscores.map((submission, i) => {
+          const embeder = new EmbedBuilder()
+          .setFooter({ text: `Page ${i + 1} of ${hiscores.length}` })
+          .setTitle("**Oyster Competition**")
+          .addFields([{ name:"Value of Oyster", value:`${submission.value}`, inline: true},
+          { name:"Current position", value:`${i+1}`, inline: true}])
+          .setImage(submission.picture)
+          .setFooter({ text: 'Powered by Wizages'});
+          const page : PaginationItem = {
+            embeds: [embeder]
+          }
+          return page;
+        });
+
+        const pagination = new Pagination(interaction, pages, { type: PaginationType.Button, ephemeral: true, time: 600000 });
+        await pagination.send();
+      } else {
+        let noneofthat = new EmbedBuilder()
+          .setTitle("**Oyster Competition**")
+          .setDescription("No one has submitted anything...");
+        interaction.reply({ embeds: [noneofthat], ephemeral: true });
+      }
   }
 }
+
