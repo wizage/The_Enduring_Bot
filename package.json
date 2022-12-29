@@ -35,7 +35,7 @@
     "@discordx/importer": "^1.1.10",
     "@discordx/pagination": "^3.4.0",
     "@discordx/utilities": "^5.2.0",
-    "discordx": "^11.3.0",
+    "discordx": "^11.5.2",
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
     "multer": "^1.4.4",
