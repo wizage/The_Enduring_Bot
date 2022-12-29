@@ -9,6 +9,9 @@ import { addEntry, getHiscores } from "../backend/models/Oyster.js";
 @Discord()
 @SlashGroup({ name: "oyster", description: "Commands for oyster competition" })
 export abstract class OysterSlash {
+  numberWithCommas(x: number) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
   @Slash( { name: 'submit', description: 'Submit your value' })
   @SlashGroup("oyster")
   async submitOyster(
@@ -29,19 +32,23 @@ export abstract class OysterSlash {
   interaction: CommandInteraction) {
 
     // getHiscores();
-    const convertValue = Number(value);
-    const results = await addEntry({value: convertValue,  discordId:interaction.member!.user.id, picture: attachment.url, discordName:interaction.member!.user.username });
-
-    if (results.err) {
-        interaction.reply("Error has occured... Please ping Wizages");
+    const convertValue = Number(value.replace(/,/g, ''));
+    if (isNaN(convertValue)){
+        interaction.reply("Your value is not a number. Try again.")
     } else {
-        const oysterSubmission = new EmbedBuilder()
-          .setTitle(`**Oyster Submission for ${interaction.member!.user.username}**`)
-          .addFields([{ name:"Value of Oyster", value:`${value}`, inline: true},
-          { name:"Current position", value:`${results.position}`, inline: true}])
-          .setImage(attachment.url)
-          .setFooter({ text: 'Powered by Wizages'})
-          interaction.reply({ embeds: [oysterSubmission] });
+        const results = await addEntry({value: convertValue,  discordId:interaction.member!.user.id, picture: attachment.url, discordName:interaction.member!.user.username });
+
+        if (results.err) {
+            interaction.reply("Error has occured... Please ping Wizages");
+        } else {
+            const oysterSubmission = new EmbedBuilder()
+            .setTitle(`**Oyster Submission for ${interaction.member!.user.username}**`)
+            .addFields([{ name:"Value of Oyster", value:this.numberWithCommas(convertValue), inline: true},
+            { name:"Current position", value:`${results.position}`, inline: true}])
+            .setImage(attachment.url)
+            .setFooter({ text: 'Powered by Wizages'})
+            interaction.reply({ embeds: [oysterSubmission] });
+        }
     }
   }
 
@@ -56,7 +63,7 @@ export abstract class OysterSlash {
           const embeder = new EmbedBuilder()
           .setFooter({ text: `Page ${i + 1} of ${hiscores.length}` })
           .setTitle("**Oyster Competition**")
-          .addFields([{ name:"Value of Oyster", value:`${submission.value}`, inline: true},
+          .addFields([{ name:"Value of Oyster", value:this.numberWithCommas(submission.value), inline: true},
           { name:"Current position", value:`${i+1}`, inline: true}])
           .setImage(submission.picture)
           .setFooter({ text: 'Powered by Wizages'});
