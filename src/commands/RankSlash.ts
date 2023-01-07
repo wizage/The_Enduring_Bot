@@ -3,7 +3,7 @@ import { Discord, Slash, SlashOption, SlashGroup, ButtonComponent } from "discor
 import { APIEmbedField, ApplicationCommandOptionType, ButtonStyle } from "discord-api-types/v10";
 import { Pagination, PaginationItem, PaginationType } from "@discordx/pagination";
 import { clan } from "runescape-api";
-import { User } from "../backend/types/User";
+import { User } from "../types/User";
 import { createUser, getUser, verifyUser } from "../backend/models/User.js";
 
 @Discord()

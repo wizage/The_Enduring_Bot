@@ -1,4 +1,4 @@
-import { User } from "../types/User";
+import { User } from "../../types/User";
 import { DynamoDBClient, Get, GetItemCommand, PutItemCommand, QueryCommand, UpdateItemCommand } from "@aws-sdk/client-dynamodb";
 import { userInfo } from "os";
 import e from "express";
