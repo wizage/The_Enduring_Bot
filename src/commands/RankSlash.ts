@@ -213,7 +213,10 @@ export abstract class RankSlash {
           const embed = new EmbedBuilder({ title: 'Server Error', description: `❌ Error: Contact <@409181714821283840> if you see this with a screenshot ❌ \n \n ${result.err}` });
           interaction.reply({ embeds: [embed], ephemeral: true });
         }
-      } else {
+      } else if (result.wrongCommand){
+        this.setRank(interaction);
+      }
+      else {
         let channelId = '';
         if (interaction.guildId === '932144876659822623'){
           channelId = '932331442669776916';
@@ -240,7 +243,7 @@ export abstract class RankSlash {
         await verifyChannel.send({ embeds: [embedVerify], components: [row] });
         let StringRole = "";
         if (person?.rank && !RankSlash.ADMIN_RANKS.includes(person?.rank)) {
-          StringRole = person?.rank;
+          StringRole = `Clan ${person?.rank}`;
         } else {
           StringRole = "Guest";
         }
@@ -287,7 +290,7 @@ export abstract class RankSlash {
         }
         let StringRole = "";
         if (person?.rank && (!RankSlash.ADMIN_RANKS.includes(person?.rank) || userResults.result.valid)) {
-          StringRole = person?.rank;
+          StringRole = `Clan ${person?.rank}`;
         } else {
           StringRole = "Guest";
         }

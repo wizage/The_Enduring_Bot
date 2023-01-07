@@ -31,10 +31,7 @@ export class Main {
       //   ...this._client.guilds.cache.map((guild) => guild.id)
       // );
 
-      await this._client.initApplicationCommands({
-        global: { log: true },
-        guild: { log: true },
-      });
+      await this._client.initApplicationCommands();
 
       this._client.user?.setActivity('Runescape | Type / to get started')
 
