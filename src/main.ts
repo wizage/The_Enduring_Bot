@@ -1,11 +1,9 @@
-import dotenv from 'dotenv'
-dotenv.config()
-import "reflect-metadata";
-import { IntentsBitField, Interaction, Message } from "discord.js";
-import { Client } from "discordx";
-import { ActivityType } from "discord-api-types/v10";
-import { dirname, importx } from "@discordx/importer";
-import express from "express";
+import dotenv from 'dotenv';
+dotenv.config();
+import 'reflect-metadata';
+import { IntentsBitField } from 'discord.js';
+import { Client } from 'discordx';
+import { dirname, importx } from '@discordx/importer';
 
 export class Main {
   private static _client: Client;
@@ -24,7 +22,7 @@ export class Main {
       ],
     });
 
-    this._client.once("ready", async () => {
+    this._client.once('ready', async () => {
       // An example of how guild commands can be cleared
       //
       // await this._client.clearApplicationCommands(
@@ -33,18 +31,18 @@ export class Main {
 
       await this._client.initApplicationCommands();
 
-      this._client.user?.setActivity('Runescape | Type / to get started')
+      this._client.user?.setActivity('Runescape | Type / to get started');
 
-      console.log(">> Bot started");
+      console.log('>> Bot started');
     });
 
-    this._client.on("interactionCreate", (interaction) => {
+    this._client.on('interactionCreate', (interaction) => {
       this._client.executeInteraction(interaction);
     });
 
     await importx(`${dirname(import.meta.url)}/commands/**/*.{js,ts}`);
 
-    await this._client.login(process.env.DISCORDTOKEN ?? "");
+    await this._client.login(process.env.DISCORDTOKEN ?? '');
   }
 }
 

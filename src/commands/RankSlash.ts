@@ -1,57 +1,58 @@
-import { ButtonInteraction, CommandInteraction, GuildMemberRoleManager, Message, ActionRowBuilder, ButtonBuilder, EmbedBuilder, TextChannel, MessageActionRowComponentBuilder, Role } from "discord.js";
-import { Discord, Slash, SlashOption, SlashGroup, ButtonComponent } from "discordx";
-import { APIEmbedField, ApplicationCommandOptionType, ButtonStyle } from "discord-api-types/v10";
-import { Pagination, PaginationItem, PaginationType } from "@discordx/pagination";
-import { clan } from "runescape-api";
-import { User } from "../types/User";
-import { createUser, getUser, verifyUser } from "../backend/models/User.js";
+import { ButtonInteraction, CommandInteraction, GuildMemberRoleManager, ActionRowBuilder, ButtonBuilder, EmbedBuilder, TextChannel, MessageActionRowComponentBuilder, Role } from 'discord.js';
+import { Discord, Slash, SlashOption, SlashGroup, ButtonComponent } from 'discordx';
+import { APIEmbedField, ApplicationCommandOptionType, ButtonStyle } from 'discord-api-types/v10';
+import { Pagination, PaginationItem, PaginationType } from '@discordx/pagination';
+import { clan } from 'runescape-api';
+import { User } from '../types/User';
+import { createUser, getUser, verifyUser } from '../backend/models/User.js';
 
 @Discord()
-@SlashGroup({ name: "rank", description: "Commands to set your server rank/role" })
+@SlashGroup({ name: 'rank', description: 'Commands to set your server rank/role' })
 export abstract class RankSlash {
 
   static readonly ADMIN_RANKS: string[] = [
-    "Owner", "Deputy Owner", "Overseer", "Coordinator", "Organiser", "Admin", // Admin roles
+    'Owner', 'Deputy Owner', 'Overseer', 'Coordinator', 'Organiser', 'Admin', // Admin roles
   ];
+
   static readonly CLAN_RANKS: string[] = [
-    "General", "Captain", "Lieuntenant", "Sergeant", "Corporal", "Recruit", "Guest", // Normal roles
+    'General', 'Captain', 'Lieuntenant', 'Sergeant', 'Corporal', 'Recruit', 'Guest', // Normal roles
   ];
 
   static readonly embedFields: APIEmbedField[] = [{
-    "name": "Username",
-    "value": '',
-    "inline": true
+    'name': 'Username',
+    'value': '',
+    'inline': true,
   },
   {
-    "name": "Rank",
-    "value": "Guest",
-    "inline": true
+    'name': 'Rank',
+    'value': 'Guest',
+    'inline': true,
   },
   {
-    "name": "Clan XP",
-    "value": "N/A",
-    "inline": true
+    'name': 'Clan XP',
+    'value': 'N/A',
+    'inline': true,
   }];
 
   static readonly verifyFields: APIEmbedField[] = [{
-    "name": "RSN",
-    "value": '',
-    "inline": true
+    'name': 'RSN',
+    'value': '',
+    'inline': true,
   },
   {
-    "name": "Rank",
-    "value": "Guest",
-    "inline": true
+    'name': 'Rank',
+    'value': 'Guest',
+    'inline': true,
   },
   {
-    "name": "Discord",
-    "value": "",
-    "inline": true
+    'name': 'Discord',
+    'value': '',
+    'inline': true,
   },
   ];
 
   private numberWithCommas(x: number): string {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   }
 
   private async addRole(interaction: CommandInteraction, roleName: string) {
@@ -65,9 +66,9 @@ export abstract class RankSlash {
       role = guild?.roles.cache.find((r: Role) => r.name == roleName);
     }
     // Get current roles
-    let current_roles = (interaction.member!.roles as GuildMemberRoleManager).cache.filter((role: Role) => (RankSlash.ADMIN_RANKS.includes(role.name) || RankSlash.CLAN_RANKS.includes(role.name)));
+    let currentRoles = (interaction.member!.roles as GuildMemberRoleManager).cache.filter((roleFilter: Role) => (RankSlash.ADMIN_RANKS.includes(roleFilter.name) || RankSlash.CLAN_RANKS.includes(roleFilter.name)));
     // 
-    current_roles.forEach((current_role: Role) => {
+    currentRoles.forEach((current_role: Role) => {
       if (current_role.name != roleName) {
         (interaction.member!.roles as GuildMemberRoleManager).remove(current_role);
       }
@@ -77,18 +78,18 @@ export abstract class RankSlash {
     }
   }
 
-  @ButtonComponent({id:/(confirm-user-*)\w+/g})
+  @ButtonComponent({ id:/(confirm-user-*)\w+/g })
   async confirmUser(interaction: ButtonInteraction) {
     await interaction.deferUpdate();
     const userId = interaction.customId.split('-');
     const result = await verifyUser(userId[2], true);
     if (result.err) {
-      console.log("Error: valid saving", result.err)
+      console.log('Error: valid saving', result.err);
     } else {
       
       if (interaction.user) {
-        console.log("responding")
-        const message = (interaction.message as Message);
+        console.log('responding');
+        // const message = (interaction.message as Message);
         const embedVerify = interaction.message.embeds[0];
         // interaction.
         const newEmbed = EmbedBuilder.from(embedVerify).setDescription(`✅ Verified by <@${interaction.user.id}> ✅`);
@@ -97,16 +98,16 @@ export abstract class RankSlash {
     }
   }
 
-  @ButtonComponent({id:/(deny-user-*)\w+/g})
+  @ButtonComponent({ id:/(deny-user-*)\w+/g })
   async denyUser(interaction: ButtonInteraction) {
     await interaction.deferUpdate();
     const userId = interaction.customId.split('-');
-    const result = await verifyUser(userId[2], false)
+    const result = await verifyUser(userId[2], false);
     if (result.err) {
-      console.log("Error: valid saving", result.err)
+      console.log('Error: valid saving', result.err);
     } else {
       if (interaction.user) {
-        const message = (interaction.message as Message);
+        // const message = (interaction.message as Message);
         const embedVerify = interaction.message.embeds[0];
         // interaction.
         const newEmbed = EmbedBuilder.from(embedVerify).setDescription(`❌ Denied by <@${interaction.user.id}> ❌`);
@@ -115,51 +116,51 @@ export abstract class RankSlash {
     }
   }
 
-  @Slash({name: "new-ranks", description: "List new rank-ups needed" })
-  @SlashGroup("rank")
+  @Slash({ name: 'new-ranks', description: 'List new rank-ups needed' })
+  @SlashGroup('rank')
   async getAllClannies(
     interaction: CommandInteraction) {
-    clan.getMembers("The Enduring").then(async data => {
+    clan.getMembers('The Enduring').then(async data => {
       let needRanks = [];
       for (const clanny of data) {
         if (RankSlash.ADMIN_RANKS.includes(clanny.rank)) {
           //Do nothing
         } else if (clanny.experience >= 500000000) {
           if (clanny.rank !== 'General') {
-            needRanks.push({ clanny, newRank: "General" });
+            needRanks.push({ clanny, newRank: 'General' });
           }
         } else if (clanny.experience >= 300000000) {
           if (clanny.rank !== 'Captain') {
-            needRanks.push({ clanny, newRank: "Captain" });
+            needRanks.push({ clanny, newRank: 'Captain' });
           }
         } else if (clanny.experience >= 150000000) {
           if (clanny.rank !== 'Lieutenant') {
-            needRanks.push({ clanny, newRank: "Lieutenant" });
+            needRanks.push({ clanny, newRank: 'Lieutenant' });
           }
         } else if (clanny.experience >= 75000000) {
           if (clanny.rank !== 'Sergeant') {
-            needRanks.push({ clanny, newRank: "Sergeant" });
+            needRanks.push({ clanny, newRank: 'Sergeant' });
           }
         } else if (clanny.experience >= 15000000) {
           if (clanny.rank !== 'Corporal') {
-            needRanks.push({ clanny, newRank: "Corporal " });
+            needRanks.push({ clanny, newRank: 'Corporal ' });
           }
         }
-      };
+      }
       if (needRanks.length > 0) {
         const pages = needRanks.map((needRank, i) => {
           const embeder = new EmbedBuilder()
-          .setFooter({ text: `Page ${i + 1} of ${needRanks.length}` })
-          .setTitle("**Rankup**")
-          .addFields([
-            {name:"RSN", value:needRank.clanny.name, inline: true},
-            {name:"Current Rank", value: needRank.clanny.rank, inline:true},
-            {name:"New Rank", value: needRank.newRank, inline:true},
-            {name:"Clan Xp", value: this.numberWithCommas(needRank.clanny.experience), inline:true}
-          ]);
+            .setFooter({ text: `Page ${i + 1} of ${needRanks.length}` })
+            .setTitle('**Rankup**')
+            .addFields([
+              { name:'RSN', value:needRank.clanny.name, inline: true },
+              { name:'Current Rank', value: needRank.clanny.rank, inline:true },
+              { name:'New Rank', value: needRank.newRank, inline:true },
+              { name:'Clan Xp', value: this.numberWithCommas(needRank.clanny.experience), inline:true },
+            ]);
           const page : PaginationItem = {
-            embeds: [embeder]
-          }
+            embeds: [embeder],
+          };
           return page;
         });
 
@@ -167,26 +168,26 @@ export abstract class RankSlash {
         await pagination.send();
       } else {
         let noneofthat = new EmbedBuilder()
-          .setTitle("**Rankup**")
-          .setDescription("🎉 Everyone is ranked up 🎉");
+          .setTitle('**Rankup**')
+          .setDescription('🎉 Everyone is ranked up 🎉');
         interaction.reply({ embeds: [noneofthat], ephemeral: true });
       }
     });
   }
 
-  @Slash({name:"config", description: "Config your discord with your rsn" })
-  @SlashGroup("rank")
+  @Slash({ name:'config', description: 'Config your discord with your rsn' })
+  @SlashGroup('rank')
   async setRSN(
-    @SlashOption({ name:"rsn", description: "Runescape Username", required: true,  type: ApplicationCommandOptionType.String})
+  @SlashOption({ name:'rsn', description: 'Runescape Username', required: true,  type: ApplicationCommandOptionType.String })
     rsn: string,
     interaction: CommandInteraction) {
       
-    clan.getMembers("The Enduring").then(async data => {
-      const person = data.find(person => person.name.toLowerCase() === rsn.toLowerCase());
+    clan.getMembers('The Enduring').then(async data => {
+      const person = data.find(personF => personF.name.toLowerCase() === rsn.toLowerCase());
       let fields = RankSlash.embedFields;
       fields[0].value = person?.name || rsn;
-      if (!interaction.member){
-        const embed = new EmbedBuilder({ title: 'Server Error', description: `❌ Error: Contact <@409181714821283840> if you see this with a screenshot ❌ \n \n No 'interaction.member' was found` });
+      if (!interaction.member) {
+        const embed = new EmbedBuilder({ title: 'Server Error', description: '❌ Error: Contact <@409181714821283840> if you see this with a screenshot ❌ \n \n No \'interaction.member\' was found' });
         interaction.reply({ embeds: [embed], ephemeral: true });
         return;
       }
@@ -213,21 +214,20 @@ export abstract class RankSlash {
           const embed = new EmbedBuilder({ title: 'Server Error', description: `❌ Error: Contact <@409181714821283840> if you see this with a screenshot ❌ \n \n ${result.err}` });
           interaction.reply({ embeds: [embed], ephemeral: true });
         }
-      } else if (result.wrongCommand){
+      } else if (result.wrongCommand) {
         this.setRank(interaction);
-      }
-      else {
+      } else {
         let channelId = '';
-        if (interaction.guildId === '932144876659822623'){
+        if (interaction.guildId === '932144876659822623') {
           channelId = '932331442669776916';
-        } else if (interaction.guildId === '198166521573408768'){
+        } else if (interaction.guildId === '198166521573408768') {
           channelId = '1022554962439450674';
         }
         let verifyChannel = interaction.client.channels.cache.get(channelId) as TextChannel;
         let verifyEmbed = RankSlash.verifyFields;
         verifyEmbed[0].value = rsn;
         verifyEmbed[1].value = person?.rank || 'Guest';
-        verifyEmbed[2].value = `<@${interaction.user.id}>`
+        verifyEmbed[2].value = `<@${interaction.user.id}>`;
         const row = new ActionRowBuilder<MessageActionRowComponentBuilder>().addComponents(
           new ButtonBuilder()
             .setCustomId(`confirm-user-${dbUser.discordID}`)
@@ -236,18 +236,18 @@ export abstract class RankSlash {
           new ButtonBuilder()
             .setCustomId(`deny-user-${dbUser.discordID}`)
             .setLabel('Deny')
-            .setStyle(ButtonStyle.Danger)
+            .setStyle(ButtonStyle.Danger),
         );
 
         const embedVerify = new EmbedBuilder({ title: 'New Registered RSN', fields: verifyEmbed, description: 'Please verify new user' });
         await verifyChannel.send({ embeds: [embedVerify], components: [row] });
-        let StringRole = "";
+        let StringRole = '';
         if (person?.rank && !RankSlash.ADMIN_RANKS.includes(person?.rank)) {
           StringRole = `Clan ${person?.rank}`;
         } else {
-          StringRole = "Guest";
+          StringRole = 'Guest';
         }
-        if (!person){
+        if (!person) {
           fields[1].value = 'Guest';
           fields[2].value = 'Not in clan';
         } else {
@@ -261,10 +261,10 @@ export abstract class RankSlash {
     });
   }
 
-  @Slash({name:"update", description: "Update your clan discord rank" })
-  @SlashGroup("rank")
+  @Slash({ name:'update', description: 'Update your clan discord rank' })
+  @SlashGroup('rank')
   async setRank(interaction: CommandInteraction) {
-    const userResults = await getUser(interaction.member!.user.id)
+    const userResults = await getUser(interaction.member!.user.id);
     if (userResults.err || !userResults.result) {
       if (userResults.err instanceof Error && userResults.err.name == 'noUser') {
         const embed = new EmbedBuilder({
@@ -277,8 +277,8 @@ export abstract class RankSlash {
         interaction.reply({ embeds: [embed], ephemeral: true });
       }
     } else {
-      clan.getMembers("The Enduring").then(async data => {
-        const person = data.find(person => person.name === userResults.result.rsn);
+      clan.getMembers('The Enduring').then(async data => {
+        const person = data.find(personF => personF.name === userResults.result.rsn);
         let fields = RankSlash.embedFields;
         fields[0].value = person?.name || userResults.result.rsn;
         if (!person?.rank) {
@@ -288,11 +288,11 @@ export abstract class RankSlash {
           interaction.reply({ embeds: [embed], ephemeral: true });
           return;
         }
-        let StringRole = "";
+        let StringRole = '';
         if (person?.rank && (!RankSlash.ADMIN_RANKS.includes(person?.rank) || userResults.result.valid)) {
           StringRole = `Clan ${person?.rank}`;
         } else {
-          StringRole = "Guest";
+          StringRole = 'Guest';
         }
         fields[1].value = person?.rank;
         fields[2].value = this.numberWithCommas(person?.experience);
