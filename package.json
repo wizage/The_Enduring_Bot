@@ -37,7 +37,7 @@
     "@discordx/importer": "^1.1.10",
     "@discordx/pagination": "^3.4.0",
     "@discordx/utilities": "^5.2.0",
-    "discord-api-types": "^0.37.26",
+    "discord-api-types": "^0.37.27",
     "discord.js": "^14.7.1",
     "discordx": "^11.5.2",
     "dotenv": "^16.0.2",
