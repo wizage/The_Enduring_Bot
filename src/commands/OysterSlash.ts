@@ -4,7 +4,6 @@ import { Pagination, PaginationItem, PaginationType } from '@discordx/pagination
 import { ApplicationCommandOptionType } from 'discord-api-types/v10';
 import { addEntry, getHiscores } from '../backend/models/Oyster.js';
 
-
 @Discord()
 @SlashGroup({ name: 'oyster', description: 'Commands for oyster competition' })
 export abstract class OysterSlash {
