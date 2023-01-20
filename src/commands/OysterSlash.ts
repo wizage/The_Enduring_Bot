@@ -1,9 +1,8 @@
-import { CommandInteraction, EmbedBuilder, Attachment } from 'discord.js';
+import { CommandInteraction, EmbedBuilder, Attachment, AttachmentBuilder } from 'discord.js';
 import { Discord, Slash, SlashOption, SlashGroup } from 'discordx';
 import { Pagination, PaginationItem, PaginationType } from '@discordx/pagination';
 import { ApplicationCommandOptionType } from 'discord-api-types/v10';
 import { addEntry, getHiscores } from '../backend/models/Oyster.js';
-
 
 @Discord()
 @SlashGroup({ name: 'oyster', description: 'Commands for oyster competition' })
@@ -30,8 +29,6 @@ export abstract class OysterSlash {
     })
     attachment: Attachment,
     interaction: CommandInteraction) {
-
-    // getHiscores();
     const convertValue = Number(value.replace(/,/g, ''));
     if (isNaN(convertValue)) {
       interaction.reply('Your value is not a number. Try again.');
@@ -45,9 +42,9 @@ export abstract class OysterSlash {
           .setTitle(`**Oyster Submission for ${interaction.member!.user.username}**`)
           .addFields([{ name:'Value of Oyster', value:this.numberWithCommas(convertValue), inline: true },
             { name:'Current position', value:`${results.position}`, inline: true }])
-          .setImage(attachment.url)
+          .setImage(`attachment://${attachment.name}`)
           .setFooter({ text: 'Powered by Wizages' });
-        interaction.reply({ embeds: [oysterSubmission] });
+        interaction.reply({ embeds: [oysterSubmission], files: [attachment] });
       }
     }
   }
