@@ -33,7 +33,7 @@
     "lint-fix": "npx eslint . --ext .js,.jsx,.ts,.tsx --fix"
   },
   "dependencies": {
-    "@aws-sdk/client-dynamodb": "^3.245.0",
+    "@aws-sdk/client-dynamodb": "^3.259.0",
     "@discordx/importer": "^1.1.10",
     "@discordx/pagination": "^3.4.0",
     "@discordx/utilities": "^5.2.0",
