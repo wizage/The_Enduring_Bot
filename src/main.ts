@@ -1,6 +1,5 @@
 import dotenv from 'dotenv';
 dotenv.config();
-import 'reflect-metadata';
 import { IntentsBitField } from 'discord.js';
 import { Client } from 'discordx';
 import { dirname, importx } from '@discordx/importer';
