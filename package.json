@@ -39,7 +39,7 @@
     "@discordx/utilities": "^5.2.0",
     "discord-api-types": "^0.37.35",
     "discord.js": "^14.7.1",
-    "discordx": "^11.5.2",
+    "discordx": "^11.7.0",
     "dotenv": "^16.0.2",
     "runescape-api": "^2.1.6"
   },
