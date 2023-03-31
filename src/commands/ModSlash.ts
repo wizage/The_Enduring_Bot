@@ -31,9 +31,9 @@ export abstract class ClueSlash {
     const response = await removeOysterEntry(convertValue);
     const oysterSubmission = new EmbedBuilder()
       .setTitle(`**Oyster Submission Removed by ${interaction.member!.user.username}**`)
-      .addFields([{ name:'Value of Oyster', value:this.numberWithCommas(response.old_post.value), inline: true },
+      .addFields([{ name:'Value of Oyster', value:this.numberWithCommas(response.oldPost.value), inline: true },
         { name:'Current position', value:'Removed', inline: true }])
-      .setImage(response.old_post.picture)
+      .setImage(response.oldPost.picture)
       .setFooter({ text: 'Powered by Wizages' });
     interaction.reply({ embeds: [oysterSubmission] });
   }
