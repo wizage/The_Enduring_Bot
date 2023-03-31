@@ -85,6 +85,32 @@ export const removeOysterEntry = async (location: number) => {
   }
 };
 
+export const updateEntry = async (location: number, url: string) => {
+  let utcDateString = new Date().toLocaleString('en-US', { timeZone: 'UTC' });
+  let dateUTC = new Date(utcDateString);
+  let month = ('0' + (dateUTC.getMonth() + 1)).slice(-2);
+  let year = dateUTC.getFullYear();
+  if (!oysterCache) {
+    await createNewHiscore(`${month}-${year}`);
+  }
+  const oldPost = oysterCache.hiscore[location - 1];
+  oldPost.picture = url;
+  const updateHiscores = new UpdateItemCommand({
+    TableName: 'oysterTable',
+    Key: { monthDate: { S: `${month}-${year}` } },
+    UpdateExpression:'set hiscore = :r_hiscore',
+    ExpressionAttributeValues: { ':r_hiscore': { S: JSON.stringify(oysterCache.hiscore) } },
+  });
+
+  try {
+    const result = await ddbClient.send(updateHiscores);
+    return { result, err: null, oldPost };
+  } catch (err) {
+    console.error(err);
+    return { result: null, err, oldPost };
+  }
+};
+
 export const getHiscores = async () => {
 
   let utcDateString = new Date().toLocaleString('en-US', { timeZone: 'UTC' });

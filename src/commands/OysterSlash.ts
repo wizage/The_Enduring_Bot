@@ -2,7 +2,7 @@ import { CommandInteraction, EmbedBuilder, Attachment } from 'discord.js';
 import { Discord, Slash, SlashOption, SlashGroup } from 'discordx';
 import { Pagination, PaginationItem, PaginationType } from '@discordx/pagination';
 import { ApplicationCommandOptionType } from 'discord-api-types/v10';
-import { addEntry, getHiscores } from '../backend/models/Oyster.js';
+import { addEntry, getHiscores, updateEntry } from '../backend/models/Oyster.js';
 
 @Discord()
 @SlashGroup({ name: 'oyster', description: 'Commands for oyster competition' })
@@ -44,7 +44,9 @@ export abstract class OysterSlash {
             { name:'Current position', value:`${results.position}`, inline: true }])
           .setImage(`attachment://${attachment.name}`)
           .setFooter({ text: 'Powered by Wizages' });
-        interaction.reply({ embeds: [oysterSubmission], files: [attachment] });
+        const writtenMessage = await (await interaction.reply({ embeds: [oysterSubmission], files: [attachment] })).fetch();
+        const permURL = writtenMessage.embeds[0].data.image!.url;
+        updateEntry(results.position, permURL);
       }
     }
   }
