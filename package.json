@@ -38,15 +38,16 @@
     "@discordx/pagination": "^3.4.0",
     "@discordx/utilities": "^5.2.0",
     "discord-api-types": "^0.37.35",
-    "discord.js": "^14.7.1",
+    "discord.js": "^14.8.0",
     "discordx": "^11.7.4",
     "dotenv": "^16.0.2",
     "runescape-api": "^2.1.6"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
-    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
     "@typescript-eslint/parser": "^5.52.0",
+    "@typescript-eslint/typescript-estree": "^5.57.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.37.0",
     "eslint-config-airbnb-base": "^15.0.0",

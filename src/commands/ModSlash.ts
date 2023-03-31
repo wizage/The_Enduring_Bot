@@ -1,4 +1,4 @@
-import { CommandInteraction, EmbedBuilder, Attachment, PermissionFlagsBits } from 'discord.js';
+import { CommandInteraction, EmbedBuilder, PermissionFlagsBits } from 'discord.js';
 import { Discord, Slash, SlashOption, SlashGroup } from 'discordx';
 import { ApplicationCommandOptionType } from 'discord-api-types/v10';
 import { removeOysterEntry } from '../backend/models/Oyster.js';
@@ -15,14 +15,14 @@ export abstract class ClueSlash {
   @Slash( { name: 'remove-oyster-entry', description: 'Remove invalid score' })
   @SlashGroup('mod')
   async removeInvalidScore(
-    @SlashOption({
-      description: 'Provide postion of the invalid entry',
-      name: 'value',
-      required: true,
-      type: ApplicationCommandOptionType.String,
-    })
-      value: string,
-      interaction: CommandInteraction,
+  @SlashOption({
+    description: 'Provide postion of the invalid entry',
+    name: 'value',
+    required: true,
+    type: ApplicationCommandOptionType.String,
+  })
+    value: string,
+    interaction: CommandInteraction,
   ) {
     const convertValue = Number(value.replace(/,/g, ''));
     if (isNaN(convertValue)) {

@@ -1,4 +1,4 @@
-import { CommandInteraction, EmbedBuilder, Attachment, AttachmentBuilder } from 'discord.js';
+import { CommandInteraction, EmbedBuilder, Attachment } from 'discord.js';
 import { Discord, Slash, SlashOption, SlashGroup } from 'discordx';
 import { Pagination, PaginationItem, PaginationType } from '@discordx/pagination';
 import { ApplicationCommandOptionType } from 'discord-api-types/v10';

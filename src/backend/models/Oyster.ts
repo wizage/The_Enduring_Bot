@@ -66,8 +66,8 @@ export const removeOysterEntry = async (location: number) => {
   if (!oysterCache) {
     await createNewHiscore(`${month}-${year}`);
   }
-  const oldPost = oysterCache.hiscore[location-1];
-  oysterCache.hiscore.splice(location-1, 1);
+  const oldPost = oysterCache.hiscore[location - 1];
+  oysterCache.hiscore.splice(location - 1, 1);
   oysterCache.hiscore.sort(hiscoreSort);
   const updateHiscores = new UpdateItemCommand({
     TableName: 'oysterTable',
