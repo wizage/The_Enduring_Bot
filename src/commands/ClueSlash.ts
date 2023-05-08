@@ -57,7 +57,7 @@ export abstract class ClueSlash {
 
       const clueScrollResults = new EmbedBuilder()
         .setTitle(`**Clue Stats for ${username}**`)
-        .addFields([{ name:'Total', value:`Total Clue Points: ${totalPoints}\nTotalClues: ${totalClues}` },
+        .addFields([{ name:'Total', value:`Total Clue Points: ${totalPoints}\nTotal Clues: ${totalClues}` },
           { name:'Masters', value:`Count: ${clues[4].count !== -1 ? clues[4].count : 0}, Rank: ${clues[4].rank !== -1 ? clues[4].rank : 0}` },
           { name:'Elites', value:`Count: ${clues[3].count !== -1 ? clues[3].count : 0}, Rank: ${clues[3].rank !== -1 ? clues[3].rank : 0}` },
           { name:'Hards', value:`Count: ${clues[2].count !== -1 ? clues[2].count : 0}, Rank: ${clues[2].rank !== -1 ? clues[2].rank : 0}` },
