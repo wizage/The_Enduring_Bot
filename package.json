@@ -33,11 +33,11 @@
     "lint-fix": "npx eslint . --ext .js,.jsx,.ts,.tsx --fix"
   },
   "dependencies": {
-    "@aws-sdk/client-dynamodb": "^3.306.0",
+    "@aws-sdk/client-dynamodb": "^3.328.0",
     "@discordx/importer": "^1.1.10",
     "@discordx/pagination": "^3.4.0",
     "@discordx/utilities": "^5.2.0",
-    "discord-api-types": "^0.37.35",
+    "discord-api-types": "^0.37.41",
     "discord.js": "^14.9.0",
     "discordx": "^11.7.4",
     "dotenv": "^16.0.2",
@@ -49,7 +49,7 @@
     "@typescript-eslint/parser": "^5.57.1",
     "@typescript-eslint/typescript-estree": "^5.57.1",
     "cross-env": "^7.0.3",
-    "eslint": "^8.37.0",
+    "eslint": "^8.40.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-plugin-import": "^2.27.5",
