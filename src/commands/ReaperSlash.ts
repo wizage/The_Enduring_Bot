@@ -84,7 +84,7 @@ export abstract class PVMSlash {
     
     const bossInput = new TextInputBuilder()
       .setCustomId('teachBosses')
-      .setLabel('Please list what bosses you are willing to teach')
+      .setLabel('List what bosses you are willing to teach')
       .setStyle(TextInputStyle.Paragraph);
 
     const row1 = new ActionRowBuilder<TextInputBuilder>().addComponents(
