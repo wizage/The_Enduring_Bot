@@ -3,7 +3,7 @@ import { Discord, Slash, SlashOption, SlashGroup, ButtonComponent } from 'discor
 import { APIEmbedField, ApplicationCommandOptionType, ButtonStyle } from 'discord-api-types/v10';
 import { Pagination, PaginationItem, PaginationType } from '@discordx/pagination';
 import { clan } from 'runescape-api';
-import { User } from '../types/User';
+import { User, RankUps } from '../types/User';
 import { createUser, getUser, verifyUser } from '../backend/models/User.js';
 
 @Discord()
@@ -121,7 +121,7 @@ export abstract class RankSlash {
   async getAllClannies(
     interaction: CommandInteraction) {
     clan.getMembers('The Enduring').then(async data => {
-      let needRanks = [];
+      let needRanks: RankUps[] = [];
       for (const clanny of data) {
         if (RankSlash.ADMIN_RANKS.includes(clanny.rank)) {
           //Do nothing
