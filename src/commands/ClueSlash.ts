@@ -1,7 +1,7 @@
 import { CommandInteraction, EmbedBuilder } from 'discord.js';
 import { Discord, Slash, SlashOption } from 'discordx';
 import { ApplicationCommandOptionType } from 'discord-api-types/v10';
-import { hiscores } from 'runescape-api';
+import { RunescapeAPI } from 'runescape-api-ts';
 import { getUser } from '../backend/models/User.js';
 
 
@@ -34,7 +34,7 @@ export abstract class ClueSlash {
       }
       username = userResults.result.rsn;
     }
-    const userScore = await hiscores.getPlayer(username);
+    const userScore = await RunescapeAPI.hiscores.getPlayer(username);
     if (userScore.activities) {
       const clues = [userScore.activities.clue_scrolls_easy, userScore.activities.clue_scrolls_medium,
         userScore.activities.clue_scrolls_hard, userScore.activities.clue_scrolls_elite, userScore.activities.clue_scrolls_master];

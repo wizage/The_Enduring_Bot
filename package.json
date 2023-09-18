@@ -41,7 +41,7 @@
     "discord.js": "^14.9.0",
     "discordx": "^11.7.4",
     "dotenv": "^16.0.2",
-    "runescape-api": "^2.1.6"
+    "runescape-api-ts": "2.0.0-1"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",

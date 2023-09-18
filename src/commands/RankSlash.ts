@@ -2,9 +2,10 @@ import { ButtonInteraction, CommandInteraction, GuildMemberRoleManager, ActionRo
 import { Discord, Slash, SlashOption, SlashGroup, ButtonComponent } from 'discordx';
 import { APIEmbedField, ApplicationCommandOptionType, ButtonStyle } from 'discord-api-types/v10';
 import { Pagination, PaginationItem, PaginationType } from '@discordx/pagination';
-import { clan } from 'runescape-api';
+import { RunescapeAPI } from 'runescape-api-ts';
 import { User, RankUps } from '../types/User';
 import { createUser, getUser, verifyUser } from '../backend/models/User.js';
+import { overwriteRanks } from '../constants/rankoverwrites.js';
 
 @Discord()
 @SlashGroup({ name: 'rank', description: 'Commands to set your server rank/role' })
@@ -120,28 +121,31 @@ export abstract class RankSlash {
   @SlashGroup('rank')
   async getAllClannies(
     interaction: CommandInteraction) {
-    clan.getMembers('The Enduring').then(async data => {
+    RunescapeAPI.clan.getMembers('The Enduring').then(async data => {
       let needRanks: RankUps[] = [];
       for (const clanny of data) {
-        if (RankSlash.ADMIN_RANKS.includes(clanny.rank)) {
+        if (overwriteRanks[clanny.name]){
           //Do nothing
-        } else if (clanny.experience >= 500000000) {
+        }
+        else if (RankSlash.ADMIN_RANKS.includes(clanny.rank)) {
+          //Do nothing
+        } else if (clanny.experience >= 1000000000) {
           if (clanny.rank !== 'General') {
             needRanks.push({ clanny, newRank: 'General' });
           }
-        } else if (clanny.experience >= 300000000) {
+        } else if (clanny.experience >= 500000000) {
           if (clanny.rank !== 'Captain') {
             needRanks.push({ clanny, newRank: 'Captain' });
           }
-        } else if (clanny.experience >= 150000000) {
+        } else if (clanny.experience >= 200000000) {
           if (clanny.rank !== 'Lieutenant') {
             needRanks.push({ clanny, newRank: 'Lieutenant' });
           }
-        } else if (clanny.experience >= 75000000) {
+        } else if (clanny.experience >= 100000000) {
           if (clanny.rank !== 'Sergeant') {
             needRanks.push({ clanny, newRank: 'Sergeant' });
           }
-        } else if (clanny.experience >= 15000000) {
+        } else if (clanny.experience >= 50000000) {
           if (clanny.rank !== 'Corporal') {
             needRanks.push({ clanny, newRank: 'Corporal ' });
           }
@@ -182,7 +186,7 @@ export abstract class RankSlash {
     rsn: string,
     interaction: CommandInteraction) {
       
-    clan.getMembers('The Enduring').then(async data => {
+      RunescapeAPI.clan.getMembers('The Enduring').then(async data => {
       const person = data.find(personF => personF.name.toLowerCase() === rsn.toLowerCase());
       let fields = RankSlash.embedFields;
       fields[0].value = person?.name || rsn;
@@ -277,7 +281,8 @@ export abstract class RankSlash {
         interaction.reply({ embeds: [embed], ephemeral: true });
       }
     } else {
-      clan.getMembers('The Enduring').then(async data => {
+      RunescapeAPI.clan.getMembers('The Enduring').then(async data => {
+        console.log(data);
         const person = data.find(personF => personF.name === userResults.result.rsn);
         let fields = RankSlash.embedFields;
         fields[0].value = person?.name || userResults.result.rsn;
