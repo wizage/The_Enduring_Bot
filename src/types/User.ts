@@ -1,4 +1,4 @@
-import { ClanMember } from 'runescape-api/lib/RuneScape';
+import { ClanMember } from 'runescape-api-ts';
 export interface User {
   discordID: string,
   rsn: string,
