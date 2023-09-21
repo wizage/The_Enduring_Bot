@@ -124,10 +124,9 @@ export abstract class RankSlash {
     RunescapeAPI.clan.getMembers('The Enduring').then(async data => {
       let needRanks: RankUps[] = [];
       for (const clanny of data) {
-        if (overwriteRanks[clanny.name]){
+        if (overwriteRanks[clanny.name]) {
           //Do nothing
-        }
-        else if (RankSlash.ADMIN_RANKS.includes(clanny.rank)) {
+        } else if (RankSlash.ADMIN_RANKS.includes(clanny.rank)) {
           //Do nothing
         } else if (clanny.experience >= 1000000000) {
           if (clanny.rank !== 'General') {
@@ -186,7 +185,7 @@ export abstract class RankSlash {
     rsn: string,
     interaction: CommandInteraction) {
       
-      RunescapeAPI.clan.getMembers('The Enduring').then(async data => {
+    RunescapeAPI.clan.getMembers('The Enduring').then(async data => {
       const person = data.find(personF => personF.name.toLowerCase() === rsn.toLowerCase());
       let fields = RankSlash.embedFields;
       fields[0].value = person?.name || rsn;
