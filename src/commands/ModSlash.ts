@@ -15,12 +15,12 @@ export abstract class ClueSlash {
   @Slash( { name: 'remove-oyster-entry', description: 'Remove invalid score' })
   @SlashGroup('mod')
   async removeInvalidScore(
-  @SlashOption({
-    description: 'Provide postion of the invalid entry',
-    name: 'value',
-    required: true,
-    type: ApplicationCommandOptionType.String,
-  })
+    @SlashOption({
+      description: 'Provide postion of the invalid entry',
+      name: 'value',
+      required: true,
+      type: ApplicationCommandOptionType.String,
+    })
     value: string,
     interaction: CommandInteraction,
   ) {

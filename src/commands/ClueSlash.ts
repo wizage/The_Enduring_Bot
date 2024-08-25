@@ -9,12 +9,12 @@ import { getUser } from '../backend/models/User.js';
 export abstract class ClueSlash {
   @Slash( { name: 'clue-points', description: 'Get current clue points' })
   async assignClueTitle(
-  @SlashOption({
-    description: 'username',
-    name: 'username',
-    required: false,
-    type: ApplicationCommandOptionType.String,
-  })
+    @SlashOption({
+      description: 'username',
+      name: 'username',
+      required: false,
+      type: ApplicationCommandOptionType.String,
+    })
     username: string,
     interaction: CommandInteraction) {
     if (!username) {

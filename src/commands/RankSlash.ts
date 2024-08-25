@@ -181,7 +181,7 @@ export abstract class RankSlash {
   @Slash({ name:'config', description: 'Config your discord with your rsn' })
   @SlashGroup('rank')
   async setRSN(
-  @SlashOption({ name:'rsn', description: 'Runescape Username', required: true,  type: ApplicationCommandOptionType.String })
+    @SlashOption({ name:'rsn', description: 'Runescape Username', required: true,  type: ApplicationCommandOptionType.String })
     rsn: string,
     interaction: CommandInteraction) {
       

@@ -1,0 +1,501 @@
+{
+  "settings": {
+    "bingoSize": 4,
+    "bingoTitle": "Card 1",
+    "fontFormat": "bold",
+    "fontSize": 23,
+    "fontType": "Bree Serif",
+    "fontColor": "#000000",
+    "outlineEnable": true,
+    "outlineColor": "#ff0000",
+    "lineColor": "#325FA2",
+    "backgroundColor": "#ffffff",
+    "autoRefresh": false,
+    "refreshNumber": 8441.267305231615
+  },
+  "itemList": [
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Fractured_Staff_of_Armadyl_detail.png/100px-Fractured_Staff_of_Armadyl_detail.png?cf7b6",
+      "name": "Fractured Staff of Armadyl",
+      "pixelUrl": "https://runescape.wiki/images/Fractured_Staff_of_Armadyl.png?50e28"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Manuscript_of_Bik_detail.png/100px-Manuscript_of_Bik_detail.png?84368",
+      "name": "Manuscript of Bik",
+      "pixelUrl": "https://runescape.wiki/images/Manuscript_of_Bik.png?647bc"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Katagon_ore_detail.png/100px-Katagon_ore_detail.png?a2b17",
+      "name": "Katagon ore",
+      "pixelUrl": "https://runescape.wiki/images/Katagon_ore.png?1c127"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Clue_scroll_%28elite%29_detail.png/100px-Clue_scroll_%28elite%29_detail.png?96959",
+      "name": "Clue scroll (elite)",
+      "pixelUrl": "https://runescape.wiki/images/Clue_scroll_%28elite%29_%28scan%29.png?93a09"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Greater_Ricochet_ability_codex_detail.png/100px-Greater_Ricochet_ability_codex_detail.png?08545",
+      "name": "Greater Ricochet ability codex",
+      "pixelUrl": "https://runescape.wiki/images/Greater_Ricochet_ability_codex.png?2c250"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Ode_to_Deceit_detail.png/95px-Ode_to_Deceit_detail.png?4dcac",
+      "name": "Ode to Deceit",
+      "pixelUrl": "https://runescape.wiki/images/Ode_to_Deceit.png?cc319"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Ascension_crossbow_detail.png/100px-Ascension_crossbow_detail.png?e5365",
+      "name": "Ascension crossbow",
+      "pixelUrl": "https://runescape.wiki/images/Ascension_crossbow.png?5054e"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Golden_bamboo_detail.png/100px-Golden_bamboo_detail.png?5fdf3",
+      "name": "Golden bamboo",
+      "pixelUrl": "https://runescape.wiki/images/Golden_bamboo.png?04949"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Double_Surge_codex_detail.png/82px-Double_Surge_codex_detail.png?a3662",
+      "name": "Double Surge codex",
+      "pixelUrl": "https://runescape.wiki/images/Double_Surge_codex.png?3f063"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Terrasaur_maul_detail.png/110px-Terrasaur_maul_detail.png?12d4c",
+      "name": "Terrasaur maul",
+      "pixelUrl": "https://runescape.wiki/images/Terrasaur_maul.png?154a5"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Rocktail_detail.png/100px-Rocktail_detail.png?57295",
+      "name": "Rocktail",
+      "pixelUrl": "https://runescape.wiki/images/Rocktail.png?d86d8"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Puzzle_box_%28bridge%29_detail.png/60px-Puzzle_box_%28bridge%29_detail.png?4cb8c",
+      "name": "Puzzle box (hard)",
+      "pixelUrl": "https://runescape.wiki/images/Puzzle_box_%28bridge%29.png?21b32"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Armadyl_godsword_detail.png/150px-Armadyl_godsword_detail.png?5f244",
+      "name": "Armadyl godsword",
+      "pixelUrl": "https://runescape.wiki/images/Armadyl_godsword.png?1a6a8"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Ice_dye_detail.png/100px-Ice_dye_detail.png?b952e",
+      "name": "Ice dye",
+      "pixelUrl": "https://runescape.wiki/images/Ice_dye.png?0b971"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Backstab_cape_detail.png/120px-Backstab_cape_detail.png?2fc99",
+      "name": "Backstab cape",
+      "pixelUrl": "https://runescape.wiki/images/Backstab_cape.png?20211"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Pith_helmet_detail.png/100px-Pith_helmet_detail.png?965bb",
+      "name": "Pith helmet",
+      "pixelUrl": "https://runescape.wiki/images/Pith_helmet.png?40433",
+      "location": [
+        3,
+        3
+      ]
+    }
+  ],
+  "bingoCardBot": {
+    "Finish a staff": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Fractured_Staff_of_Armadyl_detail.png/100px-Fractured_Staff_of_Armadyl_detail.png?cf7b6",
+      "name": "Fractured Staff of Armadyl",
+      "pixelUrl": "https://runescape.wiki/images/Fractured_Staff_of_Armadyl.png?50e28",
+      "overrideName": "Finish a staff",
+      "location": [
+        0,
+        0
+      ],
+      "type": "number",
+      "goal": 3
+    },
+    "Get 10 bik pages": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Manuscript_of_Bik_detail.png/100px-Manuscript_of_Bik_detail.png?84368",
+      "name": "Manuscript of Bik",
+      "pixelUrl": "https://runescape.wiki/images/Manuscript_of_Bik.png?647bc",
+      "overrideName": "Get 10 bik pages",
+      "location": [
+        0,
+        1
+      ],
+      "type": "number",
+      "goal": 10
+    },
+    "Gain 1,000,000 mining xp": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Katagon_ore_detail.png/100px-Katagon_ore_detail.png?a2b17",
+      "name": "Katagon ore",
+      "pixelUrl": "https://runescape.wiki/images/Katagon_ore.png?1c127",
+      "overrideName": "Mine 1000 primal ores",
+      "location": [
+        0,
+        2
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Solve 10 elites": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Clue_scroll_%28elite%29_detail.png/100px-Clue_scroll_%28elite%29_detail.png?96959",
+      "name": "Clue scroll (elite)",
+      "pixelUrl": "https://runescape.wiki/images/Clue_scroll_%28elite%29_%28scan%29.png?93a09",
+      "overrideName": "Solve 10 elites",
+      "location": [
+        0,
+        3
+      ],
+      "type": "number",
+      "goal": 10
+    },
+    "Any Raksha codex": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Greater_Ricochet_ability_codex_detail.png/100px-Greater_Ricochet_ability_codex_detail.png?08545",
+      "name": "Greater Ricochet ability codex",
+      "pixelUrl": "https://runescape.wiki/images/Greater_Ricochet_ability_codex.png?2c250",
+      "overrideName": "Any Raksha codex",
+      "location": [
+        1,
+        0
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Get both t95's from Sanctum": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Ode_to_Deceit_detail.png/95px-Ode_to_Deceit_detail.png?4dcac",
+      "name": "Ode to Deceit",
+      "pixelUrl": "https://runescape.wiki/images/Ode_to_Deceit.png?cc319",
+      "overrideName": "Get both t95's from Sanctum",
+      "location": [
+        1,
+        1
+      ],
+      "type": "specific",
+      "goal": [
+        {
+          "name": "Ode to Deceit",
+          "goal": 1
+        },
+        {
+          "name": "Roar of Awakening",
+          "goal": 1
+        }
+      ]
+    },
+    "Full ascension crossbow": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Ascension_crossbow_detail.png/100px-Ascension_crossbow_detail.png?e5365",
+      "name": "Ascension crossbow",
+      "pixelUrl": "https://runescape.wiki/images/Ascension_crossbow.png?5054e",
+      "overrideName": "Full ascension crossbow",
+      "location": [
+        1,
+        2
+      ],
+      "type": "specific",
+      "goal": [
+        {
+          "name": "Dragon Limbs",
+          "goal": 1
+        },
+        {
+          "name": "Primus",
+          "goal": 1
+        },
+        {
+          "name": "etc",
+          "goal": 1
+        }
+      ]
+    },
+    "Assemble a godsword": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Armadyl_godsword_detail.png/150px-Armadyl_godsword_detail.png?5f244",
+      "name": "Armadyl godsword",
+      "pixelUrl": "https://runescape.wiki/images/Armadyl_godsword.png?1a6a8",
+      "overrideName": "Assemble a godsword",
+      "location": [
+        1,
+        3
+      ],
+      "type": "specific",
+      "goal": [
+        {
+          "name": "Hilt",
+          "goal": 1
+        },
+        {
+          "name": "Shard 1",
+          "goal": 1
+        },
+        {
+          "name": "Shard 2",
+          "goal": 1
+        },
+        {
+          "name": "Shard 3",
+          "goal": 1
+        }
+      ]
+    },
+    "Do 15 laps at anachronia": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Double_Surge_codex_detail.png/82px-Double_Surge_codex_detail.png?a3662",
+      "name": "Double Surge codex",
+      "pixelUrl": "https://runescape.wiki/images/Double_Surge_codex.png?3f063",
+      "overrideName": "Do 15 laps at anachronia",
+      "location": [
+        2,
+        0
+      ],
+      "type": "number",
+      "goal": 15
+    },
+    "Do 20 bgh rounds": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Terrasaur_maul_detail.png/110px-Terrasaur_maul_detail.png?12d4c",
+      "name": "Terrasaur maul",
+      "pixelUrl": "https://runescape.wiki/images/Terrasaur_maul.png?154a5",
+      "overrideName": "Do 20 bgh rounds",
+      "location": [
+        2,
+        1
+      ],
+      "type": "number",
+      "goal": 20
+    },
+    "Harvest 1000 golden bamboo": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Golden_bamboo_detail.png/100px-Golden_bamboo_detail.png?5fdf3",
+      "name": "Golden bamboo",
+      "pixelUrl": "https://runescape.wiki/images/Golden_bamboo.png?04949",
+      "overrideName": "Harvest 1000 golden bamboo",
+      "location": [
+        2,
+        2
+      ],
+      "type": "number",
+      "goal": 1000
+    },
+    "cook 1000 of your favorite food": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Rocktail_detail.png/100px-Rocktail_detail.png?57295",
+      "name": "Rocktail",
+      "pixelUrl": "https://runescape.wiki/images/Rocktail.png?d86d8",
+      "overrideName": "cook 1000 of your favorite food",
+      "location": [
+        2,
+        3
+      ],
+      "type": "number",
+      "goal": 1000
+    },
+    "Complete any puzzle box": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Puzzle_box_%28bridge%29_detail.png/60px-Puzzle_box_%28bridge%29_detail.png?4cb8c",
+      "name": "Puzzle box (hard)",
+      "pixelUrl": "https://runescape.wiki/images/Puzzle_box_%28bridge%29.png?21b32",
+      "overrideName": "Complete any puzzle box",
+      "location": [
+        3,
+        0
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Ice dye": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Ice_dye_detail.png/100px-Ice_dye_detail.png?b952e",
+      "name": "Ice dye",
+      "pixelUrl": "https://runescape.wiki/images/Ice_dye.png?0b971",
+      "location": [
+        3,
+        1
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Backstab cape": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Backstab_cape_detail.png/120px-Backstab_cape_detail.png?2fc99",
+      "name": "Backstab cape",
+      "pixelUrl": "https://runescape.wiki/images/Backstab_cape.png?20211",
+      "location": [
+        3,
+        2
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Pith helmet": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Pith_helmet_detail.png/100px-Pith_helmet_detail.png?965bb",
+      "name": "Pith helmet",
+      "pixelUrl": "https://runescape.wiki/images/Pith_helmet.png?40433",
+      "location": [
+        3,
+        3
+      ],
+      "type": "single",
+      "goal": 1
+    }
+  },
+  "bingoBoard": [
+    [
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Fractured_Staff_of_Armadyl_detail.png/100px-Fractured_Staff_of_Armadyl_detail.png?cf7b6",
+        "name": "Fractured Staff of Armadyl",
+        "pixelUrl": "https://runescape.wiki/images/Fractured_Staff_of_Armadyl.png?50e28",
+        "overrideName": "Finish a staff",
+        "location": [
+          0,
+          0
+        ],
+        "type": "number",
+        "goal": 3
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Manuscript_of_Bik_detail.png/100px-Manuscript_of_Bik_detail.png?84368",
+        "name": "Manuscript of Bik",
+        "pixelUrl": "https://runescape.wiki/images/Manuscript_of_Bik.png?647bc",
+        "overrideName": "Get 10 bik pages",
+        "location": [
+          0,
+          1
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Katagon_ore_detail.png/100px-Katagon_ore_detail.png?a2b17",
+        "name": "Katagon ore",
+        "pixelUrl": "https://runescape.wiki/images/Katagon_ore.png?1c127",
+        "overrideName": "Mine 1000 primal ores",
+        "location": [
+          0,
+          2
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Clue_scroll_%28elite%29_detail.png/100px-Clue_scroll_%28elite%29_detail.png?96959",
+        "name": "Clue scroll (elite)",
+        "pixelUrl": "https://runescape.wiki/images/Clue_scroll_%28elite%29_%28scan%29.png?93a09",
+        "overrideName": "Solve 10 elites",
+        "location": [
+          0,
+          3
+        ]
+      }
+    ],
+    [
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Greater_Ricochet_ability_codex_detail.png/100px-Greater_Ricochet_ability_codex_detail.png?08545",
+        "name": "Greater Ricochet ability codex",
+        "pixelUrl": "https://runescape.wiki/images/Greater_Ricochet_ability_codex.png?2c250",
+        "overrideName": "Any Raksha codex",
+        "location": [
+          1,
+          0
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Ode_to_Deceit_detail.png/95px-Ode_to_Deceit_detail.png?4dcac",
+        "name": "Ode to Deceit",
+        "pixelUrl": "https://runescape.wiki/images/Ode_to_Deceit.png?cc319",
+        "overrideName": "Any t95 single handed weapon",
+        "location": [
+          1,
+          1
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Ascension_crossbow_detail.png/100px-Ascension_crossbow_detail.png?e5365",
+        "name": "Ascension crossbow",
+        "pixelUrl": "https://runescape.wiki/images/Ascension_crossbow.png?5054e",
+        "overrideName": "Full ascension crossbow",
+        "location": [
+          1,
+          2
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Armadyl_godsword_detail.png/150px-Armadyl_godsword_detail.png?5f244",
+        "name": "Armadyl godsword",
+        "pixelUrl": "https://runescape.wiki/images/Armadyl_godsword.png?1a6a8",
+        "overrideName": "Assemble a godsword",
+        "location": [
+          1,
+          3
+        ]
+      }
+    ],
+    [
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Double_Surge_codex_detail.png/82px-Double_Surge_codex_detail.png?a3662",
+        "name": "Double Surge codex",
+        "pixelUrl": "https://runescape.wiki/images/Double_Surge_codex.png?3f063",
+        "overrideName": "Do 15 laps at anachronia",
+        "location": [
+          2,
+          0
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Terrasaur_maul_detail.png/110px-Terrasaur_maul_detail.png?12d4c",
+        "name": "Terrasaur maul",
+        "pixelUrl": "https://runescape.wiki/images/Terrasaur_maul.png?154a5",
+        "overrideName": "Do 20 bgh rounds",
+        "location": [
+          2,
+          1
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Golden_bamboo_detail.png/100px-Golden_bamboo_detail.png?5fdf3",
+        "name": "Golden bamboo",
+        "pixelUrl": "https://runescape.wiki/images/Golden_bamboo.png?04949",
+        "overrideName": "Harvest 1000 golden bamboo",
+        "location": [
+          2,
+          2
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Rocktail_detail.png/100px-Rocktail_detail.png?57295",
+        "name": "Rocktail",
+        "pixelUrl": "https://runescape.wiki/images/Rocktail.png?d86d8",
+        "overrideName": "cook 1000 of your favorite food",
+        "location": [
+          2,
+          3
+        ]
+      }
+    ],
+    [
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Puzzle_box_%28bridge%29_detail.png/60px-Puzzle_box_%28bridge%29_detail.png?4cb8c",
+        "name": "Puzzle box (hard)",
+        "pixelUrl": "https://runescape.wiki/images/Puzzle_box_%28bridge%29.png?21b32",
+        "overrideName": "Complete any puzzle box",
+        "location": [
+          3,
+          0
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Ice_dye_detail.png/100px-Ice_dye_detail.png?b952e",
+        "name": "Ice dye",
+        "pixelUrl": "https://runescape.wiki/images/Ice_dye.png?0b971",
+        "location": [
+          3,
+          1
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Backstab_cape_detail.png/120px-Backstab_cape_detail.png?2fc99",
+        "name": "Backstab cape",
+        "pixelUrl": "https://runescape.wiki/images/Backstab_cape.png?20211",
+        "location": [
+          3,
+          2
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Pith_helmet_detail.png/100px-Pith_helmet_detail.png?965bb",
+        "name": "Pith helmet",
+        "pixelUrl": "https://runescape.wiki/images/Pith_helmet.png?40433",
+        "location": [
+          3,
+          3
+        ]
+      }
+    ]
+  ]
+}

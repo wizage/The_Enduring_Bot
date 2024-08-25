@@ -14,12 +14,12 @@ export abstract class OysterSlash {
   @Slash( { name: 'submit', description: 'Submit your value' })
   @SlashGroup('oyster')
   async submitOyster(
-  @SlashOption({
-    description: 'Provide your oyster value',
-    name: 'value',
-    required: true,
-    type: ApplicationCommandOptionType.String,
-  })
+    @SlashOption({
+      description: 'Provide your oyster value',
+      name: 'value',
+      required: true,
+      type: ApplicationCommandOptionType.String,
+    })
     value: string,
     @SlashOption({
       description: 'image',

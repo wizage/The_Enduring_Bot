@@ -9,12 +9,12 @@ export abstract class FashionSlash {
   @Slash( { name: 'submit', description: 'Submit your fashion' })
   @SlashGroup('fashion')
   async submitOyster(
-  @SlashOption({
-    description: 'Provide your in-game name',
-    name: 'username',
-    required: true,
-    type: ApplicationCommandOptionType.String,
-  })
+    @SlashOption({
+      description: 'Provide your in-game name',
+      name: 'username',
+      required: true,
+      type: ApplicationCommandOptionType.String,
+    })
     username: string,
     @SlashOption({
       description: 'image',
