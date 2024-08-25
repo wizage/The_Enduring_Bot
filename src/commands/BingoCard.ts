@@ -49,7 +49,7 @@ export abstract class BingoClass {
     } else if (interaction.guildId === '198166521573408768') { //enduring
       let guild = await interaction.guild?.fetch();
       const member = await guild!.members.fetch(interaction.user.id);
-      const role = await guild?.roles.fetch('1039654397866692650');
+      const role = await guild?.roles.fetch('1007735894452731954');
       member.roles.add(role!);
     }
 
