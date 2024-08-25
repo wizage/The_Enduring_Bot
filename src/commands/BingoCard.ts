@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-shadow */
 import { CommandInteraction, EmbedBuilder, StringSelectMenuBuilder, MessageActionRowComponentBuilder, 
   ActionRowBuilder, Message, TextChannel, ModalBuilder, TextInputStyle, TextInputBuilder, ModalSubmitInteraction, 
-  StringSelectMenuInteraction} from 'discord.js';
+  StringSelectMenuInteraction } from 'discord.js';
 import { Discord, SelectMenuComponent, Slash, ModalComponent, SlashGroup  } from 'discordx';
 import { Readable } from 'stream';
 import bingoCard from '../constants/card1.json' assert {type: 'json'};
@@ -19,10 +19,6 @@ export abstract class BingoClass {
 
   @ModalComponent()
   async signup(interaction: ModalSubmitInteraction): Promise<void> {
-    if (interaction.guildId === '198166521573408768' && interaction.channelId !== '1275969956663787652') {
-      interaction.reply({ content: 'This command is disabled all channels but <#1275969956663787652>', ephemeral: true });
-      return;
-    }
 
     const [rsn, lvl, timezone, clueCount, favoriteBoss] = ['rsn', 'lvl', 'timezone', 'clueCount', 'favoriteBoss'].map((id) =>
       interaction.fields.getTextInputValue(id),
@@ -156,6 +152,11 @@ export abstract class BingoClass {
   @SlashGroup('bingo')
   signupClue(
     interaction: CommandInteraction): void {
+
+    if (interaction.guildId === '198166521573408768' && interaction.channelId !== '1275969956663787652') {
+      interaction.reply({ content: 'This command is disabled all channels but <#1275969956663787652>', ephemeral: true });
+      return;
+    }
 
     const modal = new ModalBuilder()
       .setTitle('Bingo Signup')
