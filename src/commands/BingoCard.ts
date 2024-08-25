@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-shadow */
 import { CommandInteraction, EmbedBuilder, StringSelectMenuBuilder, MessageActionRowComponentBuilder, 
-  ActionRowBuilder, Message, TextChannel, ModalBuilder, TextInputStyle, TextInputBuilder, ModalSubmitInteraction } from 'discord.js';
+  ActionRowBuilder, Message, TextChannel, ModalBuilder, TextInputStyle, TextInputBuilder, ModalSubmitInteraction, 
+  StringSelectMenuInteraction} from 'discord.js';
 import { Discord, SelectMenuComponent, Slash, ModalComponent, SlashGroup  } from 'discordx';
 import { Readable } from 'stream';
 import bingoCard from '../constants/card1.json' assert {type: 'json'};
@@ -85,7 +86,7 @@ export abstract class BingoClass {
   }
 
   @SelectMenuComponent({ id: 'dropsubmission' })
-  async submitDrop(interaction: CommandInteraction) : Promise<unknown> {
+  async submitDrop(interaction: StringSelectMenuInteraction) : Promise<unknown> {
     await interaction.deferReply({ ephemeral: true });
 
     const dropId = interaction.values?.[0];

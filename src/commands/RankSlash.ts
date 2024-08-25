@@ -1,6 +1,6 @@
 import { ButtonInteraction, CommandInteraction, GuildMemberRoleManager, ActionRowBuilder, ButtonBuilder, EmbedBuilder, TextChannel, MessageActionRowComponentBuilder, Role } from 'discord.js';
 import { Discord, Slash, SlashOption, SlashGroup, ButtonComponent } from 'discordx';
-import { APIEmbedField, ApplicationCommandOptionType, ButtonStyle } from 'discord-api-types/v10';
+import { APIEmbedField, ApplicationCommandOptionType } from 'discord-api-types/v10';
 import { Pagination, PaginationItem, PaginationType } from '@discordx/pagination';
 import { RunescapeAPI } from 'runescape-api-ts';
 import { User, RankUps } from '../types/User';
@@ -235,11 +235,11 @@ export abstract class RankSlash {
           new ButtonBuilder()
             .setCustomId(`confirm-user-${dbUser.discordID}`)
             .setLabel('Validate')
-            .setStyle(ButtonStyle.Success),
+            .setStyle(3),
           new ButtonBuilder()
             .setCustomId(`deny-user-${dbUser.discordID}`)
             .setLabel('Deny')
-            .setStyle(ButtonStyle.Danger),
+            .setStyle(4),
         );
 
         const embedVerify = new EmbedBuilder({ title: 'New Registered RSN', fields: verifyEmbed, description: 'Please verify new user' });
