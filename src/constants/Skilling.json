@@ -1,0 +1,865 @@
+{
+  "settings": {
+    "autoRefresh": false,
+    "backgroundColor": "#dedede",
+    "bingoSize": 5,
+    "bingoTitle": "Skilling",
+    "fontColor": "#000000",
+    "fontFormat": "bold",
+    "fontSize": 23,
+    "fontType": "Bree Serif",
+    "lineColor": "#325FA2",
+    "outlineColor": "#ff0000",
+    "outlineEnable": false,
+    "refreshNumber": 8690.095931375028
+  },
+  "itemList": [
+    {
+      "imageUrl": "https://runescape.wiki/images/Saradomin%27s_Book_of_Wisdom_detail.png?aa0ae",
+      "name": "Saradomin's Book of Wisdom",
+      "pixelUrl": "https://runescape.wiki/images/Saradomin%27s_Book_of_Wisdom.png?b3ac7"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Bamboo_detail.png/100px-Bamboo_detail.png?98ead",
+      "name": "Bamboo",
+      "pixelUrl": "https://runescape.wiki/images/Bamboo.png?bb7d0"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/Sack_of_wild_rewards_detail.png?175fe",
+      "name": "Sack of wild rewards",
+      "pixelUrl": "https://runescape.wiki/images/Sack_of_wild_rewards.png?094bc"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Vis_wax_detail.png/100px-Vis_wax_detail.png?37b96",
+      "name": "Vis wax",
+      "pixelUrl": "https://runescape.wiki/images/Vis_wax.png?8bbab"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Anima_crystal_detail.png/100px-Anima_crystal_detail.png?35aa1",
+      "name": "Anima crystal",
+      "pixelUrl": "https://runescape.wiki/images/Anima_crystal.png?77edd"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Elder_logs_detail.png/100px-Elder_logs_detail.png?8aec6",
+      "name": "Elder logs",
+      "pixelUrl": "https://runescape.wiki/images/Elder_logs.png?0115d"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Croesus_spore_sack_detail.png/100px-Croesus_spore_sack_detail.png?ee4ac",
+      "name": "Croesus spore sack",
+      "pixelUrl": "https://runescape.wiki/images/Croesus_spore_sack.png?16fec"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Slayer_helmet_detail.png/63px-Slayer_helmet_detail.png?db70d",
+      "name": "Slayer helmet",
+      "pixelUrl": "https://runescape.wiki/images/Slayer_helmet.png?f9b1e"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/Reward_casket_%28elite%29_detail.png?48cc5",
+      "name": "Reward casket (elite)",
+      "pixelUrl": "https://runescape.wiki/images/Reward_casket_%28elite%29.png?8b52e"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/Codex_page_detail.png?59367",
+      "name": "Codex page",
+      "pixelUrl": "https://runescape.wiki/images/Codex_page.png?e25eb"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/Unstable_air_rune_detail.png?771b8",
+      "name": "Unstable air rune",
+      "pixelUrl": "https://runescape.wiki/images/Unstable_air_rune.png?50b0f"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Luminite_injector_detail.png/100px-Luminite_injector_detail.png?5245c",
+      "name": "Luminite injector",
+      "pixelUrl": "https://runescape.wiki/images/Luminite_injector.png?1aebe"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Cresbot_%28unpoked%29_detail.png/100px-Cresbot_%28unpoked%29_detail.png?d7623",
+      "name": "Cresbot",
+      "pixelUrl": "https://runescape.wiki/images/Cresbot_%28unpoked%29.png?e55f7"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Sea_salt_detail.png/100px-Sea_salt_detail.png?153b3",
+      "name": "Sea salt",
+      "pixelUrl": "https://runescape.wiki/images/Sea_salt.png?c38df"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Primal_stone_spirit_detail.png/120px-Primal_stone_spirit_detail.png?f55d0",
+      "name": "Primal stone spirit",
+      "pixelUrl": "https://runescape.wiki/images/Primal_stone_spirit.png?bbbc1"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Armadyl_godsword_detail.png/150px-Armadyl_godsword_detail.png?5f244",
+      "name": "Armadyl godsword",
+      "pixelUrl": "https://runescape.wiki/images/Armadyl_godsword.png?1a6a8"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Dragon_mattock_detail.png/100px-Dragon_mattock_detail.png?551c1",
+      "name": "Dragon mattock",
+      "pixelUrl": "https://runescape.wiki/images/Dragon_mattock.png?bec9a"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Clockwork_suit_detail.png/100px-Clockwork_suit_detail.png?9acb7",
+      "name": "Clockwork suit",
+      "pixelUrl": "https://runescape.wiki/images/Clockwork_suit.png?b0c6b"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/Sealed_clue_scroll_%28hard%29_detail.png?f5297",
+      "name": "Sealed clue scroll (hard)",
+      "pixelUrl": "https://runescape.wiki/images/Sealed_clue_scroll_%28hard%29.png?64dd1"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/Tetracompass_%28powered%29_detail.png?ca3cb",
+      "name": "Tetracompass (powered)",
+      "pixelUrl": "https://runescape.wiki/images/Tetracompass_%28powered%29.png?a8a08"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Elder_Trove_%28Bik%2C_T3%29_detail.png/100px-Elder_Trove_%28Bik%2C_T3%29_detail.png?a5235",
+      "name": "Elder Trove (Bik, T3)",
+      "pixelUrl": "https://runescape.wiki/images/Elder_Trove_%28Bik%2C_T3%29.png?d80cc"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Large_crystal_urchin_detail.png/100px-Large_crystal_urchin_detail.png?c8bd0",
+      "name": "Large crystal urchin",
+      "pixelUrl": "https://runescape.wiki/images/Large_crystal_urchin.png?09593"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Scripture_of_Amascut_detail.png/100px-Scripture_of_Amascut_detail.png?50f66",
+      "name": "Scripture of Amascut",
+      "pixelUrl": "https://runescape.wiki/images/Scripture_of_Amascut.png?28836"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Indigo_afro_detail.png/100px-Indigo_afro_detail.png?ba957",
+      "name": "Indigo afro",
+      "pixelUrl": "https://runescape.wiki/images/Indigo_afro.png?b0eeb"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Cup_of_tea_detail.png/100px-Cup_of_tea_detail.png?56ee9",
+      "name": "Cup of tea",
+      "pixelUrl": "https://runescape.wiki/images/Cup_of_tea.png?8032b",
+      "overrideName": "3 Uniques @ New Boss",
+      "location": [
+        3,
+        3
+      ]
+    }
+  ],
+  "bingoCardBot": {
+    "Build a god book": {
+      "imageUrl": "https://runescape.wiki/images/Saradomin%27s_Book_of_Wisdom_detail.png?aa0ae",
+      "name": "Saradomin's Book of Wisdom",
+      "pixelUrl": "https://runescape.wiki/images/Saradomin%27s_Book_of_Wisdom.png?b3ac7",
+      "overrideName": "Build a god book",
+      "location": [
+        0,
+        0
+      ],
+      "type": "specific",
+      "goal": [
+        {
+          "name": "Page 1",
+          "goal": 1
+        },
+        {
+          "name": "Page 2",
+          "goal": 1
+        },
+        {
+          "name": "Page 3",
+          "goal": 1
+        },
+        {
+          "name": "Page 4",
+          "goal": 1
+        }
+      ]
+    },
+    "Harvest 300 bamboo": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Bamboo_detail.png/100px-Bamboo_detail.png?98ead",
+      "name": "Bamboo",
+      "pixelUrl": "https://runescape.wiki/images/Bamboo.png?bb7d0",
+      "overrideName": "Harvest 300 bamboo",
+      "location": [
+        0,
+        1
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Complete 1 of each wildy event": {
+      "imageUrl": "https://runescape.wiki/images/Sack_of_wild_rewards_detail.png?175fe",
+      "name": "Sack of wild rewards",
+      "pixelUrl": "https://runescape.wiki/images/Sack_of_wild_rewards.png?094bc",
+      "overrideName": "Complete 1 of each wildy event",
+      "location": [
+        0,
+        2
+      ],
+      "type": "specific",
+      "goal": [
+        {
+          "name": "Spider Swarm",
+          "goal": 1
+        },
+        {
+          "name": "Unnatural Outcrop",
+          "goal": 1
+        },
+        {
+          "name": "Stryke the Wyrm",
+          "goal": 1
+        },
+        {
+          "name": "Demon Stragglers",
+          "goal": 1
+        },
+        {
+          "name": "Butterfly Swarm",
+          "goal": 1
+        },
+        {
+          "name": "King Black Dragon Rampage",
+          "goal": 1
+        },
+        {
+          "name": "Surprising Seedlings",
+          "goal": 1
+        },
+        {
+          "name": "Hellhound Pack",
+          "goal": 1
+        },
+        {
+          "name": "Infernal Star",
+          "goal": 1
+        },
+        {
+          "name": "Lost Souls",
+          "goal": 1
+        },
+        {
+          "name": "Ramokee Incursion",
+          "goal": 1
+        },
+        {
+          "name": "Displaced Energy",
+          "goal": 1
+        },
+        {
+          "name": "Evil Bloodwood Tree",
+          "goal": 1
+        }
+      ]
+    },
+    "Create 3 perfect Vis Wax": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Vis_wax_detail.png/100px-Vis_wax_detail.png?37b96",
+      "name": "Vis wax",
+      "pixelUrl": "https://runescape.wiki/images/Vis_wax.png?8bbab",
+      "overrideName": "Create 3 perfect vis wax",
+      "location": [
+        0,
+        3
+      ],
+      "desc":"Vis Wax #",
+      "type": "number",
+      "goal": 3
+    },
+    "Broadcast @ every gwd2 boss": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Anima_crystal_detail.png/100px-Anima_crystal_detail.png?35aa1",
+      "name": "Anima crystal",
+      "pixelUrl": "https://runescape.wiki/images/Anima_crystal.png?77edd",
+      "overrideName": "Broadcast @ every gwd2 boss",
+      "location": [
+        0,
+        4
+      ],
+      "type": "specific",
+      "goal": [
+        {
+          "name": "Gregorovic",
+          "goal": 1
+        },
+        {
+          "name": "Twin Furies",
+          "goal": 1
+        },
+        {
+          "name": "Vindicta",
+          "goal": 1
+        },
+        {
+          "name": "Helwyr",
+          "goal": 1
+        }
+      ]
+    },
+    "Complete 3 evil trees": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Elder_logs_detail.png/100px-Elder_logs_detail.png?8aec6",
+      "name": "Elder logs",
+      "pixelUrl": "https://runescape.wiki/images/Elder_logs.png?0115d",
+      "overrideName": "Complete 3 evil trees",
+      "location": [
+        1,
+        0
+      ],
+      "desc":"Evil Tree #",
+      "type": "number",
+      "goal": 3
+    },
+    "3 Uniques @ Croesus": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Croesus_spore_sack_detail.png/100px-Croesus_spore_sack_detail.png?ee4ac",
+      "name": "Croesus spore sack",
+      "pixelUrl": "https://runescape.wiki/images/Croesus_spore_sack.png?16fec",
+      "overrideName": "3 Uniques @ Croesus",
+      "location": [
+        1,
+        1
+      ],
+      "desc":"Unique #",
+      "type": "number",
+      "goal": 3
+    },
+    "Complete 50 slayer tasks": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Slayer_helmet_detail.png/63px-Slayer_helmet_detail.png?db70d",
+      "name": "Slayer helmet",
+      "pixelUrl": "https://runescape.wiki/images/Slayer_helmet.png?f9b1e",
+      "overrideName": "Complete 50 slayer tasks",
+      "location": [
+        1,
+        2
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Casket over 10m": {
+      "imageUrl": "https://runescape.wiki/images/Reward_casket_%28elite%29_detail.png?48cc5",
+      "name": "Reward casket (elite)",
+      "pixelUrl": "https://runescape.wiki/images/Reward_casket_%28elite%29.png?8b52e",
+      "overrideName": "Casket over 10m",
+      "location": [
+        1,
+        3
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "15 anachronia laps": {
+      "imageUrl": "https://runescape.wiki/images/Codex_page_detail.png?59367",
+      "name": "Codex page",
+      "pixelUrl": "https://runescape.wiki/images/Codex_page.png?e25eb",
+      "overrideName": "15 anachronia laps",
+      "location": [
+        1,
+        4
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "1000 runespan points": {
+      "imageUrl": "https://runescape.wiki/images/Unstable_air_rune_detail.png?771b8",
+      "name": "Unstable air rune",
+      "pixelUrl": "https://runescape.wiki/images/Unstable_air_rune.png?50b0f",
+      "overrideName": "1000 runespan points",
+      "location": [
+        2,
+        0
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "3 x 100% respect @ Artisians": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Luminite_injector_detail.png/100px-Luminite_injector_detail.png?5245c",
+      "name": "Luminite injector",
+      "pixelUrl": "https://runescape.wiki/images/Luminite_injector.png?1aebe",
+      "overrideName": "3 x 100% respect @ Artisians",
+      "location": [
+        2,
+        1
+      ],
+      "desc":"Respect #",
+      "type": "number",
+      "goal": 3
+    },
+    "Free spot": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Indigo_afro_detail.png/100px-Indigo_afro_detail.png?ba957",
+      "name": "Indigo afro",
+      "pixelUrl": "https://runescape.wiki/images/Indigo_afro.png?b0eeb",
+      "overrideName": "Free spot",
+      "location": [
+        2,
+        2
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Complete 10 Guthix Caches": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Cresbot_%28unpoked%29_detail.png/100px-Cresbot_%28unpoked%29_detail.png?d7623",
+      "name": "Cresbot",
+      "pixelUrl": "https://runescape.wiki/images/Cresbot_%28unpoked%29.png?e55f7",
+      "overrideName": "Complete 10 Guthix Caches",
+      "location": [
+        2,
+        3
+      ],
+      "desc":"Cache #",
+      "type": "number",
+      "goal": 10
+    },
+    "Gather 300 sea salt": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Sea_salt_detail.png/100px-Sea_salt_detail.png?153b3",
+      "name": "Sea salt",
+      "pixelUrl": "https://runescape.wiki/images/Sea_salt.png?c38df",
+      "overrideName": "Gather 300 sea salt",
+      "location": [
+        2,
+        4
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Gather 500 of each primal ore": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Primal_stone_spirit_detail.png/120px-Primal_stone_spirit_detail.png?f55d0",
+      "name": "Primal stone spirit",
+      "pixelUrl": "https://runescape.wiki/images/Primal_stone_spirit.png?bbbc1",
+      "overrideName": "Gather 500 of each primal ore",
+      "location": [
+        3,
+        0
+      ],
+      "type": "specific",
+      "goal": [
+        {
+          "name": "Novite ore",
+          "goal": 1
+        },
+        {
+          "name": "Bathus ore",
+          "goal": 1
+        },
+        {
+          "name": "Marmaros ore",
+          "goal": 1
+        },
+        {
+          "name": "Kratonium ore",
+          "goal": 1
+        },
+        {
+          "name": "Fractite ore",
+          "goal": 1
+        },
+        {
+          "name": "Zephyrium ore",
+          "goal": 1
+        },
+        {
+          "name": "Argonite ore",
+          "goal": 1
+        },
+        {
+          "name": "Katagon ore",
+          "goal": 1
+        },
+        {
+          "name": "Gorgonite ore",
+          "goal": 1
+        },
+        {
+          "name": "Promethium ore",
+          "goal": 1
+        }
+      ]
+    },
+    "Complete a godsword": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Armadyl_godsword_detail.png/150px-Armadyl_godsword_detail.png?5f244",
+      "name": "Armadyl godsword",
+      "pixelUrl": "https://runescape.wiki/images/Armadyl_godsword.png?1a6a8",
+      "overrideName": "Complete a godsword",
+      "location": [
+        3,
+        1
+      ],
+      "type": "specific",
+      "goal": [
+        {
+          "name": "Hilt",
+          "goal": 1
+        },
+        {
+          "name": "Shard 1",
+          "goal": 1
+        },
+        {
+          "name": "Shard 2",
+          "goal": 1
+        },
+        {
+          "name": "Shard 3",
+          "goal": 1
+        }
+      ]
+    },
+    "Broadcast from BGH": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Dragon_mattock_detail.png/100px-Dragon_mattock_detail.png?551c1",
+      "name": "Dragon mattock",
+      "pixelUrl": "https://runescape.wiki/images/Dragon_mattock.png?bec9a",
+      "overrideName": "Broadcast from BGH",
+      "location": [
+        3,
+        2
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "3 Uniques @ New Boss": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Cup_of_tea_detail.png/100px-Cup_of_tea_detail.png?56ee9",
+      "name": "Cup of tea",
+      "pixelUrl": "https://runescape.wiki/images/Cup_of_tea.png?8032b",
+      "overrideName": "3 Uniques @ New Boss",
+      "location": [
+        3,
+        3
+      ],
+      "desc":"Unique #",
+      "type": "number",
+      "goal": 3
+    },
+    "Find 12 penguins in a week": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Clockwork_suit_detail.png/100px-Clockwork_suit_detail.png?9acb7",
+      "name": "Clockwork suit",
+      "pixelUrl": "https://runescape.wiki/images/Clockwork_suit.png?b0c6b",
+      "overrideName": "Find 12 penguins in a week",
+      "location": [
+        3,
+        4
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Complete 50 clue scrolls": {
+      "imageUrl": "https://runescape.wiki/images/Sealed_clue_scroll_%28hard%29_detail.png?f5297",
+      "name": "Sealed clue scroll (hard)",
+      "pixelUrl": "https://runescape.wiki/images/Sealed_clue_scroll_%28hard%29.png?64dd1",
+      "overrideName": "Complete 50 clue scrolls",
+      "location": [
+        4,
+        0
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Complete 15 Tetras": {
+      "imageUrl": "https://runescape.wiki/images/Tetracompass_%28powered%29_detail.png?ca3cb",
+      "name": "Tetracompass (powered)",
+      "pixelUrl": "https://runescape.wiki/images/Tetracompass_%28powered%29.png?a8a08",
+      "overrideName": "Complete 15 Tetras",
+      "location": [
+        4,
+        1
+      ],
+      "type": "number",
+      "desc":"Tetra #",
+      "goal": 3
+    },
+    "Collect 50 Elder Troves (no Zuk)": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Elder_Trove_%28Bik%2C_T3%29_detail.png/100px-Elder_Trove_%28Bik%2C_T3%29_detail.png?a5235",
+      "name": "Elder Trove (Bik, T3)",
+      "pixelUrl": "https://runescape.wiki/images/Elder_Trove_%28Bik%2C_T3%29.png?d80cc",
+      "overrideName": "Collect 50 Elder Troves (no Zuk)",
+      "location": [
+        4,
+        2
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Gather 3k crystal urchin points": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Large_crystal_urchin_detail.png/100px-Large_crystal_urchin_detail.png?c8bd0",
+      "name": "Large crystal urchin",
+      "pixelUrl": "https://runescape.wiki/images/Large_crystal_urchin.png?09593",
+      "overrideName": "Gather 3k crystal urchin points",
+      "location": [
+        4,
+        3
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "3 Broadcasts @ Sanctum": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Scripture_of_Amascut_detail.png/100px-Scripture_of_Amascut_detail.png?50f66",
+      "name": "Scripture of Amascut",
+      "pixelUrl": "https://runescape.wiki/images/Scripture_of_Amascut.png?28836",
+      "overrideName": "3 Broadcasts @ Sanctum",
+      "location": [
+        4,
+        4
+      ],
+      "type": "number",
+      "desc":"Broadcast #",
+      "goal": 3
+    }
+  },
+  "bingoBoard": [
+    [
+      {
+        "imageUrl": "https://runescape.wiki/images/Saradomin%27s_Book_of_Wisdom_detail.png?aa0ae",
+        "name": "Saradomin's Book of Wisdom",
+        "pixelUrl": "https://runescape.wiki/images/Saradomin%27s_Book_of_Wisdom.png?b3ac7",
+        "overrideName": "Build a god book",
+        "location": [
+          0,
+          0
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Bamboo_detail.png/100px-Bamboo_detail.png?98ead",
+        "name": "Bamboo",
+        "pixelUrl": "https://runescape.wiki/images/Bamboo.png?bb7d0",
+        "overrideName": "Harvest 300 bamboo",
+        "location": [
+          0,
+          1
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/Sack_of_wild_rewards_detail.png?175fe",
+        "name": "Sack of wild rewards",
+        "pixelUrl": "https://runescape.wiki/images/Sack_of_wild_rewards.png?094bc",
+        "overrideName": "Complete 1 of each wildy event",
+        "location": [
+          0,
+          2
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Vis_wax_detail.png/100px-Vis_wax_detail.png?37b96",
+        "name": "Vis wax",
+        "pixelUrl": "https://runescape.wiki/images/Vis_wax.png?8bbab",
+        "overrideName": "Create 3 perfect vis wax",
+        "location": [
+          0,
+          3
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Anima_crystal_detail.png/100px-Anima_crystal_detail.png?35aa1",
+        "name": "Anima crystal",
+        "pixelUrl": "https://runescape.wiki/images/Anima_crystal.png?77edd",
+        "overrideName": "Broadcast @ every gwd2 boss",
+        "location": [
+          0,
+          4
+        ]
+      }
+    ],
+    [
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Elder_logs_detail.png/100px-Elder_logs_detail.png?8aec6",
+        "name": "Elder logs",
+        "pixelUrl": "https://runescape.wiki/images/Elder_logs.png?0115d",
+        "overrideName": "Complete 3 evil trees",
+        "location": [
+          1,
+          0
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Croesus_spore_sack_detail.png/100px-Croesus_spore_sack_detail.png?ee4ac",
+        "name": "Croesus spore sack",
+        "pixelUrl": "https://runescape.wiki/images/Croesus_spore_sack.png?16fec",
+        "overrideName": "3 Uniques @ Croesus",
+        "location": [
+          1,
+          1
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Slayer_helmet_detail.png/63px-Slayer_helmet_detail.png?db70d",
+        "name": "Slayer helmet",
+        "pixelUrl": "https://runescape.wiki/images/Slayer_helmet.png?f9b1e",
+        "overrideName": "Complete 50 slayer tasks",
+        "location": [
+          1,
+          2
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/Reward_casket_%28elite%29_detail.png?48cc5",
+        "name": "Reward casket (elite)",
+        "pixelUrl": "https://runescape.wiki/images/Reward_casket_%28elite%29.png?8b52e",
+        "overrideName": "Casket over 10m",
+        "location": [
+          1,
+          3
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/Codex_page_detail.png?59367",
+        "name": "Codex page",
+        "pixelUrl": "https://runescape.wiki/images/Codex_page.png?e25eb",
+        "overrideName": "15 anachronia laps",
+        "location": [
+          1,
+          4
+        ]
+      }
+    ],
+    [
+      {
+        "imageUrl": "https://runescape.wiki/images/Unstable_air_rune_detail.png?771b8",
+        "name": "Unstable air rune",
+        "pixelUrl": "https://runescape.wiki/images/Unstable_air_rune.png?50b0f",
+        "overrideName": "1000 runespan points",
+        "location": [
+          2,
+          0
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Luminite_injector_detail.png/100px-Luminite_injector_detail.png?5245c",
+        "name": "Luminite injector",
+        "pixelUrl": "https://runescape.wiki/images/Luminite_injector.png?1aebe",
+        "overrideName": "3 x 100% respect @ Artisians",
+        "location": [
+          2,
+          1
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Indigo_afro_detail.png/100px-Indigo_afro_detail.png?ba957",
+        "name": "Indigo afro",
+        "pixelUrl": "https://runescape.wiki/images/Indigo_afro.png?b0eeb",
+        "overrideName": "Free spot",
+        "location": [
+          2,
+          2
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Cresbot_%28unpoked%29_detail.png/100px-Cresbot_%28unpoked%29_detail.png?d7623",
+        "name": "Cresbot",
+        "pixelUrl": "https://runescape.wiki/images/Cresbot_%28unpoked%29.png?e55f7",
+        "overrideName": "Complete 10 Guthix Caches",
+        "location": [
+          2,
+          3
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Sea_salt_detail.png/100px-Sea_salt_detail.png?153b3",
+        "name": "Sea salt",
+        "pixelUrl": "https://runescape.wiki/images/Sea_salt.png?c38df",
+        "overrideName": "Gather 300 sea salt",
+        "location": [
+          2,
+          4
+        ]
+      }
+    ],
+    [
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Primal_stone_spirit_detail.png/120px-Primal_stone_spirit_detail.png?f55d0",
+        "name": "Primal stone spirit",
+        "pixelUrl": "https://runescape.wiki/images/Primal_stone_spirit.png?bbbc1",
+        "overrideName": "Gather 500 of each primal ore",
+        "location": [
+          3,
+          0
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Armadyl_godsword_detail.png/150px-Armadyl_godsword_detail.png?5f244",
+        "name": "Armadyl godsword",
+        "pixelUrl": "https://runescape.wiki/images/Armadyl_godsword.png?1a6a8",
+        "overrideName": "Complete a godsword",
+        "location": [
+          3,
+          1
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Dragon_mattock_detail.png/100px-Dragon_mattock_detail.png?551c1",
+        "name": "Dragon mattock",
+        "pixelUrl": "https://runescape.wiki/images/Dragon_mattock.png?bec9a",
+        "overrideName": "Broadcast from BGH",
+        "location": [
+          3,
+          2
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Cup_of_tea_detail.png/100px-Cup_of_tea_detail.png?56ee9",
+        "name": "Cup of tea",
+        "pixelUrl": "https://runescape.wiki/images/Cup_of_tea.png?8032b",
+        "overrideName": "3 Uniques @ New Boss",
+        "location": [
+          3,
+          3
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Clockwork_suit_detail.png/100px-Clockwork_suit_detail.png?9acb7",
+        "name": "Clockwork suit",
+        "pixelUrl": "https://runescape.wiki/images/Clockwork_suit.png?b0c6b",
+        "overrideName": "Find 12 penguins in a week",
+        "location": [
+          3,
+          4
+        ]
+      }
+    ],
+    [
+      {
+        "imageUrl": "https://runescape.wiki/images/Sealed_clue_scroll_%28hard%29_detail.png?f5297",
+        "name": "Sealed clue scroll (hard)",
+        "pixelUrl": "https://runescape.wiki/images/Sealed_clue_scroll_%28hard%29.png?64dd1",
+        "overrideName": "Complete 50 clue scrolls",
+        "location": [
+          4,
+          0
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/Tetracompass_%28powered%29_detail.png?ca3cb",
+        "name": "Tetracompass (powered)",
+        "pixelUrl": "https://runescape.wiki/images/Tetracompass_%28powered%29.png?a8a08",
+        "overrideName": "Complete 15 Tetras",
+        "location": [
+          4,
+          1
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Elder_Trove_%28Bik%2C_T3%29_detail.png/100px-Elder_Trove_%28Bik%2C_T3%29_detail.png?a5235",
+        "name": "Elder Trove (Bik, T3)",
+        "pixelUrl": "https://runescape.wiki/images/Elder_Trove_%28Bik%2C_T3%29.png?d80cc",
+        "overrideName": "Collect 50 Elder Troves (no Zuk)",
+        "location": [
+          4,
+          2
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Large_crystal_urchin_detail.png/100px-Large_crystal_urchin_detail.png?c8bd0",
+        "name": "Large crystal urchin",
+        "pixelUrl": "https://runescape.wiki/images/Large_crystal_urchin.png?09593",
+        "overrideName": "Gather 3k crystal urchin points",
+        "location": [
+          4,
+          3
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Scripture_of_Amascut_detail.png/100px-Scripture_of_Amascut_detail.png?50f66",
+        "name": "Scripture of Amascut",
+        "pixelUrl": "https://runescape.wiki/images/Scripture_of_Amascut.png?28836",
+        "overrideName": "3 Broadcasts @ Sanctum",
+        "location": [
+          4,
+          4
+        ]
+      }
+    ]
+  ]
+}

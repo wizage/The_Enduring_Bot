@@ -79,7 +79,7 @@ export abstract class RankSlash {
     }
   }
 
-  @ButtonComponent({ id:/(confirm-user-*)\w+/g })
+  @ButtonComponent({ id:/(confirm-user-*)\w+/ })
   async confirmUser(interaction: ButtonInteraction) {
     await interaction.deferUpdate();
     const userId = interaction.customId.split('-');
@@ -89,7 +89,6 @@ export abstract class RankSlash {
     } else {
       
       if (interaction.user) {
-        console.log('responding');
         // const message = (interaction.message as Message);
         const embedVerify = interaction.message.embeds[0];
         // interaction.
@@ -99,7 +98,7 @@ export abstract class RankSlash {
     }
   }
 
-  @ButtonComponent({ id:/(deny-user-*)\w+/g })
+  @ButtonComponent({ id:/(deny-user-*)\w+/ })
   async denyUser(interaction: ButtonInteraction) {
     await interaction.deferUpdate();
     const userId = interaction.customId.split('-');

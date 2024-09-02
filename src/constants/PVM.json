@@ -1,0 +1,902 @@
+{
+  "settings": {
+    "autoRefresh": false,
+    "backgroundColor": "#dedede",
+    "bingoSize": 5,
+    "bingoTitle": "PVM card",
+    "fontColor": "#000000",
+    "fontFormat": "bold",
+    "fontSize": 23,
+    "fontType": "Bree Serif",
+    "lineColor": "#325FA2",
+    "outlineColor": "#ff0000",
+    "outlineEnable": false,
+    "refreshNumber": 977.6117099835302
+  },
+  "itemList": [
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Praesul_codex_detail.png/100px-Praesul_codex_detail.png?fde6d",
+      "name": "Praesul codex",
+      "pixelUrl": "https://runescape.wiki/images/Praesul_codex.png?6b498"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Ascension_crossbow_detail.png/100px-Ascension_crossbow_detail.png?e5365",
+      "name": "Ascension crossbow",
+      "pixelUrl": "https://runescape.wiki/images/Ascension_crossbow.png?5054e"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Draconic_energy_detail.png/80px-Draconic_energy_detail.png?ef01a",
+      "name": "Draconic energy",
+      "pixelUrl": "https://runescape.wiki/images/Draconic_energy.png?74483"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Greater_Ricochet_ability_codex_detail.png/100px-Greater_Ricochet_ability_codex_detail.png?08545",
+      "name": "Greater Ricochet ability codex",
+      "pixelUrl": "https://runescape.wiki/images/Greater_Ricochet_ability_codex.png?2c250"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Cup_of_tea_detail.png/100px-Cup_of_tea_detail.png?56ee9",
+      "name": "Cup of tea",
+      "pixelUrl": "https://runescape.wiki/images/Cup_of_tea.png?8032b"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Armadyl_godsword_detail.png/150px-Armadyl_godsword_detail.png?5f244",
+      "name": "Armadyl godsword",
+      "pixelUrl": "https://runescape.wiki/images/Armadyl_godsword.png?1a6a8"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Orb_of_pure_anima_detail.png/100px-Orb_of_pure_anima_detail.png?8d45e",
+      "name": "Orb of pure anima",
+      "pixelUrl": "https://runescape.wiki/images/Orb_of_pure_anima.png?fb47f"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Erethdor%27s_grimoire_detail.png/85px-Erethdor%27s_grimoire_detail.png?70ee6",
+      "name": "Erethdor's grimoire",
+      "pixelUrl": "https://runescape.wiki/images/Erethdor%27s_grimoire.png?72c94"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Scripture_of_Ful_detail.png/100px-Scripture_of_Ful_detail.png?d87b7",
+      "name": "Scripture of Ful",
+      "pixelUrl": "https://runescape.wiki/images/Scripture_of_Ful.png?ebb92"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Drygore_longsword_detail.png/100px-Drygore_longsword_detail.png?9daaf",
+      "name": "Drygore longsword",
+      "pixelUrl": "https://runescape.wiki/images/Drygore_longsword.png?feec4"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Vestments_of_havoc_robe_top_detail.png/106px-Vestments_of_havoc_robe_top_detail.png?4b4de",
+      "name": "Vestments of havoc robe top",
+      "pixelUrl": "https://runescape.wiki/images/Vestments_of_havoc_robe_top.png?b399a"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Vestments_of_havoc_hood_detail.png/69px-Vestments_of_havoc_hood_detail.png?2f6be",
+      "name": "Vestments of havoc hood",
+      "pixelUrl": "https://runescape.wiki/images/Vestments_of_havoc_hood.png?b399a"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Elite_chest_detail.png/100px-Elite_chest_detail.png?374a6",
+      "name": "Elite chest",
+      "pixelUrl": "https://runescape.wiki/images/Elite_chest.png?828fe"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Light_blue_afro_detail.png/100px-Light_blue_afro_detail.png?1e135",
+      "name": "Light blue afro",
+      "pixelUrl": "https://runescape.wiki/images/Light_blue_afro.png?0d014"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Eldritch_crossbow_detail.png/100px-Eldritch_crossbow_detail.png?c867d",
+      "name": "Eldritch crossbow",
+      "pixelUrl": "https://runescape.wiki/images/Eldritch_crossbow.png?1c815"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Jail_cell_key_detail.png/92px-Jail_cell_key_detail.png?ac6d5",
+      "name": "Jail cell key",
+      "pixelUrl": "https://runescape.wiki/images/Jail_cell_key.png?8baf5"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/Sealed_clue_scroll_%28hard%29_detail.png?f5297",
+      "name": "Sealed clue scroll (hard)",
+      "pixelUrl": "https://runescape.wiki/images/Sealed_clue_scroll_%28hard%29.png?64dd1"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Ancient_scale_detail.png/100px-Ancient_scale_detail.png?12c44",
+      "name": "Ancient scale",
+      "pixelUrl": "https://runescape.wiki/images/Ancient_scale.png?85aac"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Noxious_scythe_detail.png/100px-Noxious_scythe_detail.png?71819",
+      "name": "Noxious scythe",
+      "pixelUrl": "https://runescape.wiki/images/Noxious_scythe.png?a250c"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Elysian_spirit_shield_detail.png/100px-Elysian_spirit_shield_detail.png?925a5",
+      "name": "Elysian spirit shield",
+      "pixelUrl": "https://runescape.wiki/images/Elysian_spirit_shield.png?6ad7a"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Vorkath%27s_scale_detail.png/100px-Vorkath%27s_scale_detail.png?946ce",
+      "name": "Vorkath's scale",
+      "pixelUrl": "https://runescape.wiki/images/Vorkath%27s_scale.png?ece3f"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Shard_of_Genesis_Essence_detail.png/100px-Shard_of_Genesis_Essence_detail.png?ac363",
+      "name": "Shard of Genesis Essence",
+      "pixelUrl": "https://runescape.wiki/images/Shard_of_Genesis_Essence.png?d63ca"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Torva_full_helm_detail.png/75px-Torva_full_helm_detail.png?71a60",
+      "name": "Torva full helm",
+      "pixelUrl": "https://runescape.wiki/images/Torva_full_helm.png?4dab8"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Crest_of_Zamorak_detail.png/110px-Crest_of_Zamorak_detail.png?b63c7",
+      "name": "Crest of Zamorak",
+      "pixelUrl": "https://runescape.wiki/images/Crest_of_Zamorak.png?e264b"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Soulbound_lantern_detail.png/49px-Soulbound_lantern_detail.png?c7346",
+      "name": "Soulbound lantern",
+      "pixelUrl": "https://runescape.wiki/images/Soulbound_lantern.png?fbe1b"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Bow_of_the_Last_Guardian_detail.png/114px-Bow_of_the_Last_Guardian_detail.png?2d1e2",
+      "name": "Bow of the Last Guardian",
+      "pixelUrl": "https://runescape.wiki/images/Bow_of_the_Last_Guardian.png?3590a"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/Slayer_collection_log_detail.png?256ac",
+      "name": "Slayer collection log",
+      "pixelUrl": "https://runescape.wiki/images/Slayer_collection_log.png?b5d72",
+      "overrideName": "1 Slayer drop from each region",
+      "location": [
+        2,
+        1
+      ]
+    }
+  ],
+  "bingoCardBot": {
+    "AoD broadcast": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Praesul_codex_detail.png/100px-Praesul_codex_detail.png?fde6d",
+      "name": "Praesul codex",
+      "overrideName": "AoD broadcast",
+      "pixelUrl": "https://runescape.wiki/images/Praesul_codex.png?6b498",
+      "location": [
+        0,
+        0
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Build an Ascension Crossbow": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Ascension_crossbow_detail.png/100px-Ascension_crossbow_detail.png?e5365",
+      "name": "Ascension crossbow",
+      "overrideName": "Build an Ascension \nCrossbow",
+      "pixelUrl": "https://runescape.wiki/images/Ascension_crossbow.png?5054e",
+      "location": [
+        0,
+        1
+      ],
+      "type": "specific",
+      "goal": [
+        {
+          "name": "Ascension signet I",
+          "goal": 1
+        },
+        {
+          "name": "Ascension signet II",
+          "goal": 1
+        },
+        {
+          "name": "Ascension signet III",
+          "goal": 1
+        },
+        {
+          "name": "Ascension signet IV",
+          "goal": 1
+        },
+        {
+          "name": "Ascension signet V",
+          "goal": 1
+        },
+        {
+          "name": "Ascension signet VI",
+          "goal": 1
+        },
+        {
+          "name": "Dragon Crossbow Limbs",
+          "goal": 1
+        }
+      ]
+    },
+    "40+ Draconic energy": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Draconic_energy_detail.png/80px-Draconic_energy_detail.png?ef01a",
+      "name": "Draconic energy",
+      "overrideName": "40+ Draconic energy",
+      "pixelUrl": "https://runescape.wiki/images/Draconic_energy.png?74483",
+      "location": [
+        0,
+        2
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "3 Raksha Broadcasts": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Greater_Ricochet_ability_codex_detail.png/100px-Greater_Ricochet_ability_codex_detail.png?08545",
+      "name": "Greater Ricochet ability codex",
+      "overrideName": "3 Raksha Broadcasts",
+      "pixelUrl": "https://runescape.wiki/images/Greater_Ricochet_ability_codex.png?2c250",
+      "location": [
+        0,
+        3
+      ],
+      "desc":"Broadcast #",
+      "type": "number",
+      "goal": 3
+    },
+    "3 Uniques @ New Boss": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Cup_of_tea_detail.png/100px-Cup_of_tea_detail.png?56ee9",
+      "name": "Cup of tea",
+      "overrideName": "3 Uniques @ New Boss",
+      "pixelUrl": "https://runescape.wiki/images/Cup_of_tea.png?8032b",
+      "location": [
+        0,
+        4
+      ],
+      "type": "number",
+      "desc":"Unique #",
+      "goal": 3
+    },
+    "Build a godsword": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Armadyl_godsword_detail.png/150px-Armadyl_godsword_detail.png?5f244",
+      "name": "Armadyl godsword",
+      "overrideName": "Build a godsword",
+      "pixelUrl": "https://runescape.wiki/images/Armadyl_godsword.png?1a6a8",
+      "location": [
+        1,
+        0
+      ],
+      "type": "specific",
+      "goal": [
+        {
+          "name": "Hilt",
+          "goal": 1
+        },
+        {
+          "name": "Shard 1",
+          "goal": 1
+        },
+        {
+          "name": "Shard 2",
+          "goal": 1
+        },
+        {
+          "name": "Shard 3",
+          "goal": 1
+        }
+      ]
+    },
+    "Build a Telos Weapon": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Orb_of_pure_anima_detail.png/100px-Orb_of_pure_anima_detail.png?8d45e",
+      "name": "Orb of pure anima",
+      "overrideName": "Build a Telos Weapon",
+      "pixelUrl": "https://runescape.wiki/images/Orb_of_pure_anima.png?fb47f",
+      "location": [
+        1,
+        1
+      ],
+      "type": "specific",
+      "goal": [
+        {
+          "name": "Dormant Weapon",
+          "goal": 1
+        },
+        {
+          "name": "Orb of pure anima",
+          "goal": 1
+        },
+        {
+          "name": "Orb of volcanic anima",
+          "goal": 1
+        },
+        {
+          "name": "Orb of corrupted anima",
+          "goal": 1
+        }
+      ]
+    },
+    "Solak unique": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Erethdor%27s_grimoire_detail.png/85px-Erethdor%27s_grimoire_detail.png?70ee6",
+      "name": "Erethdor's grimoire",
+      "overrideName": "Solak unique",
+      "pixelUrl": "https://runescape.wiki/images/Erethdor%27s_grimoire.png?72c94",
+      "location": [
+        1,
+        2
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Any scripture from EGWD": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Scripture_of_Ful_detail.png/100px-Scripture_of_Ful_detail.png?d87b7",
+      "name": "Scripture of Ful",
+      "overrideName": "Any scripture from EGWD",
+      "pixelUrl": "https://runescape.wiki/images/Scripture_of_Ful.png?ebb92",
+      "location": [
+        1,
+        3
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "3 x Drygores": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Drygore_longsword_detail.png/100px-Drygore_longsword_detail.png?9daaf",
+      "name": "Drygore longsword",
+      "overrideName": "3 x Drygores",
+      "pixelUrl": "https://runescape.wiki/images/Drygore_longsword.png?feec4",
+      "location": [
+        1,
+        4
+      ],
+      "desc":"Drygore #",
+      "type": "number",
+      "goal": 3
+    },
+    "3 Vestment pieces": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Vestments_of_havoc_hood_detail.png/69px-Vestments_of_havoc_hood_detail.png?2f6be",
+      "name": "Vestments of havoc hood",
+      "overrideName": "3 Vestment pieces",
+      "pixelUrl": "https://runescape.wiki/images/Vestments_of_havoc_hood.png?b399a",
+      "location": [
+        2,
+        0
+      ],
+      "desc":"Vestment #",
+      "type": "number",
+      "goal": 3
+    },
+    "1 Slayer drop from each region": {
+      "imageUrl": "https://runescape.wiki/images/Slayer_collection_log_detail.png?256ac",
+      "name": "Slayer collection log",
+      "pixelUrl": "https://runescape.wiki/images/Slayer_collection_log.png?b5d72",
+      "overrideName": "1 Slayer drop from each region",
+      "location": [
+        2,
+        1
+      ],
+      "type": "specific",
+      "goal": [
+        {
+          "name": "Asgarnia & Misthalin",
+          "goal": 1
+        },
+        {
+          "name": "Daemonheim",
+          "goal": 1
+        },
+        {
+          "name": "Feldip Hills",
+          "goal": 1
+        },
+        {
+          "name": "Fremennik Province",
+          "goal": 1
+        },
+        {
+          "name": "Kandarin",
+          "goal": 1
+        },
+        {
+          "name": "Karamja",
+          "goal": 1
+        },
+        {
+          "name": "Keldagrim",
+          "goal": 1
+        },
+        {
+          "name": "Kharidian Desert ",
+          "goal": 1
+        },
+        {
+          "name": "Lost Lands and Dungeons",
+          "goal": 1
+        },
+        {
+          "name": "Morytania",
+          "goal": 1
+        },
+        {
+          "name": "Other Worlds",
+          "goal": 1
+        },
+        {
+          "name": "Senntisten",
+          "goal": 1
+        },
+        {
+          "name": "Wilderness",
+          "goal": 1
+        }
+      ]
+    },
+    "Free Space": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Light_blue_afro_detail.png/100px-Light_blue_afro_detail.png?1e135",
+      "name": "Light blue afro",
+      "overrideName": "Free Space",
+      "pixelUrl": "https://runescape.wiki/images/Light_blue_afro.png?0d014",
+      "location": [
+        2,
+        2
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Eldritch piece": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Eldritch_crossbow_detail.png/100px-Eldritch_crossbow_detail.png?c867d",
+      "name": "Eldritch crossbow",
+      "overrideName": "Eldritch piece",
+      "pixelUrl": "https://runescape.wiki/images/Eldritch_crossbow.png?1c815",
+      "location": [
+        2,
+        3
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Jail cell key": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Jail_cell_key_detail.png/92px-Jail_cell_key_detail.png?ac6d5",
+      "name": "Jail cell key",
+      "pixelUrl": "https://runescape.wiki/images/Jail_cell_key.png?8baf5",
+      "location": [
+        2,
+        4
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Solve 50 clue scrolls (Hard+)": {
+      "imageUrl": "https://runescape.wiki/images/Sealed_clue_scroll_%28hard%29_detail.png?f5297",
+      "name": "Sealed clue scroll (hard)",
+      "pixelUrl": "https://runescape.wiki/images/Sealed_clue_scroll_%28hard%29.png?64dd1",
+      "overrideName": "Solve 50 clue scrolls (Hard+)",
+      "location": [
+        3,
+        0
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "40+ Ancient Scale drop": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Ancient_scale_detail.png/100px-Ancient_scale_detail.png?12c44",
+      "name": "Ancient scale",
+      "overrideName": "40+ Ancient Scale drop",
+      "pixelUrl": "https://runescape.wiki/images/Ancient_scale.png?85aac",
+      "location": [
+        3,
+        1
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Build a Arraxor weapon": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Noxious_scythe_detail.png/100px-Noxious_scythe_detail.png?71819",
+      "name": "Noxious scythe",
+      "overrideName": "Build a Arraxor weapon",
+      "pixelUrl": "https://runescape.wiki/images/Noxious_scythe.png?a250c",
+      "location": [
+        3,
+        2
+      ],
+      "type": "specific",
+      "goal": [
+        {
+          "name": "Hilt",
+          "goal": 1
+        },
+        {
+          "name": "Spider leg top",
+          "goal": 1
+        },
+        {
+          "name": "Spider leg middle",
+          "goal": 1
+        },
+        {
+          "name": "Spider leg bottom",
+          "goal": 1
+        }
+      ]
+    },
+    "Build a spirit shield w/ sigil": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Elysian_spirit_shield_detail.png/100px-Elysian_spirit_shield_detail.png?925a5",
+      "name": "Elysian spirit shield",
+      "overrideName": "Build a spirit shield w/ sigil",
+      "pixelUrl": "https://runescape.wiki/images/Elysian_spirit_shield.png?6ad7a",
+      "location": [
+        3,
+        3
+      ],
+      "type": "specific",
+      "goal": [
+        {
+          "name": "Spirit Shield",
+          "goal": 1
+        },
+        {
+          "name": "Holy elixir",
+          "goal": 1
+        },
+        {
+          "name": "Sigil",
+          "goal": 1
+        }
+      ]
+    },
+    "Vorkath Broadcast": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Vorkath%27s_scale_detail.png/100px-Vorkath%27s_scale_detail.png?946ce",
+      "name": "Vorkath's scale",
+      "overrideName": "Vorkath Broadcast",
+      "pixelUrl": "https://runescape.wiki/images/Vorkath%27s_scale.png?ece3f",
+      "location": [
+        3,
+        4
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Sanctum weapons + Shard": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Shard_of_Genesis_Essence_detail.png/100px-Shard_of_Genesis_Essence_detail.png?ac363",
+      "name": "Shard of Genesis Essence",
+      "overrideName": "Sanctum weapons + Shard",
+      "pixelUrl": "https://runescape.wiki/images/Shard_of_Genesis_Essence.png?d63ca",
+      "location": [
+        4,
+        0
+      ],
+      "type": "specific",
+      "goal": [
+        {
+          "name": "Ode to Deceit",
+          "goal": 1
+        },
+        {
+          "name": "Roar of Awakening",
+          "goal": 1
+        },
+        {
+          "name": "Shard of Genesis Essence",
+          "goal": 1
+        }
+      ]
+    },
+    "10 Nex Broadcasts": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Torva_full_helm_detail.png/75px-Torva_full_helm_detail.png?71a60",
+      "name": "Torva full helm",
+      "overrideName": "10 Nex Broadcasts",
+      "pixelUrl": "https://runescape.wiki/images/Torva_full_helm.png?4dab8",
+      "location": [
+        4,
+        1
+      ],
+      "desc":"Nex drop #",
+      "type": "number",
+      "goal": 10
+    },
+    "1 Crest from each GWD2 boss": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Crest_of_Zamorak_detail.png/110px-Crest_of_Zamorak_detail.png?b63c7",
+      "name": "Crest of Zamorak",
+      "overrideName": "1 Crest from each GWD2 boss",
+      "pixelUrl": "https://runescape.wiki/images/Crest_of_Zamorak.png?e264b",
+      "location": [
+        4,
+        2
+      ],
+      "type": "specific",
+      "goal": [
+        {
+          "name": "Crest of Seren",
+          "goal": 1
+        },
+        {
+          "name": "Crest of Sliske",
+          "goal": 1
+        },
+        {
+          "name": "Crest of Zamorak",
+          "goal": 1
+        },
+        {
+          "name": "Crest of Zaros",
+          "goal": 1
+        }
+      ]
+    },
+    "Rasial drop": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Soulbound_lantern_detail.png/49px-Soulbound_lantern_detail.png?c7346",
+      "name": "Soulbound lantern",
+      "overrideName": "Rasial drop",
+      "pixelUrl": "https://runescape.wiki/images/Soulbound_lantern.png?fbe1b",
+      "location": [
+        4,
+        3
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "2h T95 built": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Bow_of_the_Last_Guardian_detail.png/114px-Bow_of_the_Last_Guardian_detail.png?2d1e2",
+      "name": "Bow of the Last Guardian",
+      "overrideName": "2h T95 built",
+      "pixelUrl": "https://runescape.wiki/images/Bow_of_the_Last_Guardian.png?3590a",
+      "location": [
+        4,
+        4
+      ],
+      "desc":"Piece #",
+      "type": "number",
+      "goal": 3
+    }
+  },
+  "bingoBoard": [
+    [
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Praesul_codex_detail.png/100px-Praesul_codex_detail.png?fde6d",
+        "name": "Praesul codex",
+        "overrideName": "AoD broadcast",
+        "pixelUrl": "https://runescape.wiki/images/Praesul_codex.png?6b498",
+        "location": [
+          0,
+          0
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Ascension_crossbow_detail.png/100px-Ascension_crossbow_detail.png?e5365",
+        "name": "Ascension crossbow",
+        "overrideName": "Build an Ascension \nCrossbow",
+        "pixelUrl": "https://runescape.wiki/images/Ascension_crossbow.png?5054e",
+        "location": [
+          0,
+          1
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Draconic_energy_detail.png/80px-Draconic_energy_detail.png?ef01a",
+        "name": "Draconic energy",
+        "overrideName": "40+ Draconic energy",
+        "pixelUrl": "https://runescape.wiki/images/Draconic_energy.png?74483",
+        "location": [
+          0,
+          2
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Greater_Ricochet_ability_codex_detail.png/100px-Greater_Ricochet_ability_codex_detail.png?08545",
+        "name": "Greater Ricochet ability codex",
+        "overrideName": "3 Raksha Broadcasts",
+        "pixelUrl": "https://runescape.wiki/images/Greater_Ricochet_ability_codex.png?2c250",
+        "location": [
+          0,
+          3
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Cup_of_tea_detail.png/100px-Cup_of_tea_detail.png?56ee9",
+        "name": "Cup of tea",
+        "overrideName": "3 Uniques @ New Boss",
+        "pixelUrl": "https://runescape.wiki/images/Cup_of_tea.png?8032b",
+        "location": [
+          0,
+          4
+        ]
+      }
+    ],
+    [
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Armadyl_godsword_detail.png/150px-Armadyl_godsword_detail.png?5f244",
+        "name": "Armadyl godsword",
+        "overrideName": "Build a godsword",
+        "pixelUrl": "https://runescape.wiki/images/Armadyl_godsword.png?1a6a8",
+        "location": [
+          1,
+          0
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Orb_of_pure_anima_detail.png/100px-Orb_of_pure_anima_detail.png?8d45e",
+        "name": "Orb of pure anima",
+        "overrideName": "Build a Telos Weapon",
+        "pixelUrl": "https://runescape.wiki/images/Orb_of_pure_anima.png?fb47f",
+        "location": [
+          1,
+          1
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Erethdor%27s_grimoire_detail.png/85px-Erethdor%27s_grimoire_detail.png?70ee6",
+        "name": "Erethdor's grimoire",
+        "overrideName": "Solak unique",
+        "pixelUrl": "https://runescape.wiki/images/Erethdor%27s_grimoire.png?72c94",
+        "location": [
+          1,
+          2
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Scripture_of_Ful_detail.png/100px-Scripture_of_Ful_detail.png?d87b7",
+        "name": "Scripture of Ful",
+        "overrideName": "Any scripture from EGWD",
+        "pixelUrl": "https://runescape.wiki/images/Scripture_of_Ful.png?ebb92",
+        "location": [
+          1,
+          3
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Drygore_longsword_detail.png/100px-Drygore_longsword_detail.png?9daaf",
+        "name": "Drygore longsword",
+        "overrideName": "3 x Drygores",
+        "pixelUrl": "https://runescape.wiki/images/Drygore_longsword.png?feec4",
+        "location": [
+          1,
+          4
+        ]
+      }
+    ],
+    [
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Vestments_of_havoc_hood_detail.png/69px-Vestments_of_havoc_hood_detail.png?2f6be",
+        "name": "Vestments of havoc hood",
+        "overrideName": "3 Vestment pieces",
+        "pixelUrl": "https://runescape.wiki/images/Vestments_of_havoc_hood.png?b399a",
+        "location": [
+          2,
+          0
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/Slayer_collection_log_detail.png?256ac",
+        "name": "Slayer collection log",
+        "pixelUrl": "https://runescape.wiki/images/Slayer_collection_log.png?b5d72",
+        "overrideName": "1 Slayer drop from each region",
+        "location": [
+          2,
+          1
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Light_blue_afro_detail.png/100px-Light_blue_afro_detail.png?1e135",
+        "name": "Light blue afro",
+        "overrideName": "Free Space",
+        "pixelUrl": "https://runescape.wiki/images/Light_blue_afro.png?0d014",
+        "location": [
+          2,
+          2
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Eldritch_crossbow_detail.png/100px-Eldritch_crossbow_detail.png?c867d",
+        "name": "Eldritch crossbow",
+        "overrideName": "Eldritch piece",
+        "pixelUrl": "https://runescape.wiki/images/Eldritch_crossbow.png?1c815",
+        "location": [
+          2,
+          3
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Jail_cell_key_detail.png/92px-Jail_cell_key_detail.png?ac6d5",
+        "name": "Jail cell key",
+        "pixelUrl": "https://runescape.wiki/images/Jail_cell_key.png?8baf5",
+        "location": [
+          2,
+          4
+        ]
+      }
+    ],
+    [
+      {
+        "imageUrl": "https://runescape.wiki/images/Sealed_clue_scroll_%28hard%29_detail.png?f5297",
+        "name": "Sealed clue scroll (hard)",
+        "pixelUrl": "https://runescape.wiki/images/Sealed_clue_scroll_%28hard%29.png?64dd1",
+        "overrideName": "Solve 50 clue scrolls (Hard+)",
+        "location": [
+          3,
+          0
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Ancient_scale_detail.png/100px-Ancient_scale_detail.png?12c44",
+        "name": "Ancient scale",
+        "overrideName": "40+ Ancient Scale drop",
+        "pixelUrl": "https://runescape.wiki/images/Ancient_scale.png?85aac",
+        "location": [
+          3,
+          1
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Noxious_scythe_detail.png/100px-Noxious_scythe_detail.png?71819",
+        "name": "Noxious scythe",
+        "overrideName": "Build a Arraxor weapon",
+        "pixelUrl": "https://runescape.wiki/images/Noxious_scythe.png?a250c",
+        "location": [
+          3,
+          2
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Elysian_spirit_shield_detail.png/100px-Elysian_spirit_shield_detail.png?925a5",
+        "name": "Elysian spirit shield",
+        "overrideName": "Build a spirit shield w/ sigil",
+        "pixelUrl": "https://runescape.wiki/images/Elysian_spirit_shield.png?6ad7a",
+        "location": [
+          3,
+          3
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Vorkath%27s_scale_detail.png/100px-Vorkath%27s_scale_detail.png?946ce",
+        "name": "Vorkath's scale",
+        "overrideName": "Vorkath Broadcast",
+        "pixelUrl": "https://runescape.wiki/images/Vorkath%27s_scale.png?ece3f",
+        "location": [
+          3,
+          4
+        ]
+      }
+    ],
+    [
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Shard_of_Genesis_Essence_detail.png/100px-Shard_of_Genesis_Essence_detail.png?ac363",
+        "name": "Shard of Genesis Essence",
+        "overrideName": "Sanctum weapons + Shard",
+        "pixelUrl": "https://runescape.wiki/images/Shard_of_Genesis_Essence.png?d63ca",
+        "location": [
+          4,
+          0
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Torva_full_helm_detail.png/75px-Torva_full_helm_detail.png?71a60",
+        "name": "Torva full helm",
+        "overrideName": "10 Nex Broadcasts",
+        "pixelUrl": "https://runescape.wiki/images/Torva_full_helm.png?4dab8",
+        "location": [
+          4,
+          1
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Crest_of_Zamorak_detail.png/110px-Crest_of_Zamorak_detail.png?b63c7",
+        "name": "Crest of Zamorak",
+        "overrideName": "1 Crest from each GWD2 boss",
+        "pixelUrl": "https://runescape.wiki/images/Crest_of_Zamorak.png?e264b",
+        "location": [
+          4,
+          2
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Soulbound_lantern_detail.png/49px-Soulbound_lantern_detail.png?c7346",
+        "name": "Soulbound lantern",
+        "overrideName": "Rasial drop",
+        "pixelUrl": "https://runescape.wiki/images/Soulbound_lantern.png?fbe1b",
+        "location": [
+          4,
+          3
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Bow_of_the_Last_Guardian_detail.png/114px-Bow_of_the_Last_Guardian_detail.png?2d1e2",
+        "name": "Bow of the Last Guardian",
+        "overrideName": "2h T95 built",
+        "pixelUrl": "https://runescape.wiki/images/Bow_of_the_Last_Guardian.png?3590a",
+        "location": [
+          4,
+          4
+        ]
+      }
+    ]
+  ]
+}

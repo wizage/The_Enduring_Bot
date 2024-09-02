@@ -1,0 +1,828 @@
+{
+  "settings": {
+    "autoRefresh": false,
+    "backgroundColor": "#dedede",
+    "bingoSize": 5,
+    "bingoTitle": "Clues",
+    "fontColor": "#000000",
+    "fontFormat": "bold",
+    "fontSize": 23,
+    "fontType": "Bree Serif",
+    "lineColor": "#325FA2",
+    "outlineColor": "#ff0000",
+    "outlineEnable": false,
+    "refreshNumber": 5139.788364147679
+  },
+  "itemList": [
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Third_age_full_helmet_detail.png/100px-Third_age_full_helmet_detail.png?b90e7",
+      "location": [
+        0,
+        0
+      ],
+      "name": "Third age full helmet",
+      "overrideName": "3rd Age Anything",
+      "pixelUrl": "https://runescape.wiki/images/Third_age_full_helmet.png?57a9e"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Penguin_staff_detail.png/100px-Penguin_staff_detail.png?f653a",
+      "location": [
+        0,
+        1
+      ],
+      "name": "Penguin staff",
+      "overrideName": "5 x Animal Staffs",
+      "pixelUrl": "https://runescape.wiki/images/Penguin_staff.png?e280a"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Top_hat_detail.png/100px-Top_hat_detail.png?58c28",
+      "location": [
+        0,
+        2
+      ],
+      "name": "Top hat",
+      "pixelUrl": "https://runescape.wiki/images/Top_hat.png?c1ebf"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Heavy_chest_detail.png/100px-Heavy_chest_detail.png?80d3e",
+      "location": [
+        0,
+        3
+      ],
+      "name": "Heavy chest",
+      "pixelUrl": "https://runescape.wiki/images/Heavy_chest.png?9a1e6"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Slayer_helmet_detail.png/63px-Slayer_helmet_detail.png?db70d",
+      "location": [
+        0,
+        4
+      ],
+      "name": "Slayer helmet",
+      "overrideName": "Complete 50 Slayer Tasks",
+      "pixelUrl": "https://runescape.wiki/images/Slayer_helmet.png?f9b1e"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Robin_Hood_hat_detail.png/100px-Robin_Hood_hat_detail.png?2fcd3",
+      "location": [
+        1,
+        0
+      ],
+      "name": "Robin Hood hat",
+      "pixelUrl": "https://runescape.wiki/images/Robin_Hood_hat.png?be08e"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Ice_dye_detail.png/100px-Ice_dye_detail.png?b952e",
+      "location": [
+        1,
+        1
+      ],
+      "name": "Ice dye",
+      "overrideName": "Ice, Blood or 3rd age dye",
+      "pixelUrl": "https://runescape.wiki/images/Ice_dye.png?0b971"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Stylish_glasses_%28blue%29_detail.png/100px-Stylish_glasses_%28blue%29_detail.png?5574f",
+      "location": [
+        1,
+        2
+      ],
+      "name": "Stylish glasses (blue)",
+      "overrideName": "5 x Different Glasses (Masters)",
+      "pixelUrl": "https://runescape.wiki/images/Stylish_glasses_%28blue%29.png?72611"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Igneous_stone_detail.png/100px-Igneous_stone_detail.png?83826",
+      "location": [
+        1,
+        3
+      ],
+      "name": "Igneous stone",
+      "overrideName": "Flawless Zuk run",
+      "pixelUrl": "https://runescape.wiki/images/Igneous_stone.png?f1c55"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Fury_ornament_kit_detail.png/100px-Fury_ornament_kit_detail.png?3cfe6",
+      "location": [
+        1,
+        4
+      ],
+      "name": "Fury ornament kit",
+      "pixelUrl": "https://runescape.wiki/images/Fury_ornament_kit.png?ea6e7"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Amulet_of_glory_%28t%29_detail.png/120px-Amulet_of_glory_%28t%29_detail.png?a0575",
+      "location": [
+        2,
+        0
+      ],
+      "name": "Amulet of glory (t)",
+      "pixelUrl": "https://runescape.wiki/images/Amulet_of_glory_%28t%29.png?910d3"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Orlando_Smith%27s_hat_detail.png/100px-Orlando_Smith%27s_hat_detail.png?d7286",
+      "location": [
+        2,
+        1
+      ],
+      "name": "Orlando Smith's hat",
+      "overrideName": "OSH or 5 x Elemental Battlestaffs",
+      "pixelUrl": "https://runescape.wiki/images/Orlando_Smith%27s_hat.png?38ffa"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Green_afro_detail.png/100px-Green_afro_detail.png?6217a",
+      "location": [
+        2,
+        2
+      ],
+      "name": "Green afro",
+      "overrideName": "Free space",
+      "pixelUrl": "https://runescape.wiki/images/Green_afro.png?8408d"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Saradomin_bow_detail.png/100px-Saradomin_bow_detail.png?958bb",
+      "location": [
+        2,
+        3
+      ],
+      "name": "Saradomin bow",
+      "overrideName": "God bow set",
+      "pixelUrl": "https://runescape.wiki/images/Saradomin_bow.png?d63a7"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Reaper_ornament_kit_detail.png/100px-Reaper_ornament_kit_detail.png?6c711",
+      "location": [
+        2,
+        4
+      ],
+      "name": "Reaper ornament kit",
+      "pixelUrl": "https://runescape.wiki/images/Reaper_ornament_kit.png?d8888"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Dragon_cane_detail.png/100px-Dragon_cane_detail.png?192f3",
+      "location": [
+        3,
+        0
+      ],
+      "name": "Dragon cane",
+      "pixelUrl": "https://runescape.wiki/images/Dragon_cane.png?78843"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Armadyl_godsword_detail.png/150px-Armadyl_godsword_detail.png?5f244",
+      "location": [
+        3,
+        1
+      ],
+      "name": "Armadyl godsword",
+      "overrideName": "Complete a godsword",
+      "pixelUrl": "https://runescape.wiki/images/Armadyl_godsword.png?1a6a8"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Rune_dragon_mask_detail.png/100px-Rune_dragon_mask_detail.png?47e5b",
+      "location": [
+        3,
+        2
+      ],
+      "name": "Rune dragon mask",
+      "overrideName": "5 unique dragon masks",
+      "pixelUrl": "https://runescape.wiki/images/Rune_dragon_mask.png?def7e"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Barrows_dye_detail.png/100px-Barrows_dye_detail.png?6dadc",
+      "location": [
+        3,
+        3
+      ],
+      "name": "Barrows dye",
+      "overrideName": "Barrows or Shadow dye",
+      "pixelUrl": "https://runescape.wiki/images/Barrows_dye.png?deb94"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Amulet_of_fury_%28t%29_detail.png/60px-Amulet_of_fury_%28t%29_detail.png?35bcb",
+      "location": [
+        3,
+        4
+      ],
+      "name": "Amulet of fury (t)",
+      "pixelUrl": "https://runescape.wiki/images/Amulet_of_fury_%28t%29.png?6227c"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Cup_of_tea_detail.png/100px-Cup_of_tea_detail.png?56ee9",
+      "location": [
+        4,
+        0
+      ],
+      "name": "Cup of tea",
+      "overrideName": "3 Uniques @ New Boss",
+      "pixelUrl": "https://runescape.wiki/images/Cup_of_tea.png?8032b"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/Re-roll_token_%28hard%29_detail.png?e419c",
+      "location": [
+        4,
+        1
+      ],
+      "name": "Re-roll token (hard)",
+      "overrideName": "5 x re-roll tokens",
+      "pixelUrl": "https://runescape.wiki/images/Re-roll_token_%28hard%29.png?bb8a3"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Explosive_barrel_detail.png/100px-Explosive_barrel_detail.png?b63b6",
+      "location": [
+        4,
+        2
+      ],
+      "name": "Explosive barrel",
+      "overrideName": "Cape slot broadcast",
+      "pixelUrl": "https://runescape.wiki/images/Explosive_barrel.png?ba146"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Pack_yak_mask_detail.png/100px-Pack_yak_mask_detail.png?83e25",
+      "location": [
+        4,
+        3
+      ],
+      "name": "Pack yak mask",
+      "pixelUrl": "https://runescape.wiki/images/Pack_yak_mask.png?4ed5f"
+    },
+    {
+      "imageUrl": "https://runescape.wiki/images/thumb/Rune_kiteshield_%28Gilded%29_detail.png/150px-Rune_kiteshield_%28Gilded%29_detail.png?0775c",
+      "location": [
+        4,
+        4
+      ],
+      "name": "Rune kiteshield (Gilded)",
+      "overrideName": "Guilded piece",
+      "pixelUrl": "https://runescape.wiki/images/Rune_kiteshield_%28Gilded%29.png?98a7d"
+    }
+  ],
+  "bingoCardBot": {
+    "3rd Age Anything": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Third_age_full_helmet_detail.png/100px-Third_age_full_helmet_detail.png?b90e7",
+      "name": "Third age full helmet",
+      "pixelUrl": "https://runescape.wiki/images/Third_age_full_helmet.png?57a9e",
+      "overrideName": "3rd Age Anything",
+      "location": [
+        0,
+        0
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "5 x Animal Staffs": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Penguin_staff_detail.png/100px-Penguin_staff_detail.png?f653a",
+      "name": "Penguin staff",
+      "pixelUrl": "https://runescape.wiki/images/Penguin_staff.png?e280a",
+      "overrideName": "5 x Animal Staffs",
+      "location": [
+        0,
+        1
+      ],
+      "desc":"Staff #",
+      "type": "number",
+      "goal": 5
+    },
+    "Top hat": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Top_hat_detail.png/100px-Top_hat_detail.png?58c28",
+      "name": "Top hat",
+      "pixelUrl": "https://runescape.wiki/images/Top_hat.png?c1ebf",
+      "location": [
+        0,
+        2
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Heavy chest": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Heavy_chest_detail.png/100px-Heavy_chest_detail.png?80d3e",
+      "name": "Heavy chest",
+      "pixelUrl": "https://runescape.wiki/images/Heavy_chest.png?9a1e6",
+      "location": [
+        0,
+        3
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Complete 50 Slayer Tasks": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Slayer_helmet_detail.png/63px-Slayer_helmet_detail.png?db70d",
+      "name": "Slayer helmet",
+      "pixelUrl": "https://runescape.wiki/images/Slayer_helmet.png?f9b1e",
+      "overrideName": "Complete 50 Slayer Tasks",
+      "location": [
+        0,
+        4
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Robin Hood hat": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Robin_Hood_hat_detail.png/100px-Robin_Hood_hat_detail.png?2fcd3",
+      "name": "Robin Hood hat",
+      "pixelUrl": "https://runescape.wiki/images/Robin_Hood_hat.png?be08e",
+      "location": [
+        1,
+        0
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Ice, Blood or 3rd age dye": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Ice_dye_detail.png/100px-Ice_dye_detail.png?b952e",
+      "name": "Ice dye",
+      "pixelUrl": "https://runescape.wiki/images/Ice_dye.png?0b971",
+      "overrideName": "Ice, Blood or 3rd age dye",
+      "location": [
+        1,
+        1
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "5 x Different Glasses (Masters)": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Stylish_glasses_%28blue%29_detail.png/100px-Stylish_glasses_%28blue%29_detail.png?5574f",
+      "name": "Stylish glasses (blue)",
+      "pixelUrl": "https://runescape.wiki/images/Stylish_glasses_%28blue%29.png?72611",
+      "overrideName": "5 x Different Glasses (Masters)",
+      "location": [
+        1,
+        2
+      ],
+      "desc":"Glasses #",
+      "type": "number",
+      "goal": 5
+    },
+    "Flawless Zuk run": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Igneous_stone_detail.png/100px-Igneous_stone_detail.png?83826",
+      "name": "Igneous stone",
+      "pixelUrl": "https://runescape.wiki/images/Igneous_stone.png?f1c55",
+      "overrideName": "Flawless Zuk run",
+      "location": [
+        1,
+        3
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Fury ornament kit": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Fury_ornament_kit_detail.png/100px-Fury_ornament_kit_detail.png?3cfe6",
+      "name": "Fury ornament kit",
+      "pixelUrl": "https://runescape.wiki/images/Fury_ornament_kit.png?ea6e7",
+      "location": [
+        1,
+        4
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Amulet of glory (t)": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Amulet_of_glory_%28t%29_detail.png/120px-Amulet_of_glory_%28t%29_detail.png?a0575",
+      "name": "Amulet of glory (t)",
+      "pixelUrl": "https://runescape.wiki/images/Amulet_of_glory_%28t%29.png?910d3",
+      "location": [
+        2,
+        0
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "OSH or 3 x Elemental Battlestaffs": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Orlando_Smith%27s_hat_detail.png/100px-Orlando_Smith%27s_hat_detail.png?d7286",
+      "name": "Orlando Smith's hat",
+      "pixelUrl": "https://runescape.wiki/images/Orlando_Smith%27s_hat.png?38ffa",
+      "overrideName": "OSH or 3 x Elemental Battlestaffs",
+      "location": [
+        2,
+        1
+      ],
+      "desc":"Staff #",
+      "type": "number",
+      "goal": 3
+    },
+    "Free space": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Green_afro_detail.png/100px-Green_afro_detail.png?6217a",
+      "name": "Green afro",
+      "pixelUrl": "https://runescape.wiki/images/Green_afro.png?8408d",
+      "overrideName": "Free space",
+      "location": [
+        2,
+        2
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Any God Bow": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Saradomin_bow_detail.png/100px-Saradomin_bow_detail.png?958bb",
+      "name": "Saradomin bow",
+      "pixelUrl": "https://runescape.wiki/images/Saradomin_bow.png?d63a7",
+      "overrideName": "Any God Bow",
+      "location": [
+        2,
+        3
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Reaper ornament kit": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Reaper_ornament_kit_detail.png/100px-Reaper_ornament_kit_detail.png?6c711",
+      "name": "Reaper ornament kit",
+      "pixelUrl": "https://runescape.wiki/images/Reaper_ornament_kit.png?d8888",
+      "location": [
+        2,
+        4
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Dragon cane": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Dragon_cane_detail.png/100px-Dragon_cane_detail.png?192f3",
+      "name": "Dragon cane",
+      "pixelUrl": "https://runescape.wiki/images/Dragon_cane.png?78843",
+      "location": [
+        3,
+        0
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Complete a godsword": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Armadyl_godsword_detail.png/150px-Armadyl_godsword_detail.png?5f244",
+      "name": "Armadyl godsword",
+      "pixelUrl": "https://runescape.wiki/images/Armadyl_godsword.png?1a6a8",
+      "overrideName": "Complete a godsword",
+      "location": [
+        3,
+        1
+      ],
+      "type": "specific",
+      "goal": [
+        {
+          "name": "Hilt",
+          "goal": 1
+        },
+        {
+          "name": "Shard 1",
+          "goal": 1
+        },
+        {
+          "name": "Shard 2",
+          "goal": 1
+        },
+        {
+          "name": "Shard 3",
+          "goal": 1
+        }
+      ]
+    },
+    "5 unique dragon masks": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Rune_dragon_mask_detail.png/100px-Rune_dragon_mask_detail.png?47e5b",
+      "name": "Rune dragon mask",
+      "pixelUrl": "https://runescape.wiki/images/Rune_dragon_mask.png?def7e",
+      "overrideName": "5 unique dragon masks",
+      "location": [
+        3,
+        2
+      ],
+      "desc":"Mask #",
+      "type": "number",
+      "goal": 5
+    },
+    "Barrows or Shadow dye": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Barrows_dye_detail.png/100px-Barrows_dye_detail.png?6dadc",
+      "name": "Barrows dye",
+      "pixelUrl": "https://runescape.wiki/images/Barrows_dye.png?deb94",
+      "overrideName": "Barrows or Shadow dye",
+      "location": [
+        3,
+        3
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Amulet of fury (t)": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Amulet_of_fury_%28t%29_detail.png/60px-Amulet_of_fury_%28t%29_detail.png?35bcb",
+      "name": "Amulet of fury (t)",
+      "pixelUrl": "https://runescape.wiki/images/Amulet_of_fury_%28t%29.png?6227c",
+      "location": [
+        3,
+        4
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "3 Uniques @ New Boss": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Cup_of_tea_detail.png/100px-Cup_of_tea_detail.png?56ee9",
+      "name": "Cup of tea",
+      "pixelUrl": "https://runescape.wiki/images/Cup_of_tea.png?8032b",
+      "overrideName": "3 Uniques @ New Boss",
+      "location": [
+        4,
+        0
+      ],
+      "desc":"Uniques #",
+      "type": "number",
+      "goal": 3
+    },
+    "5 x re-roll tokens": {
+      "imageUrl": "https://runescape.wiki/images/Re-roll_token_%28hard%29_detail.png?e419c",
+      "name": "Re-roll token (hard)",
+      "pixelUrl": "https://runescape.wiki/images/Re-roll_token_%28hard%29.png?bb8a3",
+      "overrideName": "5 x re-roll tokens",
+      "location": [
+        4,
+        1
+      ],
+      "desc":"Reroll #",
+      "type": "number",
+      "goal": 3
+    },
+    "Cape slot broadcast": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Explosive_barrel_detail.png/100px-Explosive_barrel_detail.png?b63b6",
+      "name": "Explosive barrel",
+      "pixelUrl": "https://runescape.wiki/images/Explosive_barrel.png?ba146",
+      "overrideName": "Cape slot broadcast",
+      "location": [
+        4,
+        2
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Pack yak mask": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Pack_yak_mask_detail.png/100px-Pack_yak_mask_detail.png?83e25",
+      "name": "Pack yak mask",
+      "pixelUrl": "https://runescape.wiki/images/Pack_yak_mask.png?4ed5f",
+      "location": [
+        4,
+        3
+      ],
+      "type": "single",
+      "goal": 1
+    },
+    "Guilded piece": {
+      "imageUrl": "https://runescape.wiki/images/thumb/Rune_kiteshield_%28Gilded%29_detail.png/150px-Rune_kiteshield_%28Gilded%29_detail.png?0775c",
+      "name": "Rune kiteshield (Gilded)",
+      "pixelUrl": "https://runescape.wiki/images/Rune_kiteshield_%28Gilded%29.png?98a7d",
+      "overrideName": "Guilded piece",
+      "location": [
+        4,
+        4
+      ],
+      "type": "single",
+      "goal": 1
+    }
+  },
+  "bingoBoard": [
+    [
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Third_age_full_helmet_detail.png/100px-Third_age_full_helmet_detail.png?b90e7",
+        "name": "Third age full helmet",
+        "pixelUrl": "https://runescape.wiki/images/Third_age_full_helmet.png?57a9e",
+        "overrideName": "3rd Age Anything",
+        "location": [
+          0,
+          0
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Penguin_staff_detail.png/100px-Penguin_staff_detail.png?f653a",
+        "name": "Penguin staff",
+        "pixelUrl": "https://runescape.wiki/images/Penguin_staff.png?e280a",
+        "overrideName": "5 x Animal Staffs",
+        "location": [
+          0,
+          1
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Top_hat_detail.png/100px-Top_hat_detail.png?58c28",
+        "name": "Top hat",
+        "pixelUrl": "https://runescape.wiki/images/Top_hat.png?c1ebf",
+        "location": [
+          0,
+          2
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Heavy_chest_detail.png/100px-Heavy_chest_detail.png?80d3e",
+        "name": "Heavy chest",
+        "pixelUrl": "https://runescape.wiki/images/Heavy_chest.png?9a1e6",
+        "location": [
+          0,
+          3
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Slayer_helmet_detail.png/63px-Slayer_helmet_detail.png?db70d",
+        "name": "Slayer helmet",
+        "pixelUrl": "https://runescape.wiki/images/Slayer_helmet.png?f9b1e",
+        "overrideName": "Complete 50 Slayer Tasks",
+        "location": [
+          0,
+          4
+        ]
+      }
+    ],
+    [
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Robin_Hood_hat_detail.png/100px-Robin_Hood_hat_detail.png?2fcd3",
+        "name": "Robin Hood hat",
+        "pixelUrl": "https://runescape.wiki/images/Robin_Hood_hat.png?be08e",
+        "location": [
+          1,
+          0
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Ice_dye_detail.png/100px-Ice_dye_detail.png?b952e",
+        "name": "Ice dye",
+        "pixelUrl": "https://runescape.wiki/images/Ice_dye.png?0b971",
+        "overrideName": "Ice, Blood or 3rd age dye",
+        "location": [
+          1,
+          1
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Stylish_glasses_%28blue%29_detail.png/100px-Stylish_glasses_%28blue%29_detail.png?5574f",
+        "name": "Stylish glasses (blue)",
+        "pixelUrl": "https://runescape.wiki/images/Stylish_glasses_%28blue%29.png?72611",
+        "overrideName": "5 x Different Glasses (Masters)",
+        "location": [
+          1,
+          2
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Igneous_stone_detail.png/100px-Igneous_stone_detail.png?83826",
+        "name": "Igneous stone",
+        "pixelUrl": "https://runescape.wiki/images/Igneous_stone.png?f1c55",
+        "overrideName": "Flawless Zuk run",
+        "location": [
+          1,
+          3
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Fury_ornament_kit_detail.png/100px-Fury_ornament_kit_detail.png?3cfe6",
+        "name": "Fury ornament kit",
+        "pixelUrl": "https://runescape.wiki/images/Fury_ornament_kit.png?ea6e7",
+        "location": [
+          1,
+          4
+        ]
+      }
+    ],
+    [
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Amulet_of_glory_%28t%29_detail.png/120px-Amulet_of_glory_%28t%29_detail.png?a0575",
+        "name": "Amulet of glory (t)",
+        "pixelUrl": "https://runescape.wiki/images/Amulet_of_glory_%28t%29.png?910d3",
+        "location": [
+          2,
+          0
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Orlando_Smith%27s_hat_detail.png/100px-Orlando_Smith%27s_hat_detail.png?d7286",
+        "name": "Orlando Smith's hat",
+        "pixelUrl": "https://runescape.wiki/images/Orlando_Smith%27s_hat.png?38ffa",
+        "overrideName": "OSH or 3 x Elemental Battlestaffs",
+        "location": [
+          2,
+          1
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Green_afro_detail.png/100px-Green_afro_detail.png?6217a",
+        "name": "Green afro",
+        "pixelUrl": "https://runescape.wiki/images/Green_afro.png?8408d",
+        "overrideName": "Free space",
+        "location": [
+          2,
+          2
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Saradomin_bow_detail.png/100px-Saradomin_bow_detail.png?958bb",
+        "name": "Saradomin bow",
+        "pixelUrl": "https://runescape.wiki/images/Saradomin_bow.png?d63a7",
+        "overrideName": "Any God Bow",
+        "location": [
+          2,
+          3
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Reaper_ornament_kit_detail.png/100px-Reaper_ornament_kit_detail.png?6c711",
+        "name": "Reaper ornament kit",
+        "pixelUrl": "https://runescape.wiki/images/Reaper_ornament_kit.png?d8888",
+        "location": [
+          2,
+          4
+        ]
+      }
+    ],
+    [
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Dragon_cane_detail.png/100px-Dragon_cane_detail.png?192f3",
+        "name": "Dragon cane",
+        "pixelUrl": "https://runescape.wiki/images/Dragon_cane.png?78843",
+        "location": [
+          3,
+          0
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Armadyl_godsword_detail.png/150px-Armadyl_godsword_detail.png?5f244",
+        "name": "Armadyl godsword",
+        "pixelUrl": "https://runescape.wiki/images/Armadyl_godsword.png?1a6a8",
+        "overrideName": "Complete a godsword",
+        "location": [
+          3,
+          1
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Rune_dragon_mask_detail.png/100px-Rune_dragon_mask_detail.png?47e5b",
+        "name": "Rune dragon mask",
+        "pixelUrl": "https://runescape.wiki/images/Rune_dragon_mask.png?def7e",
+        "overrideName": "5 unique dragon masks",
+        "location": [
+          3,
+          2
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Barrows_dye_detail.png/100px-Barrows_dye_detail.png?6dadc",
+        "name": "Barrows dye",
+        "pixelUrl": "https://runescape.wiki/images/Barrows_dye.png?deb94",
+        "overrideName": "Barrows or Shadow dye",
+        "location": [
+          3,
+          3
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Amulet_of_fury_%28t%29_detail.png/60px-Amulet_of_fury_%28t%29_detail.png?35bcb",
+        "name": "Amulet of fury (t)",
+        "pixelUrl": "https://runescape.wiki/images/Amulet_of_fury_%28t%29.png?6227c",
+        "location": [
+          3,
+          4
+        ]
+      }
+    ],
+    [
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Cup_of_tea_detail.png/100px-Cup_of_tea_detail.png?56ee9",
+        "name": "Cup of tea",
+        "pixelUrl": "https://runescape.wiki/images/Cup_of_tea.png?8032b",
+        "overrideName": "3 Uniques @ New Boss",
+        "location": [
+          4,
+          0
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/Re-roll_token_%28hard%29_detail.png?e419c",
+        "name": "Re-roll token (hard)",
+        "pixelUrl": "https://runescape.wiki/images/Re-roll_token_%28hard%29.png?bb8a3",
+        "overrideName": "5 x re-roll tokens",
+        "location": [
+          4,
+          1
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Explosive_barrel_detail.png/100px-Explosive_barrel_detail.png?b63b6",
+        "name": "Explosive barrel",
+        "pixelUrl": "https://runescape.wiki/images/Explosive_barrel.png?ba146",
+        "overrideName": "Cape slot broadcast",
+        "location": [
+          4,
+          2
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Pack_yak_mask_detail.png/100px-Pack_yak_mask_detail.png?83e25",
+        "name": "Pack yak mask",
+        "pixelUrl": "https://runescape.wiki/images/Pack_yak_mask.png?4ed5f",
+        "location": [
+          4,
+          3
+        ]
+      },
+      {
+        "imageUrl": "https://runescape.wiki/images/thumb/Rune_kiteshield_%28Gilded%29_detail.png/150px-Rune_kiteshield_%28Gilded%29_detail.png?0775c",
+        "name": "Rune kiteshield (Gilded)",
+        "pixelUrl": "https://runescape.wiki/images/Rune_kiteshield_%28Gilded%29.png?98a7d",
+        "overrideName": "Guilded piece",
+        "location": [
+          4,
+          4
+        ]
+      }
+    ]
+  ]
+}

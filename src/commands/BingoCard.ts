@@ -1,15 +1,17 @@
 /* eslint-disable @typescript-eslint/no-shadow */
 import { CommandInteraction, EmbedBuilder, StringSelectMenuBuilder, MessageActionRowComponentBuilder, 
   ActionRowBuilder, Message, TextChannel, ModalBuilder, TextInputStyle, TextInputBuilder, ModalSubmitInteraction, 
-  StringSelectMenuInteraction } from 'discord.js';
-import { Discord, SelectMenuComponent, Slash, ModalComponent, SlashGroup  } from 'discordx';
+  StringSelectMenuInteraction, GuildMemberRoleManager, Role, ButtonBuilder, ButtonInteraction, SelectMenuComponentOptionData,
+} from 'discord.js';
+import { Discord, SelectMenuComponent, Slash, ModalComponent, SlashGroup, ButtonComponent  } from 'discordx';
 import { Readable } from 'stream';
-import bingoCard from '../constants/card1.json' assert {type: 'json'};
+import { PVMCard, CluesCard, SkillingCard } from '../constants/cardimport.js';
+import { getCard, insertDrop } from '../backend/models/Bingo.js';
 
 const bingoCards = [
-  { label: 'Card 1', value: 'card1' },
-  { label: 'Card 2', value: 'card2' },
-  { label: 'Card 3', value: 'card3' },
+  { label: 'Skilling', value: 'Skilling' },
+  { label: 'Clues', value: 'Clues' },
+  { label: 'PVM', value: 'PVM' },
 ];
 
 @Discord()
@@ -62,47 +64,139 @@ export abstract class BingoClass {
     return;
   }
 
-  @SelectMenuComponent({ id: 'dropselector' })
-  async selectDrop(interaction: CommandInteraction) : Promise<unknown> {
+  @ButtonComponent({ id:/(drop-(approve|deny)*)\S+/ })
+  async dropButtons(interaction: ButtonInteraction) {
+    await interaction.deferUpdate();
+    let currentRoles = (interaction.member!.roles as GuildMemberRoleManager).cache.filter((roleFilter: Role) => (roleFilter.name.includes('Council')));
+    if (currentRoles.size === 0) {
+      return interaction.followUp({ ephemeral: true, content:'You need to be an admin to approve drops' });
+    }
+    const parameters = interaction.customId.split('-');
+    parameters.shift(); // Remove the first element
+    // Parameters are now [approve/deny, card, location, droplocation, teamId]
+    const syncedCard = await getCard(parameters[1], parameters[4]);
+    const [x, y] = parameters[2].split('.').map((val) => parseInt(val));
+    const itemLog = syncedCard?.card[x][y].value!;
+    if (parameters[0] === 'approve') {
+      if (itemLog[parseInt(parameters[3])] === 1) {
+        return interaction.followUp({ ephemeral: true, content:'This drop has already been approved' });
+      }
+      insertDrop(parameters[1], parameters[4], [x, y], parseInt(parameters[3]), 1);
+      const embedVerify = interaction.message.embeds[0];
+      const newEmbed = EmbedBuilder.from(embedVerify).setDescription(`✅ Verified by <@${interaction.user.id}> ✅`);
+      return interaction.editReply({ embeds: [newEmbed] });
+    } else if (parameters[0] === 'deny') {
+      const embedVerify = interaction.message.embeds[0];
+      const newEmbed = EmbedBuilder.from(embedVerify).setDescription(`❌ Denied by <@${interaction.user.id}> ❌`);
+      if (itemLog[parseInt(parameters[3])] === 1) {
+        insertDrop(parameters[1], parameters[4], [x, y], parseInt(parameters[3]), 0);
+      }
+      return interaction.editReply({ embeds: [newEmbed] });
+    }
+  }
+
+  @SelectMenuComponent({ id: 'cardselector' })
+  async selectDrop(interaction: StringSelectMenuInteraction) : Promise<unknown> {
     await interaction.deferReply({ ephemeral: true });
-
-    // const cardId = interaction.values?.[0] as string;
-    const drops = Object.keys(bingoCard.bingoCardBot).map((key) => {return { label: key, value: key };});
-
+    let drops : SelectMenuComponentOptionData[] = [];
+    if (interaction.values?.[0] === 'Skilling') {
+      drops = Object.keys(SkillingCard.bingoCardBot).map((key) => {return { label: key, value: key };});
+    } else if (interaction.values?.[0] === 'Clues') {
+      drops = Object.keys(CluesCard.bingoCardBot).map((key) => {return { label: key, value: key };});
+    } else if (interaction.values?.[0] === 'PVM') { 
+      drops = Object.keys(PVMCard.bingoCardBot).map((key) => {return { label: key, value: key };});
+    } else {
+      return interaction.followUp({ ephemeral: true, content:'You need to select a valid bingo card' });
+    } 
+    
     const menu = new StringSelectMenuBuilder()
       .addOptions(drops)
-      .setCustomId('dropsubmission');
-      
+      .setCustomId(`dropsubmission-${interaction.values?.[0]}`);
     const buttonRow = 
       new ActionRowBuilder<MessageActionRowComponentBuilder>().addComponents(menu);
     
     interaction.editReply({ components: [buttonRow], content: 'Select your bingo card' });
     return;
-
   }
 
-  @SelectMenuComponent({ id: 'dropsubmission' })
+  @SelectMenuComponent({ id:/(dropsubmission-*)\w+/ })
   async submitDrop(interaction: StringSelectMenuInteraction) : Promise<unknown> {
     await interaction.deferReply({ ephemeral: true });
-
-    const dropId = interaction.values?.[0];
-    if (!bingoCard.bingoCardBot[dropId!]) {
-      
+    let currentCard;
+    if (interaction.customId.includes('Skilling')) {
+      currentCard = SkillingCard;
+    } else if (interaction.customId.includes('Clues')) {
+      currentCard = CluesCard;
+    } else if (interaction.customId.includes('PVM')) {
+      currentCard = PVMCard;
     } else {
-      if (bingoCard.bingoCardBot[dropId!].type && bingoCard.bingoCardBot[dropId!].type === 'specific') {
-        const menu = new StringSelectMenuBuilder()
-          .addOptions(bingoCard.bingoCardBot[dropId!].goal.map((key) => {return { label: key.name, value: key.name };}))
-          .setCustomId('dropsubmission');
-        
-        const buttonRow = 
-        new ActionRowBuilder<MessageActionRowComponentBuilder>().addComponents(menu);
+      return interaction.followUp({ ephemeral: true, content:'You need to select a valid bingo card' });
+    }
+    const parameters = interaction.customId.split('-');
+    parameters.shift(); // Remove the first element
+    const dropId = interaction.values?.[0];
+    if (currentCard.bingoCardBot[dropId!] && currentCard.bingoCardBot[dropId!].type && currentCard.bingoCardBot[dropId!].type === 'specific') {
+      const buildCustomId = parameters.join('-');
+      const menu = new StringSelectMenuBuilder()
+        .addOptions(currentCard.bingoCardBot[dropId!].goal.map((key) => {return { label: key.name, value: key.name };}))
+        .setCustomId(`dropsubmission-${buildCustomId}-${dropId}`);
       
-        interaction.editReply({ components: [buttonRow], content: 'Select your specific drop' });
-        return;
-      }
+      const buttonRow = 
+      new ActionRowBuilder<MessageActionRowComponentBuilder>().addComponents(menu);
+      interaction.editReply({ components: [buttonRow], content: 'Select your specific drop' });
+      return;
+    } else if (currentCard.bingoCardBot[dropId!] && currentCard.bingoCardBot[dropId!].type && currentCard.bingoCardBot[dropId!].type === 'number') {
+      const buildCustomId = parameters.join('-');
+      const goalMap = Array(currentCard.bingoCardBot[dropId!].goal).fill(null);
+      const menu = new StringSelectMenuBuilder()
+        .addOptions(goalMap.map((key, index) => {return { label: `${currentCard.bingoCardBot[dropId!].desc}${index + 1}`, value: `${index}` };}))
+        .setCustomId(`dropsubmission-${buildCustomId}-${dropId}`);
+      
+      const buttonRow = 
+      new ActionRowBuilder<MessageActionRowComponentBuilder>().addComponents(menu);
+      interaction.editReply({ components: [buttonRow], content: 'Select your specific drop' });
+      return;
     }
 
-    interaction.followUp({ ephemeral: true, content:`Please upload a drop for: ${dropId}` });
+    let locationBingo = [];
+    if (parameters.length >= 2) {
+      locationBingo = currentCard.bingoCardBot[parameters[1]].location;
+    } else {
+      locationBingo = currentCard.bingoCardBot[dropId].location;
+    }
+
+    let currentRoles = (interaction.member!.roles as GuildMemberRoleManager).cache.filter((roleFilter: Role) => (roleFilter.name.includes('Team')));
+    if (currentRoles.size === 0) {
+      return interaction.followUp({ ephemeral: true, content:'You need to sign up for bingo first, and have a team. If you have a team please ping <@409181714821283840>' });
+    }
+
+    const syncedCard = await getCard(parameters[0], currentRoles.first()?.id!);
+    const itemLog = syncedCard?.card[locationBingo[0]][locationBingo[1]].value!;
+    let dropLocation = 0;
+    if (parameters.length >= 2) {
+      if (currentCard.bingoCardBot[parameters[1]].type === 'specific') {
+        dropLocation = currentCard.bingoCardBot[parameters[1]].goal.findIndex((goal) => goal.name === dropId);
+      } else {
+        dropLocation = parseInt(dropId!);
+      }
+      if (itemLog[dropLocation] === 1) {
+        return interaction.followUp({ ephemeral: true, content:'You have already submitted this drop' });
+      }
+    } else {
+      if (currentCard.bingoCardBot[dropId!].type === 'single') {
+        if (itemLog[dropLocation] === 1) {
+          return interaction.followUp({ ephemeral: true, content:'You have already submitted this drop' });
+        }
+      }
+    }
+    let dropName = '';
+    if (parameters.length >= 2 && currentCard.bingoCardBot[parameters[1]].type === 'number') {
+      dropName = `${currentCard.bingoCardBot[parameters[1]].desc}${parseInt(dropId) + 1}`;
+      interaction.followUp({ ephemeral: true, content:`Please upload a drop for: ${dropName}` });
+    } else {
+      dropName = dropId!;
+      interaction.followUp({ ephemeral: true, content:`Please upload a drop for: ${dropName}` });
+    } 
     interaction.channel?.awaitMessages({ max: 1, time: 60000, errors: ['time'], filter:(response:Message)=>{ return response.author.id === interaction.user.id && response.attachments.size > 0;} }).then(collected => {
       let channelId = '';
       if (interaction.guildId === '932144876659822623') {
@@ -111,19 +205,36 @@ export abstract class BingoClass {
         channelId = '1274120845572309093';
       }
       let bingoLog = interaction.client.channels.cache.get(channelId) as TextChannel;
+
+      const buildDropString = parameters.join(' > ');
       
       fetch(collected.first()?.attachments.first()!.proxyURL!).then(response => {return response.body;}).then(async body => {
         const stream = Readable.from(body!);
         const logger = await bingoLog.send({ files: [{ attachment: stream, name: collected.first()?.attachments.first()!.name }] });
         const submitted = new EmbedBuilder()
           .setTitle('**Submitted Drop**') 
-          .addFields([{ name:'__Drop submitted__', value:`${dropId}` }])
+          .addFields([
+            { name:'__Drop submitted__', value:`${buildDropString} > ${dropName}` },
+            { name:'__Submitted by__', value:`<@${interaction.user.id}>`, inline: true },
+            { name:'__Team__', value:`<@&${currentRoles.first()?.id}>`, inline: true }])
           .setImage(logger.attachments.first()!.proxyURL);
 
         setTimeout((collected)=>{collected.first()?.delete();}, 1000, collected);
-        return interaction.followUp({ embeds:[submitted] });
+        const buildCustomId = `${parameters[0]}-${locationBingo.join('.')}-${dropLocation}`;
+        const adminButtons = new ActionRowBuilder<MessageActionRowComponentBuilder>().addComponents(
+          new ButtonBuilder()
+            .setCustomId(`drop-approve-${buildCustomId}-${currentRoles.first()?.id}`)
+            .setLabel('Validate')
+            .setStyle(3),
+          new ButtonBuilder()
+            .setCustomId(`drop-deny-${buildCustomId}-${currentRoles.first()?.id}`)
+            .setLabel('Deny')
+            .setStyle(4),
+        );
+        return interaction.followUp({ embeds:[submitted], components: [adminButtons] });
       });
-    }).catch(() => {
+    }).catch((e) => {
+      console.log(e);
       return interaction.followUp('You did not submit a bingo photo in time');
     });
     return interaction;
@@ -131,7 +242,7 @@ export abstract class BingoClass {
   
   @Slash( { name: 'submit', description: 'Submit your bingo drop' })
   @SlashGroup('bingo')
-  async submitClue(interaction: CommandInteraction): Promise<unknown> {
+  async submitBingo(interaction: CommandInteraction): Promise<unknown> {
     if (interaction.guildId === '198166521573408768') {
       return interaction.reply({ content: 'This command is disabled in this server', ephemeral: true });
     }
@@ -139,7 +250,7 @@ export abstract class BingoClass {
 
     const menu = new StringSelectMenuBuilder()
       .addOptions(bingoCards)
-      .setCustomId('dropselector');
+      .setCustomId('cardselector');
       
     const buttonRow = 
       new ActionRowBuilder<MessageActionRowComponentBuilder>().addComponents(menu);
@@ -150,7 +261,7 @@ export abstract class BingoClass {
 
   @Slash( { name: 'signup', description: 'Sign up for bingo' })
   @SlashGroup('bingo')
-  signupClue(
+  signupBingo(
     interaction: CommandInteraction): void {
 
     if (interaction.guildId === '198166521573408768' && interaction.channelId !== '1275969956663787652') {

@@ -280,8 +280,9 @@
         2,
         3
       ],
+      "desc":"Staff #",
       "type": "number",
-      "goal": 1000
+      "goal": 3
     },
     "Complete any puzzle box": {
       "imageUrl": "https://runescape.wiki/images/thumb/Puzzle_box_%28bridge%29_detail.png/60px-Puzzle_box_%28bridge%29_detail.png?4cb8c",
