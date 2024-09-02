@@ -91,11 +91,11 @@ export abstract class ClueSlash {
       var img = new Image;
       let src = '';
       if (cardType === 'PVM') {
-        src = 'https://raw.githubusercontent.com/wizage/The_Enduring_Bot/static_images/PVM.png';
+        src = 'https://github.com/wizage/The_Enduring_Bot/blob/dockerize/static_images/PVM.png?raw=true';
       } else if (cardType === 'Clues') {
-        src = 'https://raw.githubusercontent.com/wizage/The_Enduring_Bot/static_images/Clues.png';
+        src = 'https://github.com/wizage/The_Enduring_Bot/blob/dockerize/static_images/Clues.png?raw=true';
       } else if (cardType === 'Skilling') {
-        src = 'https://raw.githubusercontent.com/wizage/The_Enduring_Bot/static_images/Skilling.png';
+        src = 'https://github.com/wizage/The_Enduring_Bot/blob/dockerize/static_images/Skilling.png?raw=true';
       }
       img.src = src;
       img.onload = () => {
@@ -163,7 +163,6 @@ export abstract class ClueSlash {
   ) {
     await interaction.deferReply();
     const roleId = teamrole.replace(/[<@&>]/g, '');
-    console.log(roleId, cardtype);
     if (cardtype !== 'PVM' && cardtype !== 'Clues' && cardtype !== 'Skilling') {
       interaction.followUp('Invalid card type');
       return;
