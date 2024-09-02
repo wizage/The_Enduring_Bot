@@ -12,4 +12,6 @@ FROM base as production
 
 ENV NODE_PATH=./build
 
+RUN ls -la
+
 RUN npm run build
