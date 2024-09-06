@@ -1,4 +1,4 @@
-import { ChannelType, CommandInteraction, PermissionFlagsBits, PermissionsBitField, Role } from 'discord.js';
+import { ChannelType, CommandInteraction, EmbedBuilder, PermissionFlagsBits, PermissionsBitField, Role } from 'discord.js';
 import { Discord, Slash, SlashOption, SlashGroup } from 'discordx';
 import { ApplicationCommandOptionType } from 'discord-api-types/v10';
 import { createCanvas, Image } from 'canvas';
@@ -198,7 +198,7 @@ export abstract class ClueSlash {
     members: string,
     interaction: CommandInteraction,
   ) {
-    interaction.deferReply();
+    interaction.deferReply({ ephemeral: true });
     const teamMembers = members.split(' ');
 
     let guild = await interaction.guild?.fetch();
@@ -232,8 +232,8 @@ export abstract class ClueSlash {
     }
 
 
-    await guild?.channels.create({
-      name: discordSafe + '-chat',
+    const welcomeChannel = await guild?.channels.create({
+      name: 'chat-' + discordSafe,
       type: ChannelType.GuildText,
       parent: parent,
       permissionOverwrites:
@@ -255,8 +255,8 @@ export abstract class ClueSlash {
       // your permission overwrites or other options here
     });
 
-    await guild?.channels.create({
-      name: discordSafe + '-submissions',
+    const submissionsChannel = await guild?.channels.create({
+      name: 'submissions-' + discordSafe,
       type: ChannelType.GuildText,
       parent: parent,
       permissionOverwrites:
@@ -278,8 +278,8 @@ export abstract class ClueSlash {
       // your permission overwrites or other options here
     });
 
-    await guild?.channels.create({
-      name: discordSafe + '-cards',
+    const cardsChannel = await guild?.channels.create({
+      name: 'cards-' + discordSafe,
       type: ChannelType.GuildText,
       parent: parent,
       permissionOverwrites:
@@ -301,6 +301,15 @@ export abstract class ClueSlash {
       ],
       // your permission overwrites or other options here
     });
+    const welcomeMessage = new EmbedBuilder()
+      .setTitle(`**Welcome ${teamname}**`)
+      .setDescription(`Hello ${members}! \nWelcome to the ${teamname} bingo team. Please use this channel to communicate with your team. ` +
+        `There are two other channels: \n\n⬥ <#${submissionsChannel?.id}> to submit your drops \n\n ⬥ <#${cardsChannel?.id}> for your current cards (will be updated daily) \n\n` +
+        'If you have any issues throughout the competition, please reach out to the <@409181714821283840>. \n\n **GLHF!**');
+
+    const message = await welcomeChannel!.send({ embeds: [welcomeMessage] });
+    await message.pin();
+    
 
     // Setup 3 cards: PVM, Clues, Skilling
     const pvmCard = this.convertCard(PVMCard, role!.id, 'PVM');
@@ -312,6 +321,6 @@ export abstract class ClueSlash {
     await setupTeam(skillingCard);
 
 
-    interaction.followUp(`You are setting up a new bingo team with the name ${teamname}`);
+    interaction.followUp( { content:`You are setting up a new bingo team with the name ${teamname}`, ephemeral: true });
   }
 }
