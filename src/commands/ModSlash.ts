@@ -291,9 +291,6 @@ export abstract class ClueSlash {
         {
           id: role!.id,
           allow: [PermissionsBitField.Flags.ViewChannel],
-        },
-        {
-          id: role!.id,
           deny: [PermissionsBitField.Flags.SendMessages],
         },
         {
