@@ -219,11 +219,23 @@ export abstract class ClueSlash {
       let user = await guild?.members.fetch(memberId);
       user?.roles.add(role!);
     });
+    let parent = '';
+    let councilId = '';
+
+    if (interaction.guildId === '932144876659822623') { 
+      parent = '1279700405647052885';
+      councilId = '1279509034063499326';
+
+    } else if (interaction.guildId === '198166521573408768') { //enduring
+      parent = '1280305494552215614';
+      councilId = '1054799296404394124';
+    }
+
 
     await guild?.channels.create({
       name: discordSafe + '-chat',
       type: ChannelType.GuildText,
-      parent: '1279700405647052885',
+      parent: parent,
       permissionOverwrites:
       [
         {
@@ -234,6 +246,10 @@ export abstract class ClueSlash {
           id: role!.id,
           allow: [PermissionsBitField.Flags.ViewChannel],
         },
+        {
+          id: councilId,
+          allow: [PermissionsBitField.Flags.ViewChannel],
+        },
         //Add council eventually
       ],
       // your permission overwrites or other options here
@@ -242,7 +258,7 @@ export abstract class ClueSlash {
     await guild?.channels.create({
       name: discordSafe + '-submissions',
       type: ChannelType.GuildText,
-      parent: '1279700405647052885',
+      parent: parent,
       permissionOverwrites:
       [
         {
@@ -251,6 +267,10 @@ export abstract class ClueSlash {
         },
         {
           id: role!.id,
+          allow: [PermissionsBitField.Flags.ViewChannel],
+        },
+        {
+          id: councilId,
           allow: [PermissionsBitField.Flags.ViewChannel],
         },
         //Add council eventually

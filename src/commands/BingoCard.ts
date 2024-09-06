@@ -99,6 +99,10 @@ export abstract class BingoClass {
   async selectDrop(interaction: StringSelectMenuInteraction) : Promise<unknown> {
     await interaction.deferReply({ ephemeral: true });
     let drops : SelectMenuComponentOptionData[] = [];
+    let currentRoles = (interaction.member!.roles as GuildMemberRoleManager).cache.filter((roleFilter: Role) => (roleFilter.name.includes('Team')));
+    if (currentRoles.size === 0) {
+      return interaction.followUp({ ephemeral: true, content:'You need to sign up for bingo first, and have a team. If you have a team please ping <@409181714821283840>' });
+    }
     if (interaction.values?.[0] === 'Skilling') {
       drops = Object.keys(SkillingCard.bingoCardBot).map((key) => {return { label: key, value: key };});
     } else if (interaction.values?.[0] === 'Clues') {
@@ -107,7 +111,7 @@ export abstract class BingoClass {
       drops = Object.keys(PVMCard.bingoCardBot).map((key) => {return { label: key, value: key };});
     } else {
       return interaction.followUp({ ephemeral: true, content:'You need to select a valid bingo card' });
-    } 
+    }
     
     const menu = new StringSelectMenuBuilder()
       .addOptions(drops)
@@ -134,11 +138,18 @@ export abstract class BingoClass {
     }
     const parameters = interaction.customId.split('-');
     parameters.shift(); // Remove the first element
+    let currentRoles = (interaction.member!.roles as GuildMemberRoleManager).cache.filter((roleFilter: Role) => (roleFilter.name.includes('Team')));
+    if (currentRoles.size === 0) {
+      return interaction.followUp({ ephemeral: true, content:'You need to sign up for bingo first, and have a team. If you have a team please ping <@409181714821283840>' });
+    }
+    const syncedCard = await getCard(parameters[0], currentRoles.first()?.id!);
     const dropId = interaction.values?.[0];
     if (currentCard.bingoCardBot[dropId!] && currentCard.bingoCardBot[dropId!].type && currentCard.bingoCardBot[dropId!].type === 'specific') {
       const buildCustomId = parameters.join('-');
+      const loc = currentCard.bingoCardBot[dropId].location;
+      const itemLog = syncedCard?.card[loc[0]][loc[1]].value!;
       const menu = new StringSelectMenuBuilder()
-        .addOptions(currentCard.bingoCardBot[dropId!].goal.map((key) => {return { label: key.name, value: key.name };}))
+        .addOptions(currentCard.bingoCardBot[dropId!].goal.map((key, index) => {return { label: `${key.name}${itemLog[index] === 1 ? ' ✅' : ''}`, value: key.name };}))
         .setCustomId(`dropsubmission-${buildCustomId}-${dropId}`);
       
       const buttonRow = 
@@ -148,8 +159,10 @@ export abstract class BingoClass {
     } else if (currentCard.bingoCardBot[dropId!] && currentCard.bingoCardBot[dropId!].type && currentCard.bingoCardBot[dropId!].type === 'number') {
       const buildCustomId = parameters.join('-');
       const goalMap = Array(currentCard.bingoCardBot[dropId!].goal).fill(null);
+      const loc = currentCard.bingoCardBot[dropId].location;
+      const itemLog = syncedCard?.card[loc[0]][loc[1]].value!;
       const menu = new StringSelectMenuBuilder()
-        .addOptions(goalMap.map((key, index) => {return { label: `${currentCard.bingoCardBot[dropId!].desc}${index + 1}`, value: `${index}` };}))
+        .addOptions(goalMap.map((key, index) => {return { label: `${currentCard.bingoCardBot[dropId!].desc}${index + 1}${itemLog[index] === 1 ? ' ✅' : ''}`, value: `${index}` };}))
         .setCustomId(`dropsubmission-${buildCustomId}-${dropId}`);
       
       const buttonRow = 
@@ -165,12 +178,6 @@ export abstract class BingoClass {
       locationBingo = currentCard.bingoCardBot[dropId].location;
     }
 
-    let currentRoles = (interaction.member!.roles as GuildMemberRoleManager).cache.filter((roleFilter: Role) => (roleFilter.name.includes('Team')));
-    if (currentRoles.size === 0) {
-      return interaction.followUp({ ephemeral: true, content:'You need to sign up for bingo first, and have a team. If you have a team please ping <@409181714821283840>' });
-    }
-
-    const syncedCard = await getCard(parameters[0], currentRoles.first()?.id!);
     const itemLog = syncedCard?.card[locationBingo[0]][locationBingo[1]].value!;
     let dropLocation = 0;
     if (parameters.length >= 2) {
