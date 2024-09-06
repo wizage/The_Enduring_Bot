@@ -250,9 +250,6 @@ export abstract class BingoClass {
   @Slash( { name: 'submit', description: 'Submit your bingo drop' })
   @SlashGroup('bingo')
   async submitBingo(interaction: CommandInteraction): Promise<unknown> {
-    if (interaction.guildId === '198166521573408768') {
-      return interaction.reply({ content: 'This command is disabled in this server', ephemeral: true });
-    }
     await interaction.deferReply({ ephemeral: true });
 
     const menu = new StringSelectMenuBuilder()

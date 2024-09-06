@@ -278,6 +278,33 @@ export abstract class ClueSlash {
       // your permission overwrites or other options here
     });
 
+    await guild?.channels.create({
+      name: discordSafe + '-cards',
+      type: ChannelType.GuildText,
+      parent: parent,
+      permissionOverwrites:
+      [
+        {
+          id: guild.id,
+          deny: [PermissionsBitField.Flags.ViewChannel],
+        },
+        {
+          id: role!.id,
+          allow: [PermissionsBitField.Flags.ViewChannel],
+        },
+        {
+          id: role!.id,
+          deny: [PermissionsBitField.Flags.SendMessages],
+        },
+        {
+          id: councilId,
+          allow: [PermissionsBitField.Flags.ViewChannel],
+        },
+        //Add council eventually
+      ],
+      // your permission overwrites or other options here
+    });
+
     // Setup 3 cards: PVM, Clues, Skilling
     const pvmCard = this.convertCard(PVMCard, role!.id, 'PVM');
     const cluesCard = this.convertCard(CluesCard, role!.id, 'Clues');
