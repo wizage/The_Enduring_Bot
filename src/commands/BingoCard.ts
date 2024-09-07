@@ -204,7 +204,13 @@ export abstract class BingoClass {
       dropName = dropId!;
       interaction.followUp({ ephemeral: true, content:`Please upload a drop for: ${dropName}` });
     } 
-    interaction.channel?.awaitMessages({ max: 1, time: 60000, errors: ['time'], filter:(response:Message)=>{ return response.author.id === interaction.user.id && response.attachments.size > 0;} }).then(collected => {
+    interaction.channel?.awaitMessages({ max: 1, time: 60000, errors: ['time'], filter:(response:Message)=>{
+      const regex = /(?:([^:\/?#]+):)?(?:\/\/([^\/?#]*))?([^?#]*\.(?:jpg|gif|png))(?:\?([^#]*))?(?:#(.*))?/;
+      if (response.author.id === interaction.user.id && ( response.attachments.size > 0 || response.content.match(regex))) {
+        return true;
+      }
+      return false;
+    } }).then(collected => {
       let channelId = '';
       if (interaction.guildId === '932144876659822623') {
         channelId = '1274111586369540192';
@@ -214,10 +220,16 @@ export abstract class BingoClass {
       let bingoLog = interaction.client.channels.cache.get(channelId) as TextChannel;
 
       const buildDropString = parameters.join(' > ');
-      
-      fetch(collected.first()?.attachments.first()!.proxyURL!).then(response => {return response.body;}).then(async body => {
+
+      let url = '';
+      if (collected.first()?.attachments && collected.first()?.attachments.size && collected.first()?.attachments.size! > 0) {
+        url = collected.first()?.attachments.first()!.proxyURL!;
+      } else {
+        url = collected.first()?.content!;
+      }
+      fetch(url).then(response => {return response.body;}).then(async body => {
         const stream = Readable.from(body!);
-        const logger = await bingoLog.send({ files: [{ attachment: stream, name: collected.first()?.attachments.first()!.name }] });
+        const logger = await bingoLog.send({ files: [{ attachment: stream }] });
         const submitted = new EmbedBuilder()
           .setTitle('**Submitted Drop**') 
           .addFields([
