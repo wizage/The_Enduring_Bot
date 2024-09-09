@@ -1,4 +1,4 @@
-import { ChannelType, CommandInteraction, EmbedBuilder, PermissionFlagsBits, PermissionsBitField, Role } from 'discord.js';
+import { ChannelType, CommandInteraction, EmbedBuilder, PermissionFlagsBits, PermissionsBitField, Role, TextBasedChannel } from 'discord.js';
 import { Discord, Slash, SlashOption, SlashGroup } from 'discordx';
 import { ApplicationCommandOptionType } from 'discord-api-types/v10';
 import { createCanvas, Image } from 'canvas';
@@ -161,22 +161,39 @@ export abstract class ClueSlash {
     cardtype: string,
     interaction: CommandInteraction,
   ) {
-    await interaction.deferReply();
+    await interaction.deferReply({ ephemeral: true });
     const roleId = teamrole.replace(/[<@&>]/g, '');
-    if (cardtype !== 'PVM' && cardtype !== 'Clues' && cardtype !== 'Skilling') {
+    if (cardtype !== 'PVM' && cardtype !== 'Clues' && cardtype !== 'Skilling' && cardtype !== 'All') {
       interaction.followUp('Invalid card type');
       return;
     }
-
-    const cardChecks = await getCard(cardtype, roleId);
-    if (!cardChecks) {
-      interaction.followUp('role id does not exist');
+    const channel = interaction.channel as TextBasedChannel;
+    if (cardtype === 'All') {
+      const pvmCardChecks = await getCard('PVM', roleId);
+      const cluesCardChecks = await getCard('Clues', roleId);
+      const skillingCardChecks = await getCard('Skilling', roleId);
+      if (!pvmCardChecks || !cluesCardChecks || !skillingCardChecks) {
+        interaction.followUp('role id does not exist');
+        return;
+      }
+      const pvmBuffer = await this.drawBingoCard('PVM', pvmCardChecks!);
+      channel.send({ files: [pvmBuffer] });
+      const cluesBuffer = await this.drawBingoCard('Clues', cluesCardChecks!);
+      channel.send({ files: [cluesBuffer] });
+      const skillingBuffer = await this.drawBingoCard('Skilling', skillingCardChecks!);
+      channel.send({ files: [skillingBuffer] });
+      await interaction.followUp('All cards have been drawn');
       return;
+    } else {
+      const cardChecks = await getCard(cardtype, roleId);
+      if (!cardChecks) {
+        interaction.followUp('role id does not exist');
+        return;
+      }
+      const buffer = await this.drawBingoCard(cardtype, cardChecks!);
+      channel.send({ files: [buffer] });
+      await interaction.followUp('Card has been drawn');
     }
-
-    const buffer = await this.drawBingoCard(cardtype, cardChecks!);
-
-    await interaction.followUp({ files: [buffer] });
   }
 
   @Slash({ name:'setup-bingo-team', description: 'Setup a new bingo team' })
