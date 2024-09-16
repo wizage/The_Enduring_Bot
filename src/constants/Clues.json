@@ -523,18 +523,18 @@
       "type": "number",
       "goal": 3
     },
-    "5 x re-roll tokens": {
+    "5 x reroll tokens": {
       "imageUrl": "https://runescape.wiki/images/Re-roll_token_%28hard%29_detail.png?e419c",
       "name": "Re-roll token (hard)",
       "pixelUrl": "https://runescape.wiki/images/Re-roll_token_%28hard%29.png?bb8a3",
-      "overrideName": "5 x re-roll tokens",
+      "overrideName": "5 x reroll tokens",
       "location": [
         4,
         1
       ],
       "desc":"Reroll #",
       "type": "number",
-      "goal": 3
+      "goal": 5
     },
     "Cape slot broadcast": {
       "imageUrl": "https://runescape.wiki/images/thumb/Explosive_barrel_detail.png/100px-Explosive_barrel_detail.png?b63b6",
