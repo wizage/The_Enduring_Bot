@@ -180,6 +180,7 @@ export abstract class BingoClass {
 
     const itemLog = syncedCard?.card[locationBingo[0]][locationBingo[1]].value!;
     let dropLocation = 0;
+    
     if (parameters.length >= 2) {
       if (currentCard.bingoCardBot[parameters[1]].type === 'specific') {
         dropLocation = currentCard.bingoCardBot[parameters[1]].goal.findIndex((goal) => goal.name === dropId);
