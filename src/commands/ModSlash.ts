@@ -1,4 +1,4 @@
-import { ChannelType, CommandInteraction, EmbedBuilder, PermissionFlagsBits, PermissionsBitField, Role, TextBasedChannel } from 'discord.js';
+import { APIEmbedField, ChannelType, CommandInteraction, EmbedBuilder, PermissionFlagsBits, PermissionsBitField, Role, TextBasedChannel } from 'discord.js';
 import { Discord, Slash, SlashOption, SlashGroup } from 'discordx';
 import { ApplicationCommandOptionType } from 'discord-api-types/v10';
 import { createCanvas, Image } from 'canvas';
@@ -141,6 +141,88 @@ export abstract class ClueSlash {
     const buffer = canvas.toBuffer('image/png');
     return buffer;
   };
+
+  private countCard = (card: any, teamId:string, cardId:string): number => {
+    let counter = 0;
+    const size = card.settings.bingoSize;
+    const ddbCard = Array(size).fill(null).map(() => Array(size).fill(null));
+    Object.keys(card.bingoCardBot).forEach((item) => {
+      const [x, y] = card.bingoCardBot[item].location;
+      let value;
+      if (card.bingoCardBot[item].type === 'single') {
+        value = ['0'];
+        counter += 1;
+      } else if (card.bingoCardBot[item].type === 'number') {
+        value = Array(card.bingoCardBot[item].goal).fill('0');
+        counter += card.bingoCardBot[item].goal;
+      } else if (card.bingoCardBot[item].type === 'specific') {
+        value = Array(card.bingoCardBot[item].goal.length).fill('0');
+        counter += card.bingoCardBot[item].goal.length;
+      }
+    });
+
+    return counter;
+  };
+
+  @Slash({ name: 'get-stats', description: 'Get stats of team'})
+  @SlashGroup('mod')
+  async getStats(
+    interaction: CommandInteraction
+  )
+  {
+    await interaction.deferReply();
+    let moreMessages = true;
+    let dropContent = {};
+    let messages = await interaction.channel!.messages.fetch({limit: 100});
+    while (moreMessages) {
+      messages.forEach((message) => {
+        if (message.author.bot){
+          const embed = message.embeds[0];
+          if (embed) {
+            const fields = embed.fields.filter((field) => field.name === '__Submitted by__');
+            if (fields.length > 0 ){
+              const user = fields[0].value;
+              if (embed.description?.indexOf('Verified')) {
+                if (dropContent[user]){
+                  dropContent[user] += 1;
+                } else {
+                  dropContent[user] = 1;
+                }
+              }
+            } else {
+
+            }        
+          }
+        }
+      });
+      const lastMessage = messages.last();
+      if (lastMessage) {
+        messages = await interaction.channel!.messages.fetch({limit: 100, before: lastMessage.id});
+        if (messages.size < 100) {
+          moreMessages = false;
+        }
+      } else {
+        moreMessages = false;
+      }
+    }
+    let fields : APIEmbedField[] = [];
+    let teamCount = 1;
+    let users = '';
+    let dropCount = '';
+    Object.keys(dropContent).forEach((key) => {
+      users += `${key}\n`;
+      dropCount += `${dropContent[key]}\n`;
+    });
+    fields.push({ name:`Usernames`, value:users, inline: true });
+    fields.push({ name:`Drop Count`, value:dropCount, inline: true });
+
+    const statEmbed = new EmbedBuilder()
+      .setTitle('**Stats for your Bingo Team**') 
+      .addFields(fields);
+    await interaction.editReply({embeds:[statEmbed]});
+    //interaction.editReply(`Max number is :${pvmCard}, ${cluesCard}, ${skillingCard}`);
+
+  }
 
   @Slash({ name: 'draw-card', description: 'Draw new card' })
   @SlashGroup('mod')
